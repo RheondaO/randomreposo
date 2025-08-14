@@ -81,18 +81,17 @@ h3 {
   }
 }
 
-/* Update func section - IMPORTANT: Add float left */
 .resume .func {
   width: 100%;
   padding: 30px 15px;
   box-sizing: border-box;
-  float: left; /* Add this to align with base */
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 768px) {
   .resume .func {
     width: 66.67%;
-    float: left;
     padding: 30px 15px 30px 0;
   }
 }
