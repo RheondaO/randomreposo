@@ -50,19 +50,19 @@ h3 {
   margin: 20px auto;
   box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
   position: relative;
-  display: block; /* Changed from flex */
+  display: block;
   border-radius: 25px;
   overflow: hidden;
 }
 
-/* Create a new container for the top sections */
+/* Clear floats */
 .resume::after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Update base section for side-by-side layout */
+/* Update base section */
 .resume .base {
   width: 100%;
   padding: 30px 15px;
@@ -75,14 +75,16 @@ h3 {
 @media (min-width: 768px) {
   .resume .base {
     width: 33.33%;
+    float: left;
   }
 }
 
-/* Update func section */
+/* Update func section - IMPORTANT: Add float left */
 .resume .func {
   width: 100%;
   padding: 30px 15px;
   box-sizing: border-box;
+  float: left; /* Add this to align with base */
 }
 
 @media (min-width: 768px) {
@@ -93,12 +95,20 @@ h3 {
   }
 }
 
-/* Update work and edu sections for side-by-side layout */
+/* Create a wrapper for work and edu sections */
+.resume .func .top-section {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+/* Update work and edu sections */
 .resume .func .work,
 .resume .func .edu {
   width: 100%;
   margin-bottom: 15px;
-  float: none;
+  float: left;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
@@ -106,10 +116,10 @@ h3 {
   .resume .func .edu {
     width: 50%;
     float: left;
+    margin-bottom: 15px;
   }
   
   .resume .func .work {
-    margin-right: 0;
     padding-right: 10px;
   }
   
@@ -118,20 +128,19 @@ h3 {
   }
 }
 
-/* For very large screens, make all three sections equal width */
-@media (min-width: 1024px) {
-  .resume .base {
-    width: 30%;
-  }
-  
-  .resume .func {
-    width: 70%;
-  }
-  
-  .resume .func .work,
-  .resume .func .edu {
-    width: 50%;
-  }
+/* Work section specific styling */
+.resume .func .work {
+  background: linear-gradient(135deg, #FFE5E5 0%, #FFD3E1 100%);
+  padding: 20px;
+  border-radius: 20px;
+  margin-right: 0;
+}
+
+/* Education section specific styling */
+.resume .func .edu {
+  background: linear-gradient(135deg, #E5D4FF 0%, #FFD3E1 100%);
+  padding: 20px;
+  border-radius: 20px;
 }
 
 /* Ensure skills and interests sections span full width below */
@@ -146,12 +155,17 @@ h3 {
   margin-top: 15px;
 }
 
-/* Adjust the profile section to fit better in narrower column */
+/* Remove the old float: left from individual work/edu that might be causing issues */
 @media (min-width: 768px) {
-  .resume .base .profile {
-    padding: 20px 10px 30px 10px;
-    margin: -30px -15px 30px -15px;
+  .resume .base {
+    min-height: 400px; /* Ensure base has minimum height */
   }
+}
+
+/* Additional fix to ensure proper alignment */
+.resume .func > div:first-child {
+  margin-top: 0;
+}
   
   .resume .base .profile .photo img {
     max-width: 120px;
