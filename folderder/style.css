@@ -258,9 +258,7 @@ h3 {
   opacity: 0.5;
 }
 
-Here's the completed CSS with responsive sizing, cutesy color scheme, gradient backgrounds, and rounded corners:
 
-```css
 .resume .func h3 {
   transition-duration: 0.3s;
   margin-top: 0;
@@ -489,145 +487,111 @@ Here's the completed CSS with responsive sizing, cutesy color scheme, gradient b
 
 .resume .func .skills-soft ul li {
   position: relative;
-  
-
-.resume .func .skills-prog ul li {
-margin-bottom: 8px;
-display: flex;
-align-items: center;
-transition-duration: 0.3s;
+  width: 48%;
+  margin-bottom: 15px;
 }
 
-.resume .func .skills-prog ul li:hover {
-color: #fdd835;
-}
-
-.resume .func .skills-prog ul li:hover .skills-bar .bar {
-background: #fdd835;
-box-shadow: 0 0 0 1px #fdd835;
-}
-
-.resume .func .skills-prog ul li span {
-display: block;
-width: 120px;
-}
-
-.resume .func .skills-prog ul li .skills-bar {
-background: #ffffff;
-height: 2px;
-width: calc(100% - 120px);
-position: relative;
-border-radius: 2px;
-}
-
-.resume .func .skills-prog ul li .skills-bar .bar {
-position: absolute;
-top: -1px;
-height: 4px;
-background: #ffb300;
-box-shadow: 0 0 0 #ffb300;
-border-radius: 5px;
-}
-
-.resume .func .skills-soft {
-clear: both;
-background: #283593;
-padding: 15px;
-margin: 15px 0 0;
-}
-
-.resume .func .skills-soft ul {
-display: flex;
-justify-content: space-between;
-text-align: center;
-}
-
-.resume .func .skills-soft ul li {
-position: relative;
+@media (min-width: 768px) {
+  .resume .func .skills-soft ul li {
+    width: 23%;
+    margin-bottom: 0;
+  }
 }
 
 .resume .func .skills-soft ul li:hover svg .cbar {
-stroke: #fdd835;
-stroke-width: 4px;
+  stroke: #FF6B9D;
+  stroke-width: 4px;
 }
 
 .resume .func .skills-soft ul li:hover span,
 .resume .func .skills-soft ul li:hover small {
-transform: scale(1.2);
+  transform: scale(1.2);
+  color: #FF6B9D;
 }
 
 .resume .func .skills-soft ul li svg {
-width: 95%;
-fill: transparent;
-transform: rotate(-90deg);
+  width: 95%;
+  fill: transparent;
+  transform: rotate(-90deg);
 }
 
 .resume .func .skills-soft ul li svg circle {
-stroke-width: 1px;
-stroke: #ffffff;
+  stroke-width: 1px;
+  stroke: #FFE5E5;
 }
 
 .resume .func .skills-soft ul li svg .cbar {
-stroke-width: 3px;
-stroke: #ffb300;
-stroke-linecap: round;
+  stroke-width: 3px;
+  stroke: #FFB6C1;
+  stroke-linecap: round;
 }
 
 .resume .func .skills-soft ul li span,
 .resume .func .skills-soft ul li small {
-position: absolute;
-display: block;
-width: 100%;
-top: 52%;
-transition-duration: 0.3s;
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 52%;
+  transition-duration: 0.3s;
+  color: #5D4E60;
 }
 
 .resume .func .skills-soft ul li span {
-top: 40%;
+  top: 40%;
 }
 
 .resume .func .interests {
-background: #283593;
-margin: 15px 0 0;
-padding: 15px;
+  background: linear-gradient(135deg, #FFD3E1 0%, #FFE5E5 100%);
+  margin: 15px 0 0;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .resume .func .interests-items {
-box-sizing: border-box;
-padding: 0 0 15px;
-width: 100%;
-text-align: center;
-display: flex;
-justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 0 15px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .resume .func .interests-items div {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-width: 100px;
-height: 100px;
-border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 182, 193, 0.3) 100%);
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .resume .func .interests-items {
+    justify-content: center;
+  }
+  
+  .resume .func .interests-items div {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+  }
 }
 
 .resume .func .interests-items div:hover i {
-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .resume .func .interests-items div:hover span {
-color: #fdd835;
-transition-duration: 0.3s;
+  color: #FF6B9D;
+  transition-duration: 0.3s;
 }
 
 .resume .func .interests-items div i {
-font-size: 45px;
-width: 60px;
-height: 60px;
-line-height: 60px;
-color: #ffb300;
-transition-duration: 0.3s;
-}
+  font
 
 .resume .func .interests-items div span {
 display: block;
