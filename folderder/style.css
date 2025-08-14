@@ -103,6 +103,13 @@ h3 {
   margin-bottom: 15px;
 }
 
+/* Create a wrapper for work and edu sections */
+.resume .func .top-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
 /* Update work and edu sections */
 .resume .func .work,
 .resume .func .edu {
