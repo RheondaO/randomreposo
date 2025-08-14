@@ -50,10 +50,16 @@ h3 {
   box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  align-items: flex-start; /* Align items at the top */
   border-radius: 25px;
   overflow: hidden;
   min-height: 800px;
+}
+
+@media (max-width: 768px) {
+  .resume {
+    flex-wrap: wrap;
+  }
 }
 
 /* Clear floats */
