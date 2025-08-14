@@ -41,7 +41,6 @@ h3 {
   font-size: 1.25em;
 }
 
-/* Update the main resume container */
 .resume {
   width: 90%;
   max-width: 1200px;
@@ -50,9 +49,11 @@ h3 {
   margin: 20px auto;
   box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
   position: relative;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   border-radius: 25px;
   overflow: hidden;
+  min-height: 800px;
 }
 
 /* Clear floats */
