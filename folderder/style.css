@@ -75,15 +75,13 @@ h3 {
   background: linear-gradient(135deg, #FFB6C1 0%, #FFD4E5 100%);
   color: #5D4E60;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
+  align-self: stretch; /* Stretch to full height */
 }
 
 @media (min-width: 768px) {
   .resume .base {
     width: 33.33%;
-    height: auto;
+    flex-shrink: 0; /* Prevent shrinking */
   }
 }
 
