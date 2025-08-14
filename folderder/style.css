@@ -41,6 +41,7 @@ h3 {
   font-size: 1.25em;
 }
 
+/* Update the main resume container */
 .resume {
   width: 90%;
   max-width: 1200px;
@@ -49,112 +50,124 @@ h3 {
   margin: 20px auto;
   box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
   position: relative;
-  display: block;
-  flex-wrap: wrap;
+  display: block; /* Changed from flex */
   border-radius: 25px;
   overflow: hidden;
 }
 
-@media (max-width: 768px) {
-  .resume {
-    width: 95%;
-  }
+/* Create a new container for the top sections */
+.resume::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.resume .base,
-.resume .func {
-  box-sizing: border-box;
-}
-
-.resume .base > div,
-.resume .func > div {
-  padding-bottom: 10px;
-  border-radius: 15px;
-}
-
-.resume .base > div:last-of-type,
-.resume .func > div:last-of-type {
-  padding-bottom: 0;
-}
-
+/* Update base section for side-by-side layout */
 .resume .base {
   width: 100%;
   padding: 30px 15px;
   background: linear-gradient(135deg, #FFB6C1 0%, #FFD4E5 100%);
   color: #5D4E60;
+  float: left;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .resume .base {
-    width: 35%;
+    width: 33.33%;
+  }
+}
+
+/* Update func section */
+.resume .func {
+  width: 100%;
+  padding: 30px 15px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .resume .func {
+    width: 66.67%;
+    float: left;
+    padding: 30px 15px 30px 0;
+  }
+}
+
+/* Update work and edu sections for side-by-side layout */
+.resume .func .work,
+.resume .func .edu {
+  width: 100%;
+  margin-bottom: 15px;
+  float: none;
+}
+
+@media (min-width: 768px) {
+  .resume .func .work,
+  .resume .func .edu {
+    width: 50%;
+    float: left;
+  }
+  
+  .resume .func .work {
+    margin-right: 0;
+    padding-right: 10px;
+  }
+  
+  .resume .func .edu {
+    padding-left: 10px;
+  }
+}
+
+/* For very large screens, make all three sections equal width */
+@media (min-width: 1024px) {
+  .resume .base {
+    width: 30%;
   }
   
   .resume .func {
-    width: 65%;
+    width: 70%;
+  }
+  
+  .resume .func .work,
+  .resume .func .edu {
+    width: 50%;
   }
 }
 
-.resume .base .profile {
-  background: linear-gradient(135deg, #FFD93D 0%, #FFB6C1 100%);
-  padding: 30px 15px 40px 15px;
-  margin: -30px -15px 45px -15px;
-  position: relative;
-  z-index: 2;
-  border-radius: 25px;
-}
-
-.resume .base .profile::after {
-  content: "";
-  position: absolute;
-  background: linear-gradient(90deg, #FFB6C1 0%, #C9ADA7 100%);
+/* Ensure skills and interests sections span full width below */
+.resume .func .skills-prog,
+.resume .func .skills-soft,
+.resume .func .interests {
+  clear: both;
   width: 100%;
-  height: 30px;
-  bottom: -15px;
-  left: 0;
-  transform: skewY(-5deg);
-  z-index: -1;
-  border-radius: 0 0 20px 20px;
+  background: linear-gradient(135deg, #FFD3E1 0%, #E5D4FF 100%);
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 15px;
 }
 
-.resume .base .profile .photo img {
-  width: 100%;
-  max-width: 150px;
-  border-radius: 50%;
-  border: 5px solid rgba(255, 255, 255, 0.5);
-}
-
-.resume .base .profile .photo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.resume .base .profile .fa-rocket {
-  font-size: 80px;
-  text-align: center;
-  margin: auto;
-  color: #FF6B9D;
-}
-
-.resume .base .profile .info {
-  text-align: center;
-  color: #5D4E60;
-}
-
-.resume .base .profile .info .name {
-  margin-top: 10px;
-  margin-bottom: 0;
-  font-size: clamp(1.5em, 4vw, 1.75em);
-  text-transform: lowercase;
-  color: #8B5A8E;
-}
-
-.resume .base .profile .info .job {
-  margin-top: 10px;
-  margin-bottom: 0;
-  font-size: clamp(1.2em, 3.5vw, 1.5em);
-  text-transform: lowercase;
-  color: #A8769E;
+/* Adjust the profile section to fit better in narrower column */
+@media (min-width: 768px) {
+  .resume .base .profile {
+    padding: 20px 10px 30px 10px;
+    margin: -30px -15px 30px -15px;
+  }
+  
+  .resume .base .profile .photo img {
+    max-width: 120px;
+  }
+  
+  .resume .base .profile .fa-rocket {
+    font-size: 60px;
+  }
+  
+  .resume .base .profile .info .name {
+    font-size: 1.4em;
+  }
+  
+  .resume .base .profile .info .job {
+    font-size: 1.2em;
+  }
 }
 
 .resume .base .contact div {
