@@ -591,8 +591,39 @@ h3 {
 }
 
 .resume .func .interests-items div i {
-  font
+  font-size: 45px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  color: #FF6B9D;
+  transition-duration: 0.3s;
+  background: linear-gradient(135deg, #FFD93D 0%, #FFB6C1 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .resume .func .interests-items div i {
+    font-size: 35px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+}
 
 .resume .func .interests-items div span {
-display: block;
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #5D4E60;
+  transition-duration: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .resume .func .interests-items div span {
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
 }
