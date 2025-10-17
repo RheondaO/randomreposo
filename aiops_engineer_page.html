@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIOps Engineer - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Open+Sans:ital,wdth,wght@0,88.8,333;1,88.8,333&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 333;
+            font-style: normal;
+            font-variation-settings: "wdth" 88.8;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: #ffffff;
+            border-bottom: 4px solid #000000;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #000000;
+            font-family: "Jersey 25", sans-serif;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto 2rem;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            font-family: "Jersey 25", sans-serif;
+            color: #000000;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 3rem;
+        }
+
+        /* Folder Tabs Section */
+        .folder {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: -2px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .tab {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 600;
+            display: inline-block;
+            position: relative;
+            background: #ffffff;
+            border: 3px solid #000000;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+            margin-bottom: 0;
+        }
+
+        .tab:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+        }
+
+        .tab.active {
+            background: #ffffff;
+            border-bottom: 3px solid #ffffff;
+            z-index: 20;
+            position: relative;
+            margin-bottom: -3px;
+            padding-bottom: calc(0.75rem + 3px);
+        }
+
+        .tab.active span {
+            font-weight: 700;
+        }
+
+        .content {
+            border: 3px solid #000000;
+            border-radius: 0 8px 8px 8px;
+            position: relative;
+            width: 100%;
+            background: #ffffff;
+            min-height: 400px;
+        }
+
+        .content__inner {
+            display: none;
+            padding: 2rem;
+        }
+
+        .content__inner.active {
+            display: block;
+        }
+
+        .page {
+            padding: 2rem;
+            border: 2px solid #000000;
+            background: #ffffff;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 31px,
+                    #e0e0e0 31px,
+                    #e0e0e0 32px
+                );
+            min-height: 300px;
+            line-height: 2;
+        }
+
+        .page p {
+            margin-bottom: 2rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-box {
+            border: 3px solid #000000;
+            padding: 1.5rem;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-family: "Jersey 25", sans-serif;
+            color: #000000;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Project Cards */
+        .project-card {
+            border: 3px solid #000000;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: #ffffff;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            font-family: "Jersey 25", sans-serif;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            border: 2px solid #000000;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-item {
+            border: 3px solid #000000;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.05), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+
+        .skill-item:hover::before {
+            opacity: 1;
+            animation: shimmer 1.5s infinite;
+        }
+
+        .skill-item:hover {
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3),
+                        0 0 40px rgba(0, 191, 255, 0.2);
+        }
+
+        @keyframes shimmer {
+            0% { left: -50%; top: -50%; }
+            100% { left: 150%; top: 150%; }
+        }
+
+        /* Footer */
+        footer {
+            background: #ffffff;
+            border-top: 4px solid #000000;
+            padding: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>AIOps Engineer</h1>
+        <p class="hero-tagline">Leveraging AI and machine learning to automate IT operations, predict system failures, and optimize infrastructure performance</p>
+    </section>
+
+    <div class="folder">
+        <div class="tabs">
+            <button class="tab active" onclick="openTab(event, 'tab-1')"><span>Overview</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-2')"><span>ML Models</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-3')"><span>Monitoring</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-4')"><span>Automation</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-5')"><span>Analytics</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-6')"><span>Incident Mgmt</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-7')"><span>Predictions</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-8')"><span>Log Analysis</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-9')"><span>Cloud Ops</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-10')"><span>Performance</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-11')"><span>Security</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-12')"><span>Observability</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-13')"><span>Cost Optimization</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-14')"><span>Alerting</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-15')"><span>Remediation</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-16')"><span>Capacity</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-17')"><span>Pipelines</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-18')"><span>Kubernetes</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-19')"><span>DevOps</span></button>
+            <button class="tab" onclick="openTab(event, 'tab-20')"><span>Architecture</span></button>
+        </div>
+
+        <div class="content">
+            <div id="tab-1" class="content__inner active">
+                <div class="page">
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">System Uptime</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">70%</div>
+                            <div class="stat-label">Incident Reduction</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Automated Workflows</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">$2M</div>
+                            <div class="stat-label">Cost Savings</div>
+                        </div>
+                    </div>
+                    <p>Specialized in leveraging artificial intelligence and machine learning to transform IT operations from reactive to proactive. Built intelligent systems that predict failures, automate remediation, and optimize infrastructure performance across cloud and on-premise environments.</p>
+                    <p>Core expertise includes anomaly detection, predictive analytics, event correlation, and intelligent automation. Proven track record of reducing MTTR, eliminating manual toil, and delivering measurable cost savings through AI-driven operations.</p>
+                </div>
+            </div>
+
+            <div id="tab-2" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Machine Learning Models</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">TensorFlow</div>
+                        <div class="skill-item">PyTorch</div>
+                        <div class="skill-item">Scikit-learn</div>
+                        <div class="skill-item">XGBoost</div>
+                        <div class="skill-item">Neural Networks</div>
+                        <div class="skill-item">Time Series</div>
+                        <div class="skill-item">Anomaly Detection</div>
+                        <div class="skill-item">NLP</div>
+                    </div>
+                    <p>Developed and deployed production-grade machine learning models for anomaly detection, failure prediction, and capacity forecasting. Specialized in time-series analysis, unsupervised learning algorithms, and deep learning architectures optimized for IT operations data.</p>
+                    <p>Built custom models achieving 92% accuracy in predicting system failures 72 hours in advance. Implemented real-time inference pipelines processing millions of events per day with sub-second latency.</p>
+                </div>
+            </div>
+
+            <div id="tab-3" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Infrastructure Monitoring</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Datadog</div>
+                        <div class="skill-item">Prometheus</div>
+                        <div class="skill-item">Grafana</div>
+                        <div class="skill-item">Splunk</div>
+                        <div class="skill-item">New Relic</div>
+                        <div class="skill-item">Elastic Stack</div>
+                    </div>
+                    <p>Architected comprehensive monitoring solutions providing full-stack observability across distributed systems. Implemented intelligent dashboards, custom metrics, and advanced alerting strategies that reduce alert fatigue while improving incident detection.</p>
+                    <p>Integrated monitoring tools with ML pipelines to enable predictive alerting and automated root cause analysis. Reduced false positive alerts by 80% through intelligent correlation and pattern recognition.</p>
+                </div>
+            </div>
+
+            <div id="tab-4" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Intelligent Automation</h3>
+                    <p>Designed and implemented self-healing infrastructure using event-driven automation and AI-powered decision engines. Created automated remediation workflows that resolve 60% of incidents without human intervention.</p>
+                    <p>Built intelligent runbook automation that adapts based on historical outcomes and system state. Developed chatops integrations allowing teams to trigger complex workflows through natural language commands.</p>
+                    <div class="project-card">
+                        <h3>Auto-Scaling Optimizer</h3>
+                        <p>ML-powered auto-scaling system that predicts traffic patterns and preemptively adjusts capacity. Reduced infrastructure costs by 35% while maintaining SLA compliance.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">AWS</span>
+                            <span class="tag">ML</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-5" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Predictive Analytics</h3>
+                    <p>Built predictive analytics platforms that forecast system behavior, capacity needs, and potential failures. Developed custom algorithms for trend analysis, seasonality detection, and outlier identification across complex distributed systems.</p>
+                    <p>Created real-time analytics dashboards providing actionable insights to operations teams. Implemented statistical models and machine learning techniques to identify patterns invisible to traditional monitoring approaches.</p>
+                </div>
+            </div>
+
+            <div id="tab-6" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Incident Management</h3>
+                    <div class="project-card">
+                        <h3>AI Incident Classifier</h3>
+                        <p>Intelligent incident categorization system using NLP and historical data. Automatically routes tickets to appropriate teams and suggests resolution steps based on similar past incidents.</p>
+                        <div class="project-tags">
+                            <span class="tag">NLP</span>
+                            <span class="tag">ServiceNow</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                    <p>Reduced mean time to resolution (MTTR) by 45% through intelligent incident triage and automated escalation. Implemented machine learning models that learn from incident history to improve future response times.</p>
+                </div>
+            </div>
+
+            <div id="tab-7" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Failure Prediction</h3>
+                    <p>Developed predictive models that identify potential system failures before they occur. Achieved 92% accuracy in predicting disk failures, memory exhaustion, and service degradation events 24-72 hours in advance.</p>
+                    <p>Implemented early warning systems that trigger proactive maintenance windows, preventing costly downtime and customer impact. Reduced unplanned outages by 65% through predictive interventions.</p>
+                </div>
+            </div>
+
+            <div id="tab-8" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Log Analysis & Correlation</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Elasticsearch</div>
+                        <div class="skill-item">Logstash</div>
+                        <div class="skill-item">Kibana</div>
+                        <div class="skill-item">Fluentd</div>
+                        <div class="skill-item">Splunk</div>
+                        <div class="skill-item">NLP</div>
+                    </div>
+                    <p>Built intelligent log aggregation and analysis systems using NLP and pattern recognition. Developed algorithms that automatically identify anomalies, correlate events across services, and pinpoint root causes in complex distributed systems.</p>
+                    <p>Reduced log analysis time from hours to minutes through automated pattern matching and intelligent summarization. Created custom parsers and extractors for unstructured log data.</p>
+                </div>
+            </div>
+
+            <div id="tab-9" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Cloud Operations</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">AWS</div>
+                        <div class="skill-item">Azure</div>
+                        <div class="skill-item">GCP</div>
+                        <div class="skill-item">Terraform</div>
+                        <div class="skill-item">CloudFormation</div>
+                        <div class="skill-item">Multi-Cloud</div>
+                    </div>
+                    <p>Expertise in optimizing cloud operations across AWS, Azure, and GCP. Implemented AIOps practices for cloud-native applications including intelligent resource allocation, cost optimization, and automated compliance monitoring.</p>
+                    <p>Built cloud-agnostic monitoring and automation frameworks enabling seamless multi-cloud operations. Reduced cloud spending by 40% through ML-powered resource rightsizing and waste elimination.</p>
+                </div>
+            </div>
+
+            <div id="tab-10" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Performance Optimization</h3>
+                    <p>Developed AI-powered performance analysis tools that identify bottlenecks and optimization opportunities. Built automated tuning systems that adjust configurations based on workload patterns and performance metrics.</p>
+                    <p>Improved application response times by 60% through intelligent caching strategies, query optimization, and resource allocation. Created performance baselines using statistical analysis and machine learning to detect degradation early.</p>
+                </div>
+            </div>
+
+            <div id="tab-11" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Security Operations</h3>
+                    <p>Integrated AIOps with security operations to detect threats and anomalies in real-time. Built ML models for identifying unusual access patterns, potential breaches, and security policy violations.</p>
+                    <p>Automated security incident response workflows and compliance monitoring. Reduced security incident detection time by 75% through intelligent alerting and automated threat correlation.</p>
+                </div>
+            </div>
+
+            <div id="tab-12" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Full-Stack Observability</h3>
+                    <p>Implemented comprehensive observability solutions providing visibility into applications, infrastructure, and business metrics. Built custom instrumentation and tracing systems for complex microservices architectures.</p>
+                    <p>Created unified observability platforms aggregating data from multiple sources into actionable insights. Enabled teams to understand system behavior through intelligent correlation and visualization.</p>
+                </div>
+            </div>
+
+            <div id="tab-13" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Cost Optimization</h3>
+                    <div class="project-card">
+                        <h3>Cloud Cost Optimizer</h3>
+                        <p>ML-powered platform analyzing usage patterns to identify cost-saving opportunities. Automated recommendations for rightsizing, reserved instances, and resource cleanup.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">AWS Cost Explorer</span>
+                            <span class="tag">ML</span>
+                        </div>
+                    </div>
+                    <p>Delivered $2M in annual cost savings through intelligent resource optimization and waste elimination. Built automated systems for identifying unused resources, oversized instances, and inefficient architectures.</p>
+                </div>
+            </div>
+
+            <div id="tab-14" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Intelligent Alerting</h3>
+                    <p>Designed context-aware alerting systems that reduce noise and alert fatigue. Implemented ML-based alert correlation to group related events and suppress duplicate notifications.</p>
+                    <p>Built dynamic threshold systems that adapt to changing baselines and seasonal patterns. Reduced alert volume by 70% while improving incident detection accuracy through intelligent filtering.</p>
+                </div>
+            </div>
+
+            <div id="tab-15" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Auto-Remediation</h3>
+                    <p>Created self-healing systems that automatically resolve common issues without human intervention. Built decision engines that evaluate system state and execute appropriate remediation workflows.</p>
+                    <p>Automated resolution of 60% of incidents including service restarts, resource scaling, cache clearing, and configuration updates. Reduced on-call burden and improved system reliability through proactive automation.</p>
+                </div>
+            </div>
+
+            <div id="tab-16" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Capacity Planning</h3>
+                    <p>Developed ML models for accurate capacity forecasting based on growth trends, seasonality, and business projections. Built automated capacity planning tools that recommend infrastructure changes before constraints are reached.</p>
+                    <p>Prevented capacity-related outages through predictive scaling and proactive resource provisioning. Optimized infrastructure spend by accurately forecasting needs and avoiding over-provisioning.</p>
+                </div>
+            </div>
+
+            <div id="tab-17" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">CI/CD Pipelines</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Jenkins</div>
+                        <div class="skill-item">GitLab CI</div>
+                        <div class="skill-item">GitHub Actions</div>
+                        <div class="skill-item">ArgoCD</div>
+                        <div class="skill-item">Spinnaker</div>
+                        <div class="skill-item">CircleCI</div>
+                    </div>
+                    <p>Integrated AIOps into CI/CD pipelines for intelligent deployment validation and automated rollback. Built ML models that predict deployment risk based on code changes, test results, and historical data.</p>
+                    <p>Reduced deployment failures by 55% through predictive analysis and automated quality gates. Implemented progressive delivery strategies with automated canary analysis.</p>
+                </div>
+            </div>
+
+            <div id="tab-18" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Kubernetes Operations</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">K8s</div>
+                        <div class="skill-item">Helm</div>
+                        <div class="skill-item">Istio</div>
+                        <div class="skill-item">Prometheus</div>
+                        <div class="skill-item">EKS/GKE/AKS</div>
+                        <div class="skill-item">Operators</div>
+                    </div>
+                    <p>Built AIOps solutions specifically for Kubernetes environments including intelligent pod scheduling, auto-scaling, and resource optimization. Developed custom operators and controllers for automated cluster management.</p>
+                    <p>Implemented ML-powered anomaly detection for containerized applications and services. Created automated remediation for common Kubernetes issues including OOMKills, CrashLoopBackOff, and node failures.</p>
+                </div>
+            </div>
+
+            <div id="tab-19" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">DevOps Integration</h3>
+                    <p>Bridged development and operations through intelligent automation and shared observability. Built platforms that provide developers with operational insights while enabling operations teams to understand application behavior.</p>
+                    <p>Implemented shift-left practices bringing AIOps capabilities into development workflows. Created self-service tools enabling developers to troubleshoot and optimize their own services.</p>
+                </div>
+            </div>
+
+            <div id="tab-20" class="content__inner">
+                <div class="page">
+                    <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 2rem; margin-bottom: 1rem;">System Architecture</h3>
+                    <p>Designed scalable AIOps architectures supporting enterprise-scale operations. Built data pipelines processing billions of events daily with real-time analytics and ML inference capabilities.</p>
+                    <p>Architected fault-tolerant systems with high availability and disaster recovery. Created reference architectures and best practices for implementing AIOps in complex environments.</p>
+                    <div class="project-card">
+                        <h3>Enterprise AIOps Platform</h3>
+                        <p>Designed and built a comprehensive AIOps platform serving 500+ services across multiple data centers. Processes 10M+ events per minute with sub-second latency for real-time anomaly detection and automated remediation.</p>
+                        <div class="project-tags">
+                            <span class="tag">Architecture</span>
+                            <span class="tag">Kafka</span>
+                            <span class="tag">ML Pipeline</span>
+                            <span class="tag">Microservices</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 AIOps Engineer Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabId) {
+            var i, contentInner, tabs;
+            
+            contentInner = document.getElementsByClassName("content__inner");
+            for (i = 0; i < contentInner.length; i++) {
+                contentInner[i].classList.remove("active");
+            }
+            
+            tabs = document.getElementsByClassName("tab");
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("
