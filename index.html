@@ -3,153 +3,630 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rheonda Ogletree - Portfolio, web designer, prompt engineer, solopreneur based in Richmond, Virginia.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://rheondadotogletree.com/" />
-<meta property="og:title" content="Rheonda D. Ogletree" />
-<meta property="og:description" content="Portfolio of Rheonda Ogletree, web designer, prompt engineer, solopreneur." />
-<meta property="og:url" content="https://rheondadotogletree.com/" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="folderder/style.css">
-    <script src="folderder/actions.js"></script>
-    <title>Rheonda D. Ogletree</title>
+    <title>Sales Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Open+Sans:ital,wdth,wght@0,88.8,333;1,88.8,333&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 333;
+            font-style: normal;
+            font-variation-settings: "wdth" 88.8;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: #ffffff;
+            border-bottom: 4px solid #000000;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #000000;
+            font-family: "Jersey 25", sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            font-family: "Jersey 25", sans-serif;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .job-titles {
+            margin: 3rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .job-title {
+            font-size: 75px;
+            font-family: "Jersey 25", sans-serif;
+            color: #000000;
+            font-weight: 400;
+            line-height: 1.2;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .job-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            border-left: 6px solid #000000;
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .job-title:hover::before {
+            width: 100%;
+            border: 6px solid #000000;
+            background: transparent;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3),
+                        0 0 40px rgba(0, 191, 255, 0.2),
+                        inset 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .job-title:hover {
+            transform: translateX(10px);
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00,
+                         0 0 20px #00ff00,
+                         0 0 30px #00ff00;
+            -webkit-text-stroke: 1px #000000;
+            text-stroke: 1px #000000;
+        }
+
+        .job-title:active {
+            transform: translateX(10px) scale(0.98);
+        }
+
+        .job-title:active::before {
+            background: radial-gradient(circle at center, #ffffff 0%, #e0e0e0 50%, #ffffff 100%);
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.5),
+                        0 0 60px rgba(0, 191, 255, 0.3),
+                        inset 0 0 30px rgba(255, 182, 193, 0.4);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #ffffff;
+            color: #000000;
+            border: 3px solid #000000;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+
+        .btn:hover::before {
+            opacity: 1;
+            animation: shimmer 1.5s infinite;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 25%, #ffffff 50%, #f0f0f0 75%, #ffffff 100%);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3),
+                        0 0 40px rgba(0, 191, 255, 0.2),
+                        inset 0 0 20px rgba(255, 255, 255, 0.5);
+            border-color: #000000;
+        }
+
+        .btn:active {
+            background: radial-gradient(circle at center, #ffffff 0%, #e0e0e0 50%, #ffffff 100%);
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.5),
+                        0 0 60px rgba(0, 191, 255, 0.3),
+                        inset 0 0 30px rgba(255, 182, 193, 0.4);
+            transform: scale(0.98);
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -50%;
+                top: -50%;
+            }
+            100% {
+                left: 150%;
+                top: 150%;
+            }
+        }
+
+        /* Portfolio Grid */
+        .portfolio {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .portfolio h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: bold;
+            font-family: "Jersey 25", sans-serif;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: #ffffff;
+            border: 4px solid #000000;
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            font-family: "Jersey 25", sans-serif;
+        }
+
+        .portfolio-item p {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Form */
+        .contact {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: bold;
+            font-family: "Jersey 25", sans-serif;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 3px solid #000000;
+            background: #ffffff;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 50%, #ffffff 100%);
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.2),
+                        0 0 30px rgba(0, 191, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background: #ffffff;
+            border-top: 4px solid #000000;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 3px solid #000000;
+            background: #ffffff;
+            line-height: 44px;
+            text-align: center;
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-links a::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+
+        .social-links a:hover::before {
+            opacity: 1;
+            animation: shimmer 1.5s infinite;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 25%, #ffffff 50%, #f0f0f0 75%, #ffffff 100%);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3),
+                        0 0 40px rgba(0, 191, 255, 0.2);
+        }
+
+        .social-links a:active {
+            background: radial-gradient(circle at center, #ffffff 0%, #e0e0e0 50%, #ffffff 100%);
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.5),
+                        0 0 60px rgba(0, 191, 255, 0.3);
+            transform: scale(0.95);
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 6px solid #000000;
+            border-top: 6px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            position: relative;
+        }
+
+        .loader::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            border-radius: 50%;
+            border: 6px solid transparent;
+            border-top-color: #000000;
+            animation: shimmer-load 2s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes shimmer-load {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(138, 43, 226, 0.3),
+                            0 0 40px rgba(0, 191, 255, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(138, 43, 226, 0.5),
+                            0 0 80px rgba(0, 191, 255, 0.3);
+            }
+        }
+
+        .loading-text {
+            margin-top: 2rem;
+            font-family: "Jersey 25", sans-serif;
+            font-size: 2.5rem;
+            color: #000000;
+            position: relative;
+            width: 300px;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        .hat-name {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            animation: slideHat 1.5s ease-in-out;
+            white-space: nowrap;
+        }
+
+        @keyframes slideHat {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            20% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            80% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .job-title {
+                font-size: 45px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+        <div class="loading-text" id="hatContainer"></div>
+    </div>
 
-<div style="background:#fef3c7; color:#92400e; text-align:center; padding:10px; font-weight:bold;">
-  🚧 Portfolio started August 2025 — Currently under development 🚧
-</div>
-    
-<div class="resume">
-  <div class="base">
-    <div class="profile">
-      <div class="photo">
-        <!--<img src="" /> -->
-        <i class="fas fa-rocket"></i>
-      </div>
-      <div class="info">
-        <h1 class="name">Rheonda Dorothy Ogletree</h1>
-        <h2 class="job">Prompt Engineer & Solopreneur</h2>
-      </div>
-    </div>
-    <div class="about">
-      <h3>About Me</h3> word.
-    </div>
-    <div class="contact">
-      <h3>Contact Me</h3>
-      <div class="address"><a href="https://maps.app.goo.gl/9p2QqdVHZdfB2QZt6"><i class="fas fa-map-marker"></i><span>Richmond, Virginia</span></a>
-      </div>
-      <div class="email"><a href="mailto:rheondao@gmail.com"><i class="fas fa-envelope"></i><span>rheondao@gmail.com</span></a></div>
-      <div class="website"><a href="http://www.rheondadotogletree.com" target="_blank"> <i class="fas fa-home"></i><span>rheondadotogletree.com</span></a></div>
-    </div>
-    <div class="follow">
-      <h3>Follow Me</h3>
-      <div class="box">
-        <a href="https://www.linkedin.com/in/rheondadogletree/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/RheondaO" target="_blank"><i class="fab fa-github"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="func">
-        <div class="top-row">
-    <div class="work">
-      <h3><i class="fa fa-briefcase"></i>Experience</h3>
-      <ul>
-        <li><span>Technical Consultant -<br>Web Design</span><small>Fiserv</small><small>Apr 2018 - Now</small></li>
-        <li><span>Web Designer</span><small>Lynden</small><small>Jan 2018 - Apr 2018</small></li>
-        <li><span>Intern - Web Design</span><small>Lynden</small><small>Aug 2017 - Dec 2017</small></li>
-      </ul>
-    </div>
-    <div class="edu">
-      <h3><i class="fa fa-graduation-cap"></i>Education</h3>
-      <ul>
-        <li><span>Bachelor of Science<br>Web Design and Development</span><small>BYU-Idaho</small><small>Jan. 2016 - Apr. 2018</small></li>
-        <li><span>Computer Science</span><small>Edmonds Community College</small><small>Sept. 2014 - Dec. 2015</small></li>
-        <li><span>High School</span><small>Henry M. Jackson High School</small><small>Jan. 2013 - Jun. 2015</small></li>
-      </ul>
-    </div>
-    <div class="skills-prog">
-      <h3><i class="fas fa-code"></i>Programming Skills</h3>
-      <ul>
-        <li data-percent="95"><span>HTML5</span>
-          <div class="skills-bar">
-            <div class="bar"></div>
-          </div>
-        </li>
-        <li data-percent="90"><span>CSS3 & SCSS</span>
-          <div class="skills-bar">
-            <div class="bar"></div>
-          </div>
-        </li>
-        <li data-percent="60"><span>JavaScript</span>
-          <div class="skills-bar">
-            <div class="bar"></div>
-          </div>
-        </li>
-        <li data-percent="50"><span>jQuery</span>
-          <div class="skills-bar">
-            <div class="bar"></div>
-          </div>
-        </li>
-        <li data-percent="40"><span>JSON</span>
-          <div class="skills-bar">
-            <div class="bar"></div>
-          </div>
-        </li>
-        <li data-percent="55"><span>PHP</span>
-          <div class="skills-bar">
-            <div class="bar"></div>
-          </div>
-        </li>
-        <li data-percent="40"><span>MySQL</span>
-          <div class="skills-bar">
-            <div class="bar"></div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="skills-soft">
-      <h3><i class="fas fa-bezier-curve"></i>Software Skills</h3>
-      <ul>
-        <li data-percent="90">
-          <svg viewbox="0 0 100 100">
-            <circle cx="50" cy="50" r="45"></circle>
-            <circle class="cbar" cx="50" cy="50" r="45"></circle>
-          </svg><span>Illustrator</span><small></small>
-        </li>
-        <li data-percent="75">
-          <svg viewbox="0 0 100 100">
-            <circle cx="50" cy="50" r="45"></circle>
-            <circle class="cbar" cx="50" cy="50" r="45"></circle>
-          </svg><span>Photoshop</span><small></small>
-        </li>
-        <li data-percent="85">
-          <svg viewbox="0 0 100 100">
-            <circle cx="50" cy="50" r="45"></circle>
-            <circle class="cbar" cx="50" cy="50" r="45"></circle>
-          </svg><span>InDesign</span><small></small>
-        </li>
-        <li data-percent="65">
-          <svg viewbox="0 0 100 100">
-            <circle cx="50" cy="50" r="45"></circle>
-            <circle class="cbar" cx="50" cy="50" r="45"></circle>
-          </svg><span>Dreamweaver</span><small></small>
-        </li>
-      </ul>
-    </div>
-    <div class="interests">
-      <h3><i class="fas fa-star"></i>Creative Outlets</h3>
-      <div class="interests-items">
-        <div class="art"><i class="fas fa-palette"></i><span>ROML</span></div>
-        <div class="art"><i class="fas fa-book"></i><span>Substack</span></div>
-        <div class="movies"><i class="fas fa-film"></i><span>rdo.com</span></div>
-        <div class="music"><i class="fas fa-headphones"></i><span>@rotationonly</span></div>
-        <div class="games"><i class="fas fa-gamepad"></i><span>Misc.</span></div>
-      </div>
+    <script>
+        const hats = [
+            "dad hat",
+            "easter hat", 
+            "baseball cap",
+            "beanie",
+            "beret",
+            "cowboy hat",
+            "bucket hat",
+            "fedora",
+            "snapback",
+            "chef's hat"
+        ];
+
+        let currentHatIndex = 0;
+        const hatContainer = document.getElementById('hatContainer');
+
+        function showNextHat() {
+            if (currentHatIndex < hats.length) {
+                const hatElement = document.createElement('div');
+                hatElement.className = 'hat-name';
+                hatElement.textContent = hats[currentHatIndex];
+                hatContainer.appendChild(hatElement);
+                
+                setTimeout(() => {
+                    hatContainer.removeChild(hatElement);
+                }, 1500);
+                
+                currentHatIndex++;
+                setTimeout(showNextHat, 1500);
+            } else {
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').classList.add('fade-out');
+                }, 500);
+            }
+        }
+
+        window.addEventListener('load', function() {
+            showNextHat();
+        });
+    </script>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </div>
-  </div>
-</div>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Sales Professional</h1>
+        <p>Driving revenue growth through strategic partnerships and customer success</p>
+        <div class="job-titles">
+            <a href="#aiops" class="job-title">AIOps Engineer</a>
+            <a href="#prompt" class="job-title">Prompt Engineer</a>
+            <a href="#saas" class="job-title">SaaS Architect</a>
+            <a href="#sales" class="job-title">Sales</a>
+        </div>
+        <a href="#contact" class="btn">Get In Touch</a>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2>Featured Work</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <h3>Enterprise Solutions</h3>
+                <p>Closed $2.5M in enterprise deals within Q4, exceeding quota by 180% through consultative selling and stakeholder management.</p>
+                <button class="btn">View Details</button>
+            </div>
+            <div class="portfolio-item">
+                <h3>Client Retention</h3>
+                <p>Achieved 95% retention rate by implementing customer success strategies and proactive account management protocols.</p>
+                <button class="btn">View Details</button>
+            </div>
+            <div class="portfolio-item">
+                <h3>Market Expansion</h3>
+                <p>Led market expansion into 3 new territories, generating $1.8M in new business revenue within first 6 months.</p>
+                <button class="btn">View Details</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Let's Connect</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Sales Portfolio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Li</a>
+                <a href="#">Tw</a>
+                <a href="#">In</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
