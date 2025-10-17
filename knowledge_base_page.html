@@ -361,6 +361,107 @@
         }
     </style>
 </head>
+<script>
+    function showSection(event, sectionId) {
+        event.preventDefault(); // This is crucial - prevents default anchor behavior
+        
+        // Hide all content sections
+        const sections = document.getElementsByClassName('content-section');
+        for (let i = 0; i < sections.length; i++) {
+            sections[i].classList.remove('active');
+        }
+
+        // Show selected section
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+
+        // Update active state on sidebar links
+        const links = document.getElementsByClassName('sidebar-link');
+        for (let i = 0; i < links.length; i++) {
+            links[i].classList.remove('active');
+        }
+        
+        // Add active class to clicked link
+        event.currentTarget.classList.add('active');
+
+        // Close mobile menu after selection
+        if (window.innerWidth <= 968) {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.remove('mobile-open');
+        }
+
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        // Store active section
+        sessionStorage.setItem('activeSection', sectionId);
+    }
+
+    function toggleMobileMenu() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('mobile-open');
+    }
+
+    function searchWiki(event) {
+        const searchTerm = event.target.value.toLowerCase();
+        const sections = document.querySelectorAll('.sidebar-section');
+
+        sections.forEach(section => {
+            const links = section.querySelectorAll('.sidebar-link');
+            let sectionHasMatch = false;
+
+            links.forEach(link => {
+                const text = link.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    link.style.display = 'block';
+                    link.style.backgroundColor = searchTerm ? '#fff3cd' : '';
+                    sectionHasMatch = true;
+                } else {
+                    link.style.display = searchTerm ? 'none' : 'block';
+                    link.style.backgroundColor = '';
+                }
+            });
+
+            // Show/hide entire section based on matches
+            if (searchTerm) {
+                section.style.display = sectionHasMatch ? 'block' : 'none';
+            } else {
+                section.style.display = 'block';
+            }
+        });
+    }
+
+    // Load section from URL hash on page load
+    window.addEventListener('DOMContentLoaded', function() {
+        const hash = window.location.hash.substring(1); // Remove the #
+        const activeSection = hash || sessionStorage.getItem('activeSection') || 'overview';
+        
+        // Hide all sections first
+        const sections = document.getElementsByClassName('content-section');
+        for (let i = 0; i < sections.length; i++) {
+            sections[i].classList.remove('active');
+        }
+        
+        // Show the active section
+        const targetSection = document.getElementById(activeSection);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+        
+        // Update sidebar active state
+        const links = document.querySelectorAll('.sidebar-link');
+        links.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (href === `#${activeSection}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+    
 <body>
     <nav>
         <div class="nav-container">
