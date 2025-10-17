@@ -145,6 +145,18 @@
             }
         }
 
+                .watermark {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100vh;  /* Full viewport height */
+                    background: url("folderder/babyg.svg") no-repeat center center;
+                    background-size: contain; /* or 'cover' if you want it to fill */
+                    opacity: 0.08; /* Adjust fade strength */
+                    pointer-events: none; /* Let clicks pass through */
+                    z-index: 0;
+        
         /* Portfolio Grid */
         .portfolio {
             max-width: 1200px;
@@ -325,18 +337,6 @@
 
             .portfolio-grid {
                 grid-template-columns: 1fr;
-                
-                .watermark {
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100vh;  /* Full viewport height */
-                    background: url("folderder/babyg.svg") no-repeat center center;
-                    background-size: contain; /* or 'cover' if you want it to fill */
-                    opacity: 0.08; /* Adjust fade strength */
-                    pointer-events: none; /* Let clicks pass through */
-                    z-index: 0;
 }
                 
             }
