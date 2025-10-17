@@ -728,4 +728,201 @@
 
                     <div class="project-card">
                         <h4>Intelligent Alerting</h4>
-                        <p>ML-powered alert correlation and deduplication system that reduces alert noise by 75
+                        <p>ML-powered alert correlation and deduplication system that reduces alert noise by 75</p></div>
+                </div></div></div></div></body>
+
+     <script>
+    function openTab(evt, tabId) {
+        var i, contentInner, tabs;
+        
+        // Hide all tab content
+        contentInner = document.getElementsByClassName("content__inner");
+        for (i = 0; i < contentInner.length; i++) {
+            contentInner[i].classList.remove("active");
+        }
+        
+        // Remove active class from all tabs
+        tabs = document.getElementsByClassName("tab");
+        for (i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove("active");
+        }
+        
+        // Show the selected tab content and mark the tab as active
+        document.getElementById(tabId).classList.add("active");
+        evt.currentTarget.classList.add("active");
+        
+        // Smooth scroll to content if on mobile
+        if (window.innerWidth <= 768) {
+            document.querySelector('.content').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+        
+        // Optional: Store active tab in sessionStorage for persistence on refresh
+        sessionStorage.setItem('activeTab', tabId);
+    }
+    
+    // Restore active tab on page load if stored in sessionStorage
+    window.addEventListener('DOMContentLoaded', function() {
+        var activeTab = sessionStorage.getItem('activeTab');
+        
+        if (activeTab) {
+            // Find the tab button that corresponds to the stored tab ID
+            var tabs = document.getElementsByClassName("tab");
+            for (var i = 0; i < tabs.length; i++) {
+                var tabButton = tabs[i];
+                var onclickAttr = tabButton.getAttribute('onclick');
+                
+                // Extract the tab ID from the onclick attribute
+                if (onclickAttr && onclickAttr.includes(activeTab)) {
+                    // Remove active from all content
+                    var contentInner = document.getElementsByClassName("content__inner");
+                    for (var j = 0; j < contentInner.length; j++) {
+                        contentInner[j].classList.remove("active");
+                    }
+                    
+                    // Remove active from all tabs
+                    for (var k = 0; k < tabs.length; k++) {
+                        tabs[k].classList.remove("active");
+                    }
+                    
+                    // Activate the stored tab
+                    document.getElementById(activeTab).classList.add("active");
+                    tabButton.classList.add("active");
+                    break;
+                }
+            }
+        }
+        
+        // Add fade-in animation to page content
+        fadeInElements();
+    });
+    
+    // Add fade-in animation for stat boxes and cards
+    function fadeInElements() {
+        const statBoxes = document.querySelectorAll('.stat-box');
+        const projectCards = document.querySelectorAll('.project-card');
+        const skillItems = document.querySelectorAll('.skill-item');
+        
+        statBoxes.forEach((box, index) => {
+            setTimeout(() => {
+                box.style.opacity = '0';
+                box.style.transform = 'translateY(20px)';
+                box.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    box.style.opacity = '1';
+                    box.style.transform = 'translateY(0)';
+                }, 50);
+            }, index * 100);
+        });
+        
+        projectCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 50);
+            }, index * 150);
+        });
+        
+        skillItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.9)';
+                item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 50);
+            }, index * 50);
+        });
+    }
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Add keyboard navigation for tabs
+    document.addEventListener('keydown', function(e) {
+        const tabs = document.getElementsByClassName("tab");
+        let currentActiveIndex = -1;
+        
+        // Find currently active tab
+        for (let i = 0; i < tabs.length; i++) {
+            if (tabs[i].classList.contains('active')) {
+                currentActiveIndex = i;
+                break;
+            }
+        }
+        
+        // Navigate with arrow keys
+        if (e.key === 'ArrowRight' && currentActiveIndex < tabs.length - 1) {
+            tabs[currentActiveIndex + 1].click();
+            tabs[currentActiveIndex + 1].focus();
+        } else if (e.key === 'ArrowLeft' && currentActiveIndex > 0) {
+            tabs[currentActiveIndex - 1].click();
+            tabs[currentActiveIndex - 1].focus();
+        }
+    });
+    
+    // Add intersection observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements when they come into view
+    window.addEventListener('load', function() {
+        const animateElements = document.querySelectorAll('.stat-box, .project-card, .page p');
+        animateElements.forEach(el => observer.observe(el));
+    });
+    
+    // Add click tracking for analytics (optional)
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            const tabName = this.querySelector('span').textContent;
+            console.log('Tab clicked:', tabName);
+            // You can add analytics tracking here
+            // Example: gtag('event', 'tab_click', { 'tab_name': tabName });
+        });
+    });
+    
+    // Skill item interaction
+    document.querySelectorAll('.skill-item').forEach(skill => {
+        skill.addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+    });
+</script>
