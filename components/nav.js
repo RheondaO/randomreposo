@@ -9,7 +9,7 @@ class SiteNav extends HTMLElement {
             <li><a href="index.html">home</a></li>
             <li><a href="knowledgebase.html">knowledgebase</a></li>
             <li><a href="agentlibrary.html">agent library</a></li>
-            <li><a href="the_lab.html">the lab</a></li>
+            <li><a href="thelab.html">the lab</a></li>
             <li><a href="contact.html">contact</a></li>
           </ul>
         </div>
