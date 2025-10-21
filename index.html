@@ -6,10 +6,13 @@
 </head>
     
 <body>
-
-  <site-loader></site-loader>
+    <script type="module">
+      import { loadSharedHead } from "components/head.js";
+      loadSharedHead();
+    </script>
 
   
+  <site-loader></site-loader>
   <site-nav></site-nav>
   <main>
     <section class="hero" id="home">
@@ -47,11 +50,6 @@
   </main>
     
 <site-footer></site-footer>
-
-<script type="module">
-  import { loadSharedHead } from "components/head.js";
-  loadSharedHead();
-</script>
 
 </body>
 </html>
