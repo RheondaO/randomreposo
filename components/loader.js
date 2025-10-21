@@ -1,46 +1,36 @@
-// loader.js
-function initLoader() {
-    const hatContainer = document.getElementById('hatContainer');
-    const loadingScreen = document.getElementById('loadingScreen');
+// components/loader.js
 
-    if (!hatContainer || !loadingScreen) return;
+export function showLoader(containerId = "loader-component", fadeDuration = 1000, displayTime = 2000) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
 
-    const hats = [
-        "dad hat", 
-        "easter sunday hat", 
-        "top hat",
-        "baseball cap", 
-        "beanie", 
-        "beret",
-        "cowboy hat", 
-        "bucket hat", 
-        "fedora",
-        "snapback", 
-        "chef's hat"
-    ];
+  // Only show loader once per session
+  if (sessionStorage.getItem("loaderShown")) {
+    container.style.display = "none";
+    return;
+  }
 
-    let currentHatIndex = 0;
+  fetch("/loader.html")
+    .then(res => res.text())
+    .then(html => {
+      container.innerHTML = html;
+      sessionStorage.setItem("loaderShown", "true");
 
-    function showNextHat() {
-        if (currentHatIndex < hats.length) {
-            const hatElement = document.createElement('div');
-            hatElement.className = 'hat-name';
-            hatElement.textContent = hats[currentHatIndex];
-            hatContainer.appendChild(hatElement);
+      const loaderEl = container.querySelector(".loader");
+      if (!loaderEl) return;
 
-            setTimeout(() => {
-                hatContainer.removeChild(hatElement);
-            }, 1500);
+      // Make loader visible
+      loaderEl.style.opacity = 1;
+      loaderEl.style.transition = `opacity ${fadeDuration}ms`;
 
-            currentHatIndex++;
-            setTimeout(showNextHat, 1500);
-        } else {
-            setTimeout(() => {
-                loadingScreen.classList.add('fade-out');
-            }, 500);
-        }
-    }
-
-    requestAnimationFrame(() => loadingScreen.classList.add('fade-in'));
-    showNextHat();
+      // After displayTime, fade out
+      setTimeout(() => {
+        loaderEl.style.opacity = 0;
+        // Remove loader from DOM after fade
+        setTimeout(() => {
+          container.style.display = "none";
+        }, fadeDuration);
+      }, displayTime);
+    })
+    .catch(err => console.error("Failed to load loader:", err));
 }
