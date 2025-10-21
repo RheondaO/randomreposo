@@ -38,13 +38,13 @@ export function loadSharedHead({
   // Main CSS
   const mainCSS = document.createElement("link");
   mainCSS.rel = "stylesheet";
-  mainCSS.href = "/folderder/style.css";
+  mainCSS.href = "folderder/style.css";
 
   head.append(metaCharset, metaViewport, metaDescription, headTitle, favicon, fontLink, mainCSS);
 
   // Load nav/footer modules after DOM ready
   document.addEventListener("DOMContentLoaded", async () => {
-    await import("/components/nav.js");
-    await import("/components/footer.js");
+    await import("components/nav.js");
+    await import("components/footer.js");
   });
 }
