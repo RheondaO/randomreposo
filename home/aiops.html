@@ -1,37 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Shared head: title, meta, favicon, fonts, CSS, nav/footer scripts -->
-  <script type="module">
-    import { loadSharedHead } from "/components/head.js";
-    loadSharedHead({
-      title: "AI Portfolio | New Page",
-      description: "This is a new page in Rheonda’s AI Portfolio site."
-    });
-  </script>
 </head>
 <body>
-
-<!-- Place this at the top of body in your page template -->
-<div id="loader-component"></div>
-
-<script>
-fetch('loader.html')
-  .then(res => res.text())
-  .then(html => {
-    const container = document.getElementById('loader-component');
-
-    if (!sessionStorage.getItem('loaderShown')) {
-      container.innerHTML = html;
-      sessionStorage.setItem('loaderShown', 'true');
-
-      if (typeof initLoader === "function") initLoader();
-    } else {
-      container.style.display = 'none';
-    }
-  })
-  .catch(err => console.error("Loader failed:", err));
-</script>
   
   <!-- Navigation Component -->
   <site-nav></site-nav>
