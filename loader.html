@@ -1,43 +1,44 @@
 <div class="loading-screen" id="loadingScreen">
-    <div class="loader"></div>
-    <div class="loading-text" id="hatContainer"></div>
+  <div class="loader"></div>
+  <div class="loading-text" id="hatContainer"></div>
 </div>
 
 <script>
 const hats = [
-    "dad hat",
-    "easter sunday hat", 
-    "top hat",
-    "baseball cap",
-    "beanie",
-    "beret",
-    "cowboy hat",
-    "bucket hat",
-    "fedora",
-    "snapback",
-    "chef's hat"
+  "dad hat",
+  "easter sunday hat", 
+  "top hat",
+  "baseball cap",
+  "beanie",
+  "beret",
+  "cowboy hat",
+  "bucket hat",
+  "fedora",
+  "snapback",
+  "chef's hat"
 ];
 
 let currentHatIndex = 0;
 const hatContainer = document.getElementById('hatContainer');
 
 function showNextHat() {
-    if (currentHatIndex < hats.length) {
-        const hatElement = document.createElement('div');
-        hatElement.className = 'hat-name';
-        hatElement.textContent = hats[currentHatIndex];
-        hatContainer.appendChild(hatElement);
-        
-        setTimeout(() => {
-            hatContainer.removeChild(hatElement);
-        }, 1500);
-        
-        currentHatIndex++;
-        setTimeout(showNextHat, 1500);
-    } else {
-        setTimeout(() => {
-            document.getElementById('loadingScreen').classList.add('fade-out');
-        }, 500);
-    }
+  if (currentHatIndex < hats.length) {
+    const hatElement = document.createElement('div');
+    hatElement.className = 'hat-name';
+    hatElement.textContent = hats[currentHatIndex];
+    hatContainer.appendChild(hatElement);
+    
+    setTimeout(() => {
+      hatContainer.removeChild(hatElement);
+    }, 1500);
+    
+    currentHatIndex++;
+    setTimeout(showNextHat, 1500);
+  } else {
+    // Fade out when done
+    setTimeout(() => {
+      document.getElementById('loadingScreen').classList.add('fade-out');
+    }, 500);
+  }
 }
 </script>
