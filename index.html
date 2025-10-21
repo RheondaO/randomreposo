@@ -1,43 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <script type="module">
     import { loadSharedHead } from "./component/head.js";
 
-    window.addEventListener("DOMContentLoaded", () => {
-      loadSharedHead({
-        title: "AI Portfolio | Home",
-        description: "Welcome to Rheonda’s AI Portfolio."
-      });
+    // Call head loader — this will also inject nav and footer
+    loadSharedHead({
+      title: "AI Portfolio | Home",
+      description: "Welcome to Rheonda’s AI Portfolio."
     });
   </script>
 </head>
 
 <body>
+  <!-- Optional loader -->
   <div id="loader"></div>
 
+  <!-- Nav and Footer placeholders -->
   <header id="nav"></header>
-  
+
   <main>
-    <section>
-      <h1>Welcome to Rheonda’s AI Portfolio</h1>
-      <p>Exploring agentic design, automation, and AI systems.</p>
-    </section>
+    <h1>Welcome to Rheonda’s AI Portfolio</h1>
+    <p>Exploring AI agents, automation, and creative intelligence.</p>
   </main>
 
   <footer id="footer"></footer>
-
-  <script type="module">
-    import { loadNav } from "./component/nav.js";
-    import { loadFooter } from "./component/footer.js";
-    import { loadLoader } from "/component/loader.js";
-
-  window.addEventListener("DOMContentLoaded", () => {
-    loadNav();
-    loadFooter();
-  </script>
 </body>
 </html>
