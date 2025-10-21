@@ -16,24 +16,48 @@ class SiteLoader extends HTMLElement {
         container.innerHTML = html;
         sessionStorage.setItem("loaderShown", "true");
 
-        const loaderEl = container.querySelector(".loader");
-        if (!loaderEl) return;
+        const loadingScreen = container.querySelector(".loading-screen");
+        const hatContainer = container.querySelector("#hatContainer");
 
-        // Initial style for fade-in
-        loaderEl.style.opacity = 1;
-        loaderEl.style.transition = "opacity 1s";
+        if (!loadingScreen || !hatContainer) return;
 
-        // Fade out after 2 seconds (adjust as needed)
-        setTimeout(() => {
-          loaderEl.style.opacity = 0;
-          setTimeout(() => {
-            container.style.display = "none";
-          }, 1000); // match transition duration
-        }, 2000);
+        // Fade in the loader
+        requestAnimationFrame(() => loadingScreen.classList.add("fade-in"));
+
+        // Hat names
+        const hats = [
+          "dad hat","easter sunday hat","top hat",
+          "baseball cap","beanie","beret",
+          "cowboy hat","bucket hat","fedora",
+          "snapback","chef's hat"
+        ];
+        let currentHatIndex = 0;
+
+        function showNextHat() {
+          if (currentHatIndex < hats.length) {
+            const hatEl = document.createElement("div");
+            hatEl.className = "hat-name";
+            hatEl.textContent = hats[currentHatIndex];
+            hatContainer.appendChild(hatEl);
+
+            setTimeout(() => hatContainer.removeChild(hatEl), 1500);
+            currentHatIndex++;
+            setTimeout(showNextHat, 1500);
+          } else {
+            // Fade out the entire loading screen
+            setTimeout(() => {
+              loadingScreen.classList.add("fade-out");
+              setTimeout(() => container.style.display = "none", 1000);
+            }, 500);
+          }
+        }
+
+        // Start the hat animation
+        showNextHat();
+
       })
       .catch(err => console.error("Failed to load loader:", err));
   }
 }
 
-// Register the custom element
 customElements.define("site-loader", SiteLoader);
