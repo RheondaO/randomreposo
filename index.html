@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <script type="module">
-    import { loadSharedHead } from "/component/head.js";
-    loadSharedHead({
-      title: "AI Portfolio | Home",
-      description: "Welcome to Rheonda’s AI Portfolio."
+    import { loadSharedHead } from "./component/head.js";
+
+    window.addEventListener("DOMContentLoaded", () => {
+      loadSharedHead({
+        title: "AI Portfolio | Home",
+        description: "Welcome to Rheonda’s AI Portfolio."
+      });
     });
   </script>
 </head>
@@ -14,7 +20,7 @@
   <div id="loader"></div>
 
   <header id="nav"></header>
-
+  
   <main>
     <section>
       <h1>Welcome to Rheonda’s AI Portfolio</h1>
