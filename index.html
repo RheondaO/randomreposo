@@ -12,30 +12,26 @@
 </head>
 <body>
 
-  <div id="loader-component"></div>
+ <!-- Place this at the top of body in your page template -->
+<div id="loader-component"></div>
 
-  <script>
-  fetch('loader.html')
-    .then(res => res.text())
-    .then(html => {
-      const container = document.getElementById('loader-component');
+<script>
+fetch('loader.html')
+  .then(res => res.text())
+  .then(html => {
+    const container = document.getElementById('loader-component');
 
-      if (!sessionStorage.getItem('loaderShown')) {
-          container.innerHTML = html;
-          sessionStorage.setItem('loaderShown', 'true');
+    if (!sessionStorage.getItem('loaderShown')) {
+      container.innerHTML = html;
+      sessionStorage.setItem('loaderShown', 'true');
 
-          // Make sure initLoader is defined before this runs
-          if (typeof initLoader === "function") {
-              initLoader();
-          } else {
-              console.warn("initLoader() not defined yet.");
-          }
-      } else {
-          container.style.display = 'none';
-      }
-    })
-    .catch(err => console.error("Loader failed to load:", err));
-  </script>
+      if (typeof initLoader === "function") initLoader();
+    } else {
+      container.style.display = 'none';
+    }
+  })
+  .catch(err => console.error("Loader failed:", err));
+</script>
 
   <site-nav></site-nav>
 
