@@ -4,41 +4,52 @@
 </div>
 
 <script>
-const hats = [
-  "dad hat",
-  "easter sunday hat", 
-  "top hat",
-  "baseball cap",
-  "beanie",
-  "beret",
-  "cowboy hat",
-  "bucket hat",
-  "fedora",
-  "snapback",
-  "chef's hat"
-];
+function initLoader() {
+    const hatContainer = document.getElementById('hatContainer');
+    const loadingScreen = document.getElementById('loadingScreen');
 
-let currentHatIndex = 0;
-const hatContainer = document.getElementById('hatContainer');
+    if (!hatContainer || !loadingScreen) return;
 
-function showNextHat() {
-  if (currentHatIndex < hats.length) {
-    const hatElement = document.createElement('div');
-    hatElement.className = 'hat-name';
-    hatElement.textContent = hats[currentHatIndex];
-    hatContainer.appendChild(hatElement);
-    
-    setTimeout(() => {
-      hatContainer.removeChild(hatElement);
-    }, 1500);
-    
-    currentHatIndex++;
-    setTimeout(showNextHat, 1500);
-  } else {
-    // Fade out when done
-    setTimeout(() => {
-      document.getElementById('loadingScreen').classList.add('fade-out');
-    }, 500);
-  }
+    const hats = [
+        "dad hat",
+        "easter sunday hat", 
+        "top hat",
+        "baseball cap",
+        "beanie",
+        "beret",
+        "cowboy hat",
+        "bucket hat",
+        "fedora",
+        "snapback",
+        "chef's hat"
+    ];
+
+    let currentHatIndex = 0;
+
+    function showNextHat() {
+        if (currentHatIndex < hats.length) {
+            const hatElement = document.createElement('div');
+            hatElement.className = 'hat-name';
+            hatElement.textContent = hats[currentHatIndex];
+            hatContainer.appendChild(hatElement);
+
+            setTimeout(() => {
+                hatContainer.removeChild(hatElement);
+            }, 1500);
+
+            currentHatIndex++;
+            setTimeout(showNextHat, 1500);
+        } else {
+            setTimeout(() => {
+                loadingScreen.classList.add('fade-out');
+            }, 500);
+        }
+    }
+
+    // Fade in the loader
+    requestAnimationFrame(() => loadingScreen.classList.add('fade-in'));
+
+    // Start the hat animation
+    showNextHat();
 }
 </script>
