@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Shared head: title, meta, favicon, fonts, CSS, nav/footer scripts -->
+  <script type="module">
+    import { loadSharedHead } from "/components/head.js";
+    loadSharedHead({
+      title: "AI Portfolio | New Page",
+      description: "This is a new page in Rheonda’s AI Portfolio site."
+    });
+  </script>
+</head>
+<body>
+
+  <!-- Navigation Component -->
+  <site-nav></site-nav>
+
+  <!-- Page Content -->
+  <main style="padding: 2rem; font-family: 'Poppins', sans-serif; max-width: 1200px; margin: auto;">
+    <h1>New Page Title</h1>
+    <p>Welcome to your new modular page. Everything below is unique to this page.</p>
+
+    <!-- Example Section -->
+    <section>
+      <h2>Section Heading</h2>
+      <p>Add your text, images, or other content here. This content is independent from your header and footer.</p>
+    </section>
+
+    <!-- Another Section -->
+    <section>
+      <h2>Another Section</h2>
+      <p>Repeat sections as needed. The nav and footer are fully reusable and stay synced across all pages.</p>
+    </section>
+  </main>
+
+  <!-- Footer Component -->
+  <site-footer></site-footer>
+
+</body>
+</html>
