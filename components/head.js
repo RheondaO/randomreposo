@@ -11,47 +11,50 @@ export function loadSharedHead({
     if (!preserve.includes(child.tagName)) child.remove();
   });
 
-  // Meta, Title, Favicon
-  const metaCharset = document.createElement("meta");
-  metaCharset.setAttribute("charset", "UTF-8");
+  // --- META + LINKS ---
+  const metaCharset = Object.assign(document.createElement("meta"), {
+    charset: "UTF-8",
+  });
 
-  const metaViewport = document.createElement("meta");
-  metaViewport.name = "viewport";
-  metaViewport.content = "width=device-width, initial-scale=1.0";
+  const metaViewport = Object.assign(document.createElement("meta"), {
+    name: "viewport",
+    content: "width=device-width, initial-scale=1.0",
+  });
 
-  const metaDescription = document.createElement("meta");
-  metaDescription.name = "description";
-  metaDescription.content = description;
+  const metaDescription = Object.assign(document.createElement("meta"), {
+    name: "description",
+    content: description,
+  });
 
   const headTitle = document.createElement("title");
   headTitle.textContent = title;
 
-  const favicon = document.createElement("link");
-  favicon.rel = "icon";
-  favicon.href = "folderder/favicon.png";
+  const favicon = Object.assign(document.createElement("link"), {
+    rel: "icon",
+    href: "folderder/favicon.png",
+  });
 
-  // Fonts
-  const fontLink = document.createElement("link");
-  fontLink.rel = "stylesheet";
-  fontLink.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
+  const fontLink = Object.assign(document.createElement("link"), {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap",
+  });
 
-  // Main CSS
-  const mainCSS = document.createElement("link");
-  mainCSS.rel = "stylesheet";
-  mainCSS.href = "folderder/style.css";
+  const mainCSS = Object.assign(document.createElement("link"), {
+    rel: "stylesheet",
+    href: "folderder/style.css",
+  });
 
   head.append(metaCharset, metaViewport, metaDescription, headTitle, favicon, fontLink, mainCSS);
 
-  // Load nav/footer modules after DOM ready
+  // --- NAV & FOOTER MODULE LOADER ---
   document.addEventListener("DOMContentLoaded", () => {
-    const navScript = document.createElement("script");
-    navScript.type = "module";
-    navScript.src = "components/nav.js";
+    // Dynamically load nav and footer components
+    import("./nav.js")
+      .then(() => console.log("✅ Nav loaded"))
+      .catch(err => console.error("❌ Failed to load nav:", err));
 
-    const footerScript = document.createElement("script");
-    footerScript.type = "module";
-    footerScript.src = "components/footer.js";
-
-    head.append(navScript, footerScript);
+    import("./footer.js")
+      .then(() => console.log("✅ Footer loaded"))
+      .catch(err => console.error("❌ Failed to load footer:", err));
   });
 }
