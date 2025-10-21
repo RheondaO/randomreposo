@@ -1,63 +1,47 @@
-// components/loader.js
+// components/head.js
 
-class SiteLoader extends HTMLElement {
-  connectedCallback() {
-    const container = this;
+export function loadSharedHead({
+  title = "AI Portfolio | Rheonda",
+  description = "Rheonda's AI Portfolio – exploring AI agents, automation, and creative intelligence.",
+  favicon = "folderder/favicon.png",
+  css = "folderder/style.css",
+  fonts = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+} = {}) {
+  const head = document.head;
 
-    // Only show once per session
-    if (sessionStorage.getItem("loaderShown")) {
-      container.style.display = "none";
-      return;
-    }
+  // Update <title>
+  document.title = title;
 
-    fetch("components/loader.html")
-      .then(res => res.text())
-      .then(html => {
-        container.innerHTML = html;
-        sessionStorage.setItem("loaderShown", "true");
+  // Update <meta name="description">
+  let metaDesc = document.querySelector('meta[name="description"]');
+  if (!metaDesc) {
+    metaDesc = document.createElement('meta');
+    metaDesc.name = 'description';
+    head.appendChild(metaDesc);
+  }
+  metaDesc.content = description;
 
-        const loadingScreen = container.querySelector(".loading-screen");
-        const hatContainer = container.querySelector("#hatContainer");
+  // Add favicon if not present
+  if (!document.querySelector('link[rel="icon"]')) {
+    const linkFavicon = document.createElement('link');
+    linkFavicon.rel = "icon";
+    linkFavicon.href = favicon;
+    head.appendChild(linkFavicon);
+  }
 
-        if (!loadingScreen || !hatContainer) return;
+  // Add CSS if not present
+  if (!document.querySelector(`link[href="${css}"]`)) {
+    const linkCSS = document.createElement('link');
+    linkCSS.rel = "stylesheet";
+    linkCSS.href = css;
+    head.appendChild(linkCSS);
+  }
 
-        // Fade in the loader
-        requestAnimationFrame(() => loadingScreen.classList.add("fade-in"));
-
-        // Hat names
-        const hats = [
-          "dad hat","easter sunday hat","top hat",
-          "baseball cap","beanie","beret",
-          "cowboy hat","bucket hat","fedora",
-          "snapback","chef's hat"
-        ];
-        let currentHatIndex = 0;
-
-        function showNextHat() {
-          if (currentHatIndex < hats.length) {
-            const hatEl = document.createElement("div");
-            hatEl.className = "hat-name";
-            hatEl.textContent = hats[currentHatIndex];
-            hatContainer.appendChild(hatEl);
-
-            setTimeout(() => hatContainer.removeChild(hatEl), 1500);
-            currentHatIndex++;
-            setTimeout(showNextHat, 1500);
-          } else {
-            // Fade out the entire loading screen
-            setTimeout(() => {
-              loadingScreen.classList.add("fade-out");
-              setTimeout(() => container.style.display = "none", 1000);
-            }, 500);
-          }
-        }
-
-        // Start the hat animation
-        showNextHat();
-
-      })
-      .catch(err => console.error("Failed to load loader:", err));
+  // Add fonts if not present
+  if (!document.querySelector(`link[href="${fonts}"]`)) {
+    const linkFont = document.createElement('link');
+    linkFont.rel = "stylesheet";
+    linkFont.href = fonts;
+    head.appendChild(linkFont);
   }
 }
-
-customElements.define("site-loader", SiteLoader);
