@@ -2,7 +2,6 @@
 class SiteNav extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-
       <nav>
         <div class="nav-container">
           <a href="index.html" class="logo">ai portfolio</a>
@@ -18,5 +17,4 @@ class SiteNav extends HTMLElement {
     `;
   }
 }
-
 customElements.define('site-nav', SiteNav);
