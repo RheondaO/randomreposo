@@ -1,62 +1,65 @@
 // components/loader.js
-
 class SiteLoader extends HTMLElement {
   connectedCallback() {
-    const container = this;
-
     // Only show once per session
     if (sessionStorage.getItem("loaderShown")) {
-      container.style.display = "none";
+      this.style.display = "none";
       return;
     }
 
-    fetch("components/loader.html")
-      .then(res => res.text())
-      .then(html => {
-        container.innerHTML = html;
-        sessionStorage.setItem("loaderShown", "true");
+    // Build loader directly in JS
+    this.innerHTML = `
+      <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+        <div class="loading-text" id="hatContainer"></div>
+      </div>
+    `;
 
-        const loadingScreen = container.querySelector(".loading-screen");
-        const hatContainer = container.querySelector("#hatContainer");
+    sessionStorage.setItem("loaderShown", "true");
 
-        if (!loadingScreen || !hatContainer) return;
+    const hats = [
+      "dad hat",
+      "easter sunday hat", 
+      "top hat",
+      "baseball cap",
+      "beanie",
+      "beret",
+      "cowboy hat",
+      "bucket hat",
+      "fedora",
+      "snapback",
+      "chef's hat"
+    ];
 
-        // Fade in loader
-        requestAnimationFrame(() => loadingScreen.classList.add("fade-in"));
+    let currentHatIndex = 0;
+    const hatContainer = this.querySelector('#hatContainer');
+    const loadingScreen = this.querySelector('.loading-screen');
 
-        // Hat names
-        const hats = [
-          "dad hat","easter sunday hat","top hat",
-          "baseball cap","beanie","beret",
-          "cowboy hat","bucket hat","fedora",
-          "snapback","chef's hat"
-        ];
-        let currentHatIndex = 0;
+    function showNextHat() {
+      if (currentHatIndex < hats.length) {
+        const hatElement = document.createElement('div');
+        hatElement.className = 'hat-name';
+        hatElement.textContent = hats[currentHatIndex];
+        hatContainer.appendChild(hatElement);
 
-        function showNextHat() {
-          if (currentHatIndex < hats.length) {
-            const hatEl = document.createElement("div");
-            hatEl.className = "hat-name";
-            hatEl.textContent = hats[currentHatIndex];
-            hatContainer.appendChild(hatEl);
+        setTimeout(() => {
+          hatContainer.removeChild(hatElement);
+        }, 1500);
 
-            setTimeout(() => hatContainer.removeChild(hatEl), 1500);
-            currentHatIndex++;
-            setTimeout(showNextHat, 1500);
-          } else {
-            // Fade out entire loading screen
-            setTimeout(() => {
-              loadingScreen.classList.add("fade-out");
-              setTimeout(() => container.style.display = "none", 1000);
-            }, 500);
-          }
-        }
+        currentHatIndex++;
+        setTimeout(showNextHat, 1500);
+      } else {
+        setTimeout(() => {
+          loadingScreen.classList.add('fade-out');
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 1000);
+        }, 500);
+      }
+    }
 
-        showNextHat();
-
-      })
-      .catch(err => console.error("Failed to load loader:", err));
+    window.addEventListener('load', showNextHat);
   }
 }
 
-customElements.define("site-loader", SiteLoader);
+customElements.define('site-loader', SiteLoader);
