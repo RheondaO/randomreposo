@@ -28,7 +28,7 @@ export function loadSharedHead({
 
   const favicon = document.createElement("link");
   favicon.rel = "icon";
-  favicon.href = "/folderder/favicon.png";
+  favicon.href = "folderder/favicon.png";
 
   // Fonts
   const fontLink = document.createElement("link");
@@ -38,7 +38,7 @@ export function loadSharedHead({
   // Main CSS
   const mainCSS = document.createElement("link");
   mainCSS.rel = "stylesheet";
-  mainCSS.href = "/folderder/style.css"; // <- updated path
+  mainCSS.href = "folderder/style.css"; // <- updated path
 
 
   head.append(metaCharset, metaViewport, metaDescription, headTitle, favicon, fontLink, mainCSS);
@@ -47,11 +47,11 @@ export function loadSharedHead({
   document.addEventListener("DOMContentLoaded", () => {
     const navScript = document.createElement("script");
     navScript.type = "module";
-    navScript.src = "/components/nav.js";
+    navScript.src = "components/nav.js";
 
     const footerScript = document.createElement("script");
     footerScript.type = "module";
-    footerScript.src = "/components/footer.js";
+    footerScript.src = "components/footer.js";
 
     head.append(navScript, footerScript);
   });
