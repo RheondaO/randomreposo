@@ -10,7 +10,7 @@ class SiteLoader extends HTMLElement {
       return;
     }
 
-    fetch("/loader.html")
+    fetch("/components/loader.html")
       .then(res => res.text())
       .then(html => {
         container.innerHTML = html;
