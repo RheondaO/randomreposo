@@ -1,36 +1,39 @@
 // components/loader.js
 
-export function showLoader(containerId = "loader-component", fadeDuration = 1000, displayTime = 2000) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
+class SiteLoader extends HTMLElement {
+  connectedCallback() {
+    const container = this;
 
-  // Only show loader once per session
-  if (sessionStorage.getItem("loaderShown")) {
-    container.style.display = "none";
-    return;
-  }
+    // Only show once per session
+    if (sessionStorage.getItem("loaderShown")) {
+      container.style.display = "none";
+      return;
+    }
 
-  fetch("/loader.html")
-    .then(res => res.text())
-    .then(html => {
-      container.innerHTML = html;
-      sessionStorage.setItem("loaderShown", "true");
+    fetch("/loader.html")
+      .then(res => res.text())
+      .then(html => {
+        container.innerHTML = html;
+        sessionStorage.setItem("loaderShown", "true");
 
-      const loaderEl = container.querySelector(".loader");
-      if (!loaderEl) return;
+        const loaderEl = container.querySelector(".loader");
+        if (!loaderEl) return;
 
-      // Make loader visible
-      loaderEl.style.opacity = 1;
-      loaderEl.style.transition = `opacity ${fadeDuration}ms`;
+        // Initial style for fade-in
+        loaderEl.style.opacity = 1;
+        loaderEl.style.transition = "opacity 1s";
 
-      // After displayTime, fade out
-      setTimeout(() => {
-        loaderEl.style.opacity = 0;
-        // Remove loader from DOM after fade
+        // Fade out after 2 seconds (adjust as needed)
         setTimeout(() => {
-          container.style.display = "none";
-        }, fadeDuration);
-      }, displayTime);
-    })
-    .catch(err => console.error("Failed to load loader:", err));
+          loaderEl.style.opacity = 0;
+          setTimeout(() => {
+            container.style.display = "none";
+          }, 1000); // match transition duration
+        }, 2000);
+      })
+      .catch(err => console.error("Failed to load loader:", err));
+  }
 }
+
+// Register the custom element
+customElements.define("site-loader", SiteLoader);
