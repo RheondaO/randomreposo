@@ -38,7 +38,8 @@ export function loadSharedHead({
   // Main CSS
   const mainCSS = document.createElement("link");
   mainCSS.rel = "stylesheet";
-  mainCSS.href = "/styles/main.css";
+  mainCSS.href = "/folderder/style.css"; // <- updated path
+
 
   head.append(metaCharset, metaViewport, metaDescription, headTitle, favicon, fontLink, mainCSS);
 
