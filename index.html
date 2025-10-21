@@ -11,29 +11,33 @@
 </head>
 <body>
 
-<div id="loader-component"></div>
+  <div id="loader-component"></div>
 
-<script>
-fetch('loader.html')
-  .then(res => res.text())
-  .then(html => {
-    const container = document.getElementById('loader-component');
+  <script>
+  fetch('loader.html')
+    .then(res => res.text())
+    .then(html => {
+      const container = document.getElementById('loader-component');
 
-    // Only show loader once per session
-    if (!sessionStorage.getItem('loaderShown')) {
-        container.innerHTML = html;
-        sessionStorage.setItem('loaderShown', 'true');
+      if (!sessionStorage.getItem('loaderShown')) {
+          container.innerHTML = html;
+          sessionStorage.setItem('loaderShown', 'true');
 
-        // Initialize loader after it’s injected
-        initLoader();
-    } else {
-        // Skip loader
-        container.style.display = 'none';
-    }
-  });
-</script>
+          // Make sure initLoader is defined before this runs
+          if (typeof initLoader === "function") {
+              initLoader();
+          } else {
+              console.warn("initLoader() not defined yet.");
+          }
+      } else {
+          container.style.display = 'none';
+      }
+    })
+    .catch(err => console.error("Loader failed to load:", err));
+  </script>
 
-<site-nav></site-nav>
+  <script type="module" src="components/nav.js"></script>
+  <site-nav></site-nav>
 
 
     <section class="hero" id="home">
