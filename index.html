@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="folderer/style.css">
-  <script type="module" src="component/loader.js"></script>
+  <script type="module">
+    import { loadSharedHead } from "/component/head.js";
+    loadSharedHead({
+      title: "AI Portfolio | Home",
+      description: "Welcome to Rheonda’s AI Portfolio."
+    });
+  </script>
 </head>
-    
-<body>
-    <script type="module">
-      import { loadSharedHead } from "component/head.js";
-      loadSharedHead();
-    </script>
-  
-  <site-loader></site-loader>
-  <site-nav></site-nav>
-  <main>
-    <section class="hero" id="home">
-        <h1>property of rheonda d. ogletree</h1>
-        <p>explore the professional thoughts of a technologist.</p>
-        <div class="job-titles">
-            <a href="role_aiops.html" class="job-title">AIOps Engineering</a>
-            <a href="role_prompt.html" class="job-title">Prompt Engineering</a>
-            <a href="role_saas.html" class="job-title">SaaS Architecture</a>
-            <a href="role_sales.html" class="job-title">Technical Sales</a>
-        </div>
-        <a href="contact.html" class="btn">Get In Touch</a>
-    </section>
 
-    <section class="portfolio" id="portfolio">
-        <h2>Work In Progress</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <h3>www.rheondadotogletree.com</h3>
-                <p></p>
-                <button class="btn">View Details</button>
-            </div>
-            <div class="portfolio-item">
-                <h3>Random Reposo</h3>
-                <p></p>
-                <button class="btn">View Details</button>
-            </div>
-            <div class="portfolio-item">
-                <h3>The Lab!</h3>
-                <p></p>
-                <button class="btn">View Details</button>
-            </div>
-        </div>
+<body>
+  <div id="loader"></div>
+
+  <header id="nav"></header>
+
+  <main>
+    <section>
+      <h1>Welcome to Rheonda’s AI Portfolio</h1>
+      <p>Exploring agentic design, automation, and AI systems.</p>
     </section>
   </main>
+
+  <footer id="footer"></footer>
+
+  <script type="module">
+    import { loadNav } from "/component/nav.js";
+    import { loadFooter } from "/component/footer.js";
+    import { loadLoader } from "/component/loader.js";
+
+    loadLoader();
+    loadNav();
+    loadFooter();
+  </script>
+</body>
+</html>
     
 <site-footer></site-footer>
 
