@@ -28,7 +28,7 @@ export function loadSharedHead({
 
   const favicon = document.createElement("link");
   favicon.rel = "icon";
-  favicon.href = "/folderder/favicon.png";
+  favicon.href = "folderder/favicon.png";
 
   // Fonts
   const fontLink = document.createElement("link");
