@@ -10,53 +10,8 @@
     <link rel="stylesheet" href="folderder/style.css">
 </head>
 <body>
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loader"></div>
-        <div class="loading-text" id="hatContainer"></div>
-    </div>
 
-    <script>
-        const hats = [
-            "dad hat",
-            "easter sunday hat", 
-            "top hat",
-            "baseball cap",
-            "beanie",
-            "beret",
-            "cowboy hat",
-            "bucket hat",
-            "fedora",
-            "snapback",
-            "chef's hat"
-        ];
-
-        let currentHatIndex = 0;
-        const hatContainer = document.getElementById('hatContainer');
-
-        function showNextHat() {
-            if (currentHatIndex < hats.length) {
-                const hatElement = document.createElement('div');
-                hatElement.className = 'hat-name';
-                hatElement.textContent = hats[currentHatIndex];
-                hatContainer.appendChild(hatElement);
-                
-                setTimeout(() => {
-                    hatContainer.removeChild(hatElement);
-                }, 1500);
-                
-                currentHatIndex++;
-                setTimeout(showNextHat, 1500);
-            } else {
-                setTimeout(() => {
-                    document.getElementById('loadingScreen').classList.add('fade-out');
-                }, 500);
-            }
-        }
-
-        window.addEventListener('load', function() {
-            showNextHat();
-        });
-    </script>
+    
 
     <script type="module" src="components/nav.js"></script>
     <site-nav></site-nav>
@@ -95,14 +50,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Property of Rheonda Dorothy Ogletree. Built with Transparency. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/rheondadogletree">Li</a>
-                <a href="https://substack.com/@breathinganomalypseudonym">Sub</a>
-            </div>
-        </div>
-    </footer>
+        <script type="module" src="components/footer.js"></script>
+    <site-footer></site-footer>
 </body>
 </html>
