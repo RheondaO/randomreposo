@@ -19,7 +19,7 @@ class SiteNav extends HTMLElement {
         }
 
         .logo {
-          color: #fff;
+          color: #ffffff;
           font-size: 1.3rem;
           font-weight: bold;
           text-decoration: none;
