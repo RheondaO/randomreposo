@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Shared head content -->
+  <!-- Static essentials -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Loader JS (critical) -->
+  <script type="module" src="components/loader.js"></script>
+
+  <!-- Dynamic head helper -->
   <script type="module">
     import { loadSharedHead } from "components/head.js";
     loadSharedHead({
@@ -9,7 +16,6 @@
       description: "Welcome to Rheonda’s AI Portfolio."
     });
   </script>
-    
 </head>
 
 <body>
