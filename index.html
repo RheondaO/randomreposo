@@ -1,40 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Career Portfolio</title>
-    <link rel="icon" type="image/png" href="folderder/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="folderder/style.css">
+  <!-- Shared head content -->
+  <script type="module">
+    import { loadSharedHead } from "/components/head.js";
+    loadSharedHead({
+      title: "AI Portfolio | Home",
+      description: "Welcome to Rheonda’s AI Portfolio."
+    });
+      
+  </script>
+  <!-- Loader script -->
+  <script type="module">
+    import { showLoader } from "/components/loader.js";
+    document.addEventListener("DOMContentLoaded", () => showLoader());
+  </script>
     
 </head>
 <body>
-
- <!-- Place this at the top of body in your page template -->
-<div id="loader-component"></div>
-
-<script>
-fetch('/home/loader.html')
-  .then(res => res.text())
-  .then(html => {
-    const container = document.getElementById('loader-component');
-
-    if (!sessionStorage.getItem('loaderShown')) {
-      container.innerHTML = html;
-      sessionStorage.setItem('loaderShown', 'true');
-
-      if (typeof initLoader === "function") initLoader();
-    } else {
-      container.style.display = 'none';
-    }
-  })
-  .catch(err => console.error("Loader failed:", err));
-</script>
-
+  <!-- Loader container -->
+  <div id="loader-component"></div>
+  <!-- Navigation -->
   <site-nav></site-nav>
-
 
     <section class="hero" id="home">
         <h1>property of rheonda d. ogletree</h1>
