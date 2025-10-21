@@ -13,34 +13,24 @@
 
     <div id="loader-component"></div>
 
+<div id="loader-component"></div>
+
 <script>
 fetch('loader.html')
-  .then(response => response.text())
+  .then(res => res.text())
   .then(html => {
+    const container = document.getElementById('loader-component');
+
     // Only show loader once per session
     if (!sessionStorage.getItem('loaderShown')) {
-      document.getElementById('loader-component').innerHTML = html;
-      sessionStorage.setItem('loaderShown', 'true');
-      
-      // Trigger smooth fade-in
-      const observer = new MutationObserver(() => {
-        const loader = document.getElementById('loadingScreen');
-        if (loader) {
-          requestAnimationFrame(() => loader.classList.add('fade-in'));
-          observer.disconnect();
-        }
-      });
-      observer.observe(document.getElementById('loader-component'), { childList: true });
-      
-      // Wait for content ready, then run animation
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          if (typeof showNextHat === 'function') showNextHat();
-        }, 100);
-      });
+        container.innerHTML = html;
+        sessionStorage.setItem('loaderShown', 'true');
+
+        // Initialize loader after it’s injected
+        initLoader();
     } else {
-      // Skip loader if already shown this session
-      document.getElementById('loader-component').style.display = 'none';
+        // Skip loader
+        container.style.display = 'none';
     }
   });
 </script>
