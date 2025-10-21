@@ -29,7 +29,7 @@ export function loadSharedHead({
   // --- Favicon ---
   const favicon = document.createElement("link");
   favicon.rel = "icon";
-  favicon.href = "/assets/favicon.svg";
+  favicon.href = "/folderder/favicon.png";
 
   // --- Title ---
   const headTitle = document.createElement("title");
@@ -38,12 +38,12 @@ export function loadSharedHead({
   // --- Fonts (example: Google Fonts) ---
   const fontLink = document.createElement("link");
   fontLink.rel = "stylesheet";
-  fontLink.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
+  fontLink.href = "https://fonts.googleapis.com/css2?family=Jersey+25&family=Open+Sans:ital,wdth,wght@0,88.8,333;1,88.8,333&display=swap";
 
   // --- Main CSS ---
   const mainCSS = document.createElement("link");
   mainCSS.rel = "stylesheet";
-  mainCSS.href = "folderder/styles.css";
+  mainCSS.href = "folderder/style.css";
 
   // --- Optional JS (for nav/footer components) ---
   const navComponent = document.createElement("script");
