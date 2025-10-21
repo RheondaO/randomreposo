@@ -16,7 +16,7 @@
 <div id="loader-component"></div>
 
 <script>
-fetch('home/loader.html')
+fetch('/home/loader.html')
   .then(res => res.text())
   .then(html => {
     const container = document.getElementById('loader-component');
