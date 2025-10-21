@@ -40,7 +40,6 @@ export function loadSharedHead({
   mainCSS.rel = "stylesheet";
   mainCSS.href = "folderder/style.css"; // <- updated path
 
-
   head.append(metaCharset, metaViewport, metaDescription, headTitle, favicon, fontLink, mainCSS);
 
   // Load nav/footer modules after DOM ready
