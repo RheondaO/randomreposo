@@ -33,7 +33,7 @@ export function loadSharedHead({
   // Fonts
   const fontLink = document.createElement("link");
   fontLink.rel = "stylesheet";
-  fontLink.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
+  fontLink.href = "https://fonts.googleapis.com/css2?family=Jersey+25&family=Open+Sans:ital,wdth,wght@0,88.8,333;1,88.8,333&display=swap";
 
   // Main CSS
   const mainCSS = document.createElement("link");
