@@ -1,9 +1,7 @@
 // /component/head.js
 export function loadSharedHead({ title, description }) {
-  // Set document title
   document.title = title || "AI Portfolio";
 
-  // Define standard meta + link tags
   const headContent = `
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,9 +9,17 @@ export function loadSharedHead({ title, description }) {
     
     <link rel="icon" type="image/png" href="./art/favicon.png" />
     <link rel="stylesheet" href="./art/style.css" />
-
   `;
 
-  // Append to <head>
   document.head.insertAdjacentHTML("beforeend", headContent);
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const { loadNav } = await import("./nav.js");
+    const { loadFooter } = await import("./footer.js");
+    const { loadLoader } = await import("./loader.js");
+
+    loadNav();
+    loadFooter();
+    loadLoader();
+  });
 }
