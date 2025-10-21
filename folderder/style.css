@@ -214,7 +214,11 @@ nav {
     margin-top: var(--spacing-xl);
     font-family: "Jersey 25", sans-serif;
     font-size: 2.5rem;
-    color: var(--color-black);
+    color: var(--color-cherry-red); /* hot red text */
+    text-shadow: 
+        0 0 5px var(--color-cherry-red-glow),
+        0 0 10px var(--color-orange-glow),
+        0 0 15px var(--color-cherry-red-glow-strong);
     position: relative;
     width: 300px;
     height: 60px;
@@ -227,6 +231,11 @@ nav {
     text-align: center;
     animation: slideHat 1.5s ease-in-out;
     white-space: nowrap;
+    color: var(--color-cherry-red);
+    text-shadow: 
+        0 0 3px var(--color-cherry-red-glow),
+        0 0 6px var(--color-orange-glow),
+        0 0 9px var(--color-cherry-red-glow-strong);
 }
 
 @keyframes slideHat {
