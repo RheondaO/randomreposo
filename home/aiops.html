@@ -2,30 +2,26 @@
 <html lang="en">
 <head>
   <script type="module">
-    import { loadSharedHead } from "components/head.js";
+    import { loadSharedHead } from "../components/head.js";
     loadSharedHead({
-      title: "AI Portfolio | Home",
-      description: "Welcome to Rheonda’s AI Portfolio."
+      title: "AI Portfolio | AIOps",
+      description: "Exploring AIOps — automation and intelligence in IT operations."
     });
   </script>
 
-  <link rel="stylesheet" href="folderder/style.css">
+  <!-- You can remove this extra link because loadSharedHead() already injects the main CSS -->
+  <!-- <link rel="stylesheet" href="../folderder/style.css"> -->
 </head>
 <body>
-  
   <site-nav></site-nav>
 
   <main>
-    <h1>New Page Title</h1>
+    <h1>AIOps</h1>
     <p>Welcome to your new modular page. Everything below is unique to this page.</p>
   </main>
 
-<site-footer></site-footer>
+  <site-footer></site-footer>
 
-<script type="module">
-  import { loadSharedHead } from "components/head.js";
-  loadSharedHead();
-</script>
-
+  <!-- You don’t need to call loadSharedHead() again — it’s already called in the <head> -->
 </body>
 </html>
