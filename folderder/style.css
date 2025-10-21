@@ -20,14 +20,15 @@
     --color-gray-medium: #e0e0e0;
     --color-gray-dark: #333333;
     --color-neon-green: #00ff00;
-    
-    /* Iridescent colors */
-    --color-purple-glow: rgba(138, 43, 226, 0.3);
-    --color-blue-glow: rgba(0, 191, 255, 0.2);
-    --color-purple-glow-strong: rgba(138, 43, 226, 0.5);
-    --color-blue-glow-strong: rgba(0, 191, 255, 0.3);
-    --color-pink-glow: rgba(255, 182, 193, 0.4);
-    
+
+    /* Warm iridescent colors */
+    --color-cherry-red: #ff0000;
+    --color-orange-glow: rgba(255, 140, 0, 0.2);
+    --color-cherry-red-glow: rgba(255, 0, 0, 0.3);
+    --color-cherry-red-glow-strong: rgba(255, 0, 0, 0.6);
+    --color-orange-glow-strong: rgba(255, 140, 0, 0.5);
+    --color-hot-pink-glow: rgba(255, 105, 180, 0.4);
+
     /* Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -36,22 +37,23 @@
     --spacing-xl: 2rem;
     --spacing-2xl: 3rem;
     --spacing-3xl: 4rem;
-    
+
     /* Border */
     --border-thin: 2px;
     --border-medium: 3px;
     --border-thick: 4px;
     --border-extra-thick: 6px;
-    
+
     /* Border radius */
     --radius-sm: 2px;
     --radius-md: 8px;
-    
+
     /* Transitions */
     --transition-fast: 0.3s;
     --transition-medium: 0.5s;
     --transition-slow: 1.5s;
 }
+
 
 body {
     font-family: "Open Sans", sans-serif;
