@@ -9,7 +9,7 @@ export function loadFooter() {
       <div class="social-links">
         <a href="https://www.linkedin.com/in/rheondadogletree">Li</a>
         <a href="#">Tw</a>
-        <a href="https://substack.com/@breathinganomalypseudonym">Sub</a>
+        <a href="https://breathinganomalypseudonym.substack.com/">Sub</a>
       </div>
     </div>
   `;
