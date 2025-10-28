@@ -280,6 +280,16 @@ nav {
 }
 
 /* Job Titles */
+.job-titles {
+    margin: var(--spacing-2xl) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: flex-end; /* ← Aligns all job titles to the right */
+    width: 60%; /* ← Shortens total width by 40% */
+    margin-left: auto; /* ← Pushes the entire section to the right */
+}
+
 .job-title {
     font-size: 75px;
     font-family: "Jersey 25", sans-serif;
@@ -292,15 +302,17 @@ nav {
     padding: 0.5rem 1rem;
     cursor: pointer;
     transition: all var(--transition-fast);
-    background-color: var(--color-black); /* ← Black background matches hover border */
-    border: var(--border-extra-thick) solid var(--color-black); /* ← Same thickness */
+    background-color: var(--color-black);
+    border: var(--border-extra-thick) solid var(--color-black);
     box-sizing: border-box;
+    text-align: right; /* ← Ensures text aligns with the right edge */
+    width: 100%; /* ← Uses full available width (60% of container) */
 }
 
 .job-title::before {
     content: '';
     position: absolute;
-    inset: 0; /* ← Makes it perfectly overlap the button */
+    inset: 0;
     background: transparent;
     transition: all var(--transition-fast) ease;
     z-index: -1;
@@ -323,7 +335,12 @@ nav {
 }
 
 .job-title:active::before {
-   background: transparent;
+    background: radial-gradient(
+        circle at center,
+        var(--color-white) 0%,
+        var(--color-gray-medium) 50%,
+        var(--color-white) 100%
+    );
 }
 
 /* ==========================================================================
