@@ -607,12 +607,7 @@ footer {
 }
 
 .social-links a:hover {
-    background: linear-gradient(135deg, 
-        var(--color-white) 0%, 
-        var(--color-gray-light) 25%, 
-        var(--color-white) 50%, 
-        var(--color-gray-light) 75%, 
-        var(--color-white) 100%);
+    background: #ff0000;
     box-shadow: 0 0 20px var(--color-purple-glow),
                 0 0 40px var(--color-blue-glow);
 }
@@ -1511,7 +1506,7 @@ footer {
     }
     
     .job-title {
-        font-size: 45px;
+        font-size: 65px;
         padding: 0.5rem 1rem;
     }
     
