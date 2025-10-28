@@ -327,9 +327,6 @@ nav {
 .job-title:hover {
     transform: translateX(10px);
     color: var(--color-cherry-red);
-    text-shadow: 0 0 10px var(--color-cherry-red),
-                 0 0 20px var(--color-cherry-red),
-                 0 0 30px var(--color-cherry-red);
     -webkit-text-stroke: 1px var(--color-black);
     text-stroke: 1px var(--color-black);
 }
