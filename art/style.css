@@ -323,12 +323,7 @@ nav {
 }
 
 .job-title:active::before {
-    background: radial-gradient(
-        circle at center,
-        var(--color-white) 0%,
-        var(--color-gray-medium) 50%,
-        var(--color-white) 100%
-    );
+   background: transparent;
 }
 
 /* ==========================================================================
