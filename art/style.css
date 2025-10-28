@@ -608,7 +608,7 @@ footer {
 
 .social-links a:hover {
     background: var(--color-cherry-red);
-    box-shadow: 0 0 20px var(--color-purple-glow),
+    box-shadow: 0 0 20px var(--color-cherry-red-glow-strong),
                 0 0 40px var(--color-blue-glow);
 }
 
