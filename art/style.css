@@ -280,46 +280,35 @@ nav {
 }
 
 /* Job Titles */
-.job-titles {
-    margin: var(--spacing-2xl) 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    align-items: flex-start;
-    width: 100%;
-}
-
 .job-title {
     font-size: 75px;
     font-family: "Jersey 25", sans-serif;
-    color: var(--color-black);
+    color: var(--color-white);
     font-weight: 600;
     line-height: 1.2;
     text-decoration: none;
     display: block;
-    transition: all var(--transition-fast);
     position: relative;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    transition: all var(--transition-fast);
+    background-color: var(--color-black); /* ← Black background matches hover border */
+    border: var(--border-extra-thick) solid var(--color-black); /* ← Same thickness */
+    box-sizing: border-box;
 }
 
 .job-title::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    border-left: var(--border-extra-thick) solid var(--color-black);
-    transition: width var(--transition-fast) ease;
+    inset: 0; /* ← Makes it perfectly overlap the button */
+    background: transparent;
+    transition: all var(--transition-fast) ease;
     z-index: -1;
 }
 
 .job-title:hover::before {
-    width: 100%;
-    border: var(--border-extra-thick) solid var(--color-black);
     background: transparent;
-                inset 0 0 20px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 .job-title:hover {
@@ -334,7 +323,12 @@ nav {
 }
 
 .job-title:active::before {
-    background: radial-gradient(circle at center, var(--color-white) 0%, var(--color-gray-medium) 50%, var(--color-white) 100%);
+    background: radial-gradient(
+        circle at center,
+        var(--color-white) 0%,
+        var(--color-gray-medium) 50%,
+        var(--color-white) 100%
+    );
 }
 
 /* ==========================================================================
