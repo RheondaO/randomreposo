@@ -613,10 +613,7 @@ footer {
 }
 
 .social-links a:active {
-    background: radial-gradient(circle at center, 
-        var(--color-white) 0%, 
-        var(--color-gray-medium) 50%, 
-        var(--color-white) 100%);
+    background: var (--color-white);
     box-shadow: 0 0 30px var(--color-purple-glow-strong),
                 0 0 60px var(--color-blue-glow-strong);
     transform: scale(0.95);
