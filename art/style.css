@@ -285,7 +285,7 @@ nav {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
-    align-items: flex-end; /* ← Aligns all job titles to the right */
+    align-items: flex-start; /* ← Aligns all job titles to the right */
     width: 60%; /* ← Shortens total width by 40% */
     margin-left: auto; /* ← Pushes the entire section to the right */
 }
