@@ -389,7 +389,7 @@ nav {
 }
 
 .btn:hover {
-    background: #ff0000;
+    background: var(--color-cherry-red);
     box-shadow: 0 0 20px var(--color-purple-glow),
                 0 0 40px var(--color-blue-glow),
                 inset 0 0 20px rgba(255, 255, 255, 0.5);
@@ -607,7 +607,7 @@ footer {
 }
 
 .social-links a:hover {
-    background: #ff0000;
+    background: var(--color-cherry-red);
     box-shadow: 0 0 20px var(--color-purple-glow),
                 0 0 40px var(--color-blue-glow);
 }
