@@ -287,42 +287,6 @@
                     
                 </div>
 
-                <div class="content-box">
-                    <h2>Installation Steps</h2>
-                    <h3>1. Clone the Repository</h3>
-                    <div class="code-block">
-git clone https://github.com/yourorg/platform.git
-cd platform
-                    </div>
-
-                    <h3>2. Configure Environment</h3>
-                    <div class="code-block">
-cp .env.example .env
-# Edit .env with your configuration
-vim .env
-                    </div>
-
-                    <h3>3. Deploy Infrastructure</h3>
-                    <div class="code-block">
-cd terraform
-terraform init
-terraform plan
-terraform apply
-                    </div>
-
-                    <h3>4. Deploy Applications</h3>
-                    <div class="code-block">
-kubectl apply -f k8s/
-helm install platform ./charts/platform
-                    </div>
-
-                    <div class="info-box">
-                        <div class="info-box-title">✅ Success!</div>
-                        <p>Your platform should now be running. Access the dashboard at http://localhost:3000</p>
-                    </div>
-                </div>
-            </div>
-
             <div id="templates" class="content-section">
                 <div class="breadcrumbs">
                     <a href="#overview" onclick="showSection(event, 'overview')">Home</a> <span>›</span> <a href="#">AI & ML</a> <span>›</span> <span>MLOps Best Practices</span>
