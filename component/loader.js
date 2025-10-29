@@ -45,16 +45,21 @@ class SiteLoader extends HTMLElement {
         currentHatIndex++;
         setTimeout(showNextHat, 1500);
       } else {
-        // Fade out after the last hat
+        // Fade out loader
         loadingScreen.style.transition = "opacity 1s ease";
         loadingScreen.style.opacity = "0";
+
         setTimeout(() => {
           loadingScreen.style.display = "none";
+
+          // Show page content
+          const pageContent = document.getElementById("page-content");
+          if (pageContent) pageContent.style.display = "block";
         }, 1000);
       }
     }
 
-    // Start the animation immediately
+    // Start animation immediately
     showNextHat();
   }
 }
