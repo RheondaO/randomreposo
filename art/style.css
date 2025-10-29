@@ -306,7 +306,7 @@ nav {
     border: var(--border-extra-thick) solid var(--color-black);
     box-sizing: border-box;
     text-align: left; /* ← Ensures text aligns with the right edge */
-    width: 100%; /* ← Uses full available width (60% of container) */
+    width: 100%; /* ← Uses full available width (50% of container) */
 }
 
 .job-title::before {
@@ -320,7 +320,6 @@ nav {
 
 .job-title:hover::before {
     background: transparent;
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 .job-title:hover {
