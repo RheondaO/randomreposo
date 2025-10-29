@@ -4,6 +4,10 @@ class SiteLoader extends HTMLElement {
     // Only show once per session
     if (sessionStorage.getItem("loaderShown")) {
       this.style.display = "none";
+
+      // Show page content immediately if loader already shown
+      const pageContent = document.getElementById("page-content");
+      if (pageContent) pageContent.style.display = "block";
       return;
     }
 
