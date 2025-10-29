@@ -286,7 +286,7 @@ nav {
     flex-direction: column;
     gap: var(--spacing-lg);
     align-items: flex-start; /* ← Aligns all job titles to the right */
-    width: 60%; /* ← Shortens total width by 40% */
+    width: 40%; /* ← Shortens total width by 40% */
     margin-right: auto; /* ← Pushes the entire section to the right */
 }
 
@@ -334,14 +334,14 @@ nav {
     transform: translateX(10px) scale(0.98);
 }
 
-.job-title:active::before {
+/* .job-title:active::before {
     background: radial-gradient(
         circle at center,
         var(--color-white) 0%,
         var(--color-gray-medium) 50%,
         var(--color-white) 100%
     );
-}
+} */
 
 /* ==========================================================================
    Buttons
