@@ -7,7 +7,7 @@ class SiteLoader extends HTMLElement {
       return;
     }
 
-    // Build loader directly in JS
+    // Build loader
     this.innerHTML = `
       <div class="loading-screen" id="loadingScreen">
         <div class="loader"></div>
@@ -18,17 +18,9 @@ class SiteLoader extends HTMLElement {
     sessionStorage.setItem("loaderShown", "true");
 
     const hats = [
-      "dad hat",
-      "easter sunday hat", 
-      "top hat",
-      "baseball cap",
-      "beanie",
-      "beret",
-      "cowboy hat",
-      "bucket hat",
-      "fedora",
-      "snapback",
-      "chef's hat"
+      "dad hat", "easter sunday hat", "top hat", "baseball cap",
+      "beanie", "beret", "cowboy hat", "bucket hat",
+      "fedora", "snapback", "chef's hat"
     ];
 
     let currentHatIndex = 0;
@@ -49,16 +41,17 @@ class SiteLoader extends HTMLElement {
         currentHatIndex++;
         setTimeout(showNextHat, 1500);
       } else {
+        // Fade out after the last hat
+        loadingScreen.style.transition = "opacity 1s ease";
+        loadingScreen.style.opacity = "0";
         setTimeout(() => {
-          loadingScreen.classList.add('fade-out');
-          setTimeout(() => {
-            loadingScreen.style.display = 'none';
-          }, 1000);
-        }, 500);
+          loadingScreen.style.display = "none";
+        }, 1000);
       }
     }
 
-    window.addEventListener('load', showNextHat);
+    // Start the animation immediately
+    showNextHat();
   }
 }
 
