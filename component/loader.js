@@ -6,8 +6,8 @@ class SiteLoader extends HTMLElement {
       this.style.display = "none";
 
       // Show page content immediately if loader already shown
-      const pageContent = document.getElementById("page-content");
-      if (pageContent) pageContent.style.display = "block";
+      /* const pageContent = document.getElementById("page-content");
+      if (pageContent) pageContent.style.display = "block"; */
       return;
     }
 
