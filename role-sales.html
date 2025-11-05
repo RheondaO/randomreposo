@@ -12,17 +12,519 @@
 </head>
 
 <body>
-  <header id="nav"></header>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">CRM Dashboard</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+                <li><a href="#reports">Reports</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <main>
+    <div class="crm-container">
+        <div class="page-header">
+            <h1 class="page-title">SaaS Architect</h1>
+            <p class="page-subtitle">Customer Relationship Management & Sales Pipeline</p>
+        </div>
 
-    <h1>Role: SDR/BDR</h1>
+        <!-- Dashboard Stats -->
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-label">Total Contacts</div>
+                <div class="stat-value">2,847</div>
+                <div class="stat-change positive">↑ 12.5% from last month</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Active Deals</div>
+                <div class="stat-value">68</div>
+                <div class="stat-change positive">↑ 8 new this week</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Pipeline Value</div>
+                <div class="stat-value">$1.2M</div>
+                <div class="stat-change positive">↑ 18.2% growth</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Win Rate</div>
+                <div class="stat-value">34%</div>
+                <div class="stat-change negative">↓ 2.1% vs last quarter</div>
+            </div>
+        </div>
 
+        <!-- Main CRM Layout -->
+        <div class="crm-layout">
+            <!-- Sidebar Filters -->
+            <aside class="crm-sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Filters</h3>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">Status</label>
+                        <select class="filter-select">
+                            <option>All Statuses</option>
+                            <option>Active</option>
+                            <option>Pending</option>
+                            <option>Closed</option>
+                        </select>
+                    </div>
 
+                    <div class="filter-group">
+                        <label class="filter-label">Sales Rep</label>
+                        <select class="filter-select">
+                            <option>All Reps</option>
+                            <option>John Smith</option>
+                            <option>Sarah Johnson</option>
+                            <option>Mike Chen</option>
+                            <option>Emily Davis</option>
+                        </select>
+                    </div>
 
-  </main>
-  
-  <footer id="footer"></footer>
-  
+                    <div class="filter-group">
+                        <label class="filter-label">Date Range</label>
+                        <input type="date" class="filter-input">
+                        <input type="date" class="filter-input" style="margin-top: 0.5rem;">
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Deal Size</h3>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span>$0 - $10K</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span>$10K - $50K</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span>$50K - $100K</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span>$100K+</span>
+                    </label>
+                </div>
+
+                <button class="btn-filter">Apply Filters</button>
+                <button class="btn-filter" style="margin-top: 0.5rem; background: #f5f5f5;">Clear All</button>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="crm-content">
+                <!-- Tabs -->
+                <div class="crm-tabs">
+                    <button class="crm-tab active" onclick="switchTab(0)">Contacts</button>
+                    <button class="crm-tab" onclick="switchTab(1)">Pipeline</button>
+                    <button class="crm-tab" onclick="switchTab(2)">Activity</button>
+                    <button class="crm-tab" onclick="switchTab(3)">Reports</button>
+                </div>
+
+                <!-- Contacts Tab -->
+                <div id="tab-0" class="tab-content">
+                    <div class="table-container">
+                        <div class="table-header">
+                            <h2 class="table-title">All Contacts</h2>
+                            <div class="table-actions">
+                                <button class="btn-action">Export</button>
+                                <button class="btn-action primary">+ Add Contact</button>
+                            </div>
+                        </div>
+
+                        <div class="search-bar">
+                            <input type="text" class="search-input" placeholder="Search contacts by name, company, or email...">
+                            <button class="btn-action">Search</button>
+                        </div>
+
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Company</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                    <th>Value</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Alice Thompson</td>
+                                    <td>TechCorp Inc.</td>
+                                    <td>alice@techcorp.com</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>$45,000</td>
+                                    <td>
+                                        <button class="table-btn">View</button>
+                                        <button class="table-btn">Edit</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Bob Martinez</td>
+                                    <td>CloudSolutions LLC</td>
+                                    <td>bob@cloudsolutions.com</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>$82,500</td>
+                                    <td>
+                                        <button class="table-btn">View</button>
+                                        <button class="table-btn">Edit</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Carol Chen</td>
+                                    <td>DataDrive Systems</td>
+                                    <td>carol@datadrive.com</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>$120,000</td>
+                                    <td>
+                                        <button class="table-btn">View</button>
+                                        <button class="table-btn">Edit</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>David Park</td>
+                                    <td>InnovateLabs</td>
+                                    <td>david@innovatelabs.com</td>
+                                    <td><span class="status-badge closed">Closed</span></td>
+                                    <td>$35,000</td>
+                                    <td>
+                                        <button class="table-btn">View</button>
+                                        <button class="table-btn">Edit</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Emma Wilson</td>
+                                    <td>FutureScale Co.</td>
+                                    <td>emma@futurescale.com</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>$95,000</td>
+                                    <td>
+                                        <button class="table-btn">View</button>
+                                        <button class="table-btn">Edit</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Frank Rodriguez</td>
+                                    <td>NextGen Analytics</td>
+                                    <td>frank@nextgen.com</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>$67,000</td>
+                                    <td>
+                                        <button class="table-btn">View</button>
+                                        <button class="table-btn">Edit</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Pipeline Tab -->
+                <div id="tab-1" class="tab-content" style="display: none;">
+                    <div class="pipeline-container">
+                        <div class="pipeline-stage">
+                            <div class="pipeline-header">
+                                Prospecting
+                                <div class="pipeline-count">12 deals • $340K</div>
+                            </div>
+                            <div class="pipeline-cards">
+                                <div class="pipeline-card">
+                                    <div class="card-title">Acme Corporation</div>
+                                    <div class="card-value">$45,000</div>
+                                    <div class="card-meta">Contact: John Doe • 3 days ago</div>
+                                </div>
+                                <div class="pipeline-card">
+                                    <div class="card-title">GlobalTech Solutions</div>
+                                    <div class="card-value">$82,000</div>
+                                    <div class="card-meta">Contact: Jane Smith • 1 week ago</div>
+                                </div>
+                                <div class="pipeline-card">
+                                    <div class="card-title">Innovate Inc.</div>
+                                    <div class="card-value">$38,500</div>
+                                    <div class="card-meta">Contact: Mike Johnson • 2 days ago</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pipeline-stage">
+                            <div class="pipeline-header">
+                                Qualification
+                                <div class="pipeline-count">8 deals • $520K</div>
+                            </div>
+                            <div class="pipeline-cards">
+                                <div class="pipeline-card">
+                                    <div class="card-title">DataFlow Systems</div>
+                                    <div class="card-value">$125,000</div>
+                                    <div class="card-meta">Contact: Sarah Lee • 5 days ago</div>
+                                </div>
+                                <div class="pipeline-card">
+                                    <div class="card-title">CloudFirst Ltd</div>
+                                    <div class="card-value">$95,000</div>
+                                    <div class="card-meta">Contact: Tom Brown • 1 week ago</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pipeline-stage">
+                            <div class="pipeline-header">
+                                Proposal
+                                <div class="pipeline-count">5 deals • $380K</div>
+                            </div>
+                            <div class="pipeline-cards">
+                                <div class="pipeline-card">
+                                    <div class="card-title">TechVision Corp</div>
+                                    <div class="card-value">$150,000</div>
+                                    <div class="card-meta">Contact: Emily Davis • 3 days ago</div>
+                                </div>
+                                <div class="pipeline-card">
+                                    <div class="card-title">SmartOps Inc</div>
+                                    <div class="card-value">$72,000</div>
+                                    <div class="card-meta">Contact: Chris Wilson • 1 day ago</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pipeline-stage">
+                            <div class="pipeline-header">
+                                Negotiation
+                                <div class="pipeline-count">4 deals • $290K</div>
+                            </div>
+                            <div class="pipeline-cards">
+                                <div class="pipeline-card">
+                                    <div class="card-title">Enterprise Solutions</div>
+                                    <div class="card-value">$180,000</div>
+                                    <div class="card-meta">Contact: Alex Turner • 2 days ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Tab -->
+                <div id="tab-2" class="tab-content" style="display: none;">
+                    <div class="activity-feed">
+                        <h2 class="table-title" style="margin-bottom: 1.5rem;">Recent Activity</h2>
+                        
+                        <div class="activity-item">
+                            <div class="activity-header">
+                                <span class="activity-user">Sarah Johnson</span>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                            <div class="activity-action">Closed deal with TechCorp Inc. for $45,000</div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-header">
+                                <span class="activity-user">Mike Chen</span>
+                                <span class="activity-time">4 hours ago</span>
+                            </div>
+                            <div class="activity-action">Sent proposal to CloudSolutions LLC</div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-header">
+                                <span class="activity-user">Emily Davis</span>
+                                <span class="activity-time">5 hours ago</span>
+                            </div>
+                            <div class="activity-action">Added new contact: Alice Thompson from TechCorp Inc.</div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-header">
+                                <span class="activity-user">John Smith</span>
+                                <span class="activity-time">Yesterday</span>
+                            </div>
+                            <div class="activity-action">Updated deal stage for DataDrive Systems to Negotiation</div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-header">
+                                <span class="activity-user">Sarah Johnson</span>
+                                <span class="activity-time">Yesterday</span>
+                            </div>
+                            <div class="activity-action">Scheduled follow-up call with FutureScale Co.</div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-header">
+                                <span class="activity-user">Mike Chen</span>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                            <div class="activity-action">Created quote for InnovateLabs - $120,000</div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-header">
+                                <span class="activity-user">Emily Davis</span>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                            <div class="activity-action">Completed demo presentation for NextGen Analytics</div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-header">
+                                <span class="activity-user">John Smith</span>
+                                <span class="activity-time">3 days ago</span>
+                            </div>
+                            <div class="activity-action">Lost deal with Legacy Systems Corp - competitor chosen</div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-header">
+                                <span class="activity-user">Sarah Johnson</span>
+                                <span class="activity-time">3 days ago</span>
+                            </div>
+                            <div class="activity-action">Won deal with Enterprise Solutions for $180,000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reports Tab -->
+                <div id="tab-3" class="tab-content" style="display: none;">
+                    <div class="table-container">
+                        <h2 class="table-title" style="margin-bottom: 1.5rem;">Sales Reports & Analytics</h2>
+
+                        <div class="dashboard-stats" style="margin-bottom: 2rem;">
+                            <div class="stat-card">
+                                <div class="stat-label">Monthly Revenue</div>
+                                <div class="stat-value">$487K</div>
+                                <div class="stat-change positive">↑ 23% vs last month</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Avg Deal Size</div>
+                                <div class="stat-value">$78K</div>
+                                <div class="stat-change positive">↑ $5K increase</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Sales Cycle</div>
+                                <div class="stat-value">42 days</div>
+                                <div class="stat-change negative">↑ 3 days longer</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Conversion Rate</div>
+                                <div class="stat-value">28%</div>
+                                <div class="stat-change positive">↑ 4% improvement</div>
+                            </div>
+                        </div>
+
+                        <div style="border: 3px solid #000000; padding: 2rem; margin-bottom: 2rem; background: #f9f9f9;">
+                            <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 1.5rem; margin-bottom: 1rem;">Top Performers This Quarter</h3>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sales Rep</th>
+                                        <th>Deals Closed</th>
+                                        <th>Revenue Generated</th>
+                                        <th>Win Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sarah Johnson</td>
+                                        <td>18</td>
+                                        <td>$892,000</td>
+                                        <td>42%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mike Chen</td>
+                                        <td>15</td>
+                                        <td>$745,000</td>
+                                        <td>38%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Emily Davis</td>
+                                        <td>12</td>
+                                        <td>$623,000</td>
+                                        <td>36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>John Smith</td>
+                                        <td>11</td>
+                                        <td>$578,000</td>
+                                        <td>33%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div style="border: 3px solid #000000; padding: 2rem; background: #f9f9f9;">
+                            <h3 style="font-family: 'Jersey 25', sans-serif; font-size: 1.5rem; margin-bottom: 1rem;">Deal Sources</h3>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Source</th>
+                                        <th>Leads</th>
+                                        <th>Conversions</th>
+                                        <th>Revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Inbound Marketing</td>
+                                        <td>342</td>
+                                        <td>95</td>
+                                        <td>$1,240,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Referrals</td>
+                                        <td>128</td>
+                                        <td>52</td>
+                                        <td>$890,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Direct Outreach</td>
+                                        <td>234</td>
+                                        <td>41</td>
+                                        <td>$567,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Events/Conferences</td>
+                                        <td>89</td>
+                                        <td>23</td>
+                                        <td>$423,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Partnerships</td>
+                                        <td>67</td>
+                                        <td>18</td>
+                                        <td>$312,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 SaaS Architect Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function switchTab(tabIndex) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.crm-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById('tab-' + tabIndex).style.display = 'block';
+
+            // Add active class to selected tab
+            tabs[tabIndex].classList.add('active');
+        }
+    </script>
 </body>
 </html>
