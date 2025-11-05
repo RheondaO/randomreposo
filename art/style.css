@@ -618,6 +618,366 @@ footer {
     transform: scale(0.95);
 }
 
+
+
+
+/* ==========================================================================
+   CRM Interface Styles
+   ========================================================================== */
+
+/* CRM Container */
+.crm-container {
+    max-width: 1400px;
+    margin: var(--spacing-xl) auto;
+    padding: 0 var(--spacing-xl);
+}
+
+.page-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Dashboard Stats Cards */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.stat-card {
+    border: var(--border-medium) solid var(--color-black);
+    padding: var(--spacing-lg);
+    background: var(--color-white);
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.05), transparent);
+    transform: rotate(45deg);
+    transition: all var(--transition-medium);
+    opacity: 0;
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+    animation: shimmer var(--transition-slow) infinite;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--color-purple-glow),
+                0 0 40px var(--color-blue-glow);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.stat-value {
+    font-family: "Jersey 25", sans-serif;
+    font-size: 2.5rem;
+    color: var(--color-black);
+}
+
+.stat-change {
+    font-size: 0.85rem;
+    margin-top: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.stat-change.positive {
+    color: #00aa00;
+}
+
+.stat-change.negative {
+    color: #cc0000;
+}
+
+/* CRM Main Layout */
+.crm-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* CRM Sidebar */
+.crm-sidebar {
+    border: var(--border-medium) solid var(--color-black);
+    padding: var(--spacing-lg);
+    background: var(--color-white);
+    height: fit-content;
+}
+
+.sidebar-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.sidebar-section:last-child {
+    margin-bottom: 0;
+}
+
+/* Filter Elements */
+.filter-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.filter-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+.filter-select,
+.filter-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: var(--border-thin) solid var(--color-black);
+    background: var(--color-white);
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.filter-select:focus,
+.filter-input:focus {
+    outline: none;
+    box-shadow: 0 0 15px var(--color-purple-glow),
+                0 0 30px rgba(0, 191, 255, 0.1);
+}
+
+.filter-checkbox {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    cursor: pointer;
+}
+
+.filter-checkbox input {
+    width: 18px;
+    height: 18px;
+    border: var(--border-thin) solid var(--color-black);
+    cursor: pointer;
+}
+
+.btn-filter {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--color-white);
+    border: var(--border-medium) solid var(--color-black);
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all var(--transition-fast);
+    margin-top: var(--spacing-md);
+}
+
+.btn-filter:hover {
+    background: var(--color-gray-light);
+    box-shadow: 0 0 20px var(--color-purple-glow),
+                0 0 40px var(--color-blue-glow);
+}
+
+.btn-filter:active {
+    transform: scale(0.98);
+}
+
+/* CRM Content Area */
+.crm-content {
+    border: var(--border-medium) solid var(--color-black);
+    background: var(--color-white);
+}
+
+/* CRM Tabs */
+.crm-tabs {
+    display: flex;
+    border-bottom: var(--border-medium) solid var(--color-black);
+    background: var(--color-white);
+}
+
+.crm-tab {
+    flex: 1;
+    padding: var(--spacing-md);
+    border: none;
+    border-right: var(--border-medium) solid var(--color-black);
+    background: var(--color-white);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.crm-tab:last-child {
+    border-right: none;
+}
+
+.crm-tab:hover {
+    background: var(--color-gray-light);
+}
+
+.crm-tab.active {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Table Container */
+.table-container {
+    padding: var(--spacing-lg);
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.table-title {
+    font-family: "Jersey 25", sans-serif;
+    font-size: 1.8rem;
+}
+
+.table-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.btn-action {
+    padding: 0.75rem var(--spacing-lg);
+    background: var(--color-white);
+    border: var(--border-thin) solid var(--color-black);
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all var(--transition-fast);
+}
+
+.btn-action:hover {
+    background: var(--color-gray-light);
+    box-shadow: 0 0 15px var(--color-purple-glow);
+}
+
+.btn-action.primary {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+.btn-action.primary:hover {
+    box-shadow: 0 0 20px var(--color-purple-glow),
+                0 0 40px var(--color-blue-glow);
+}
+
+/* Search Bar */
+.search-bar {
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: var(--border-thin) solid var(--color-black);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 0 15px var(--color-purple-glow);
+}
+
+/* Data Table */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: var(--border-thin) solid var(--color-black);
+}
+
+.data-table thead {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+.data-table th {
+    padding: var(--spacing-md);
+    text-align: left;
+    font-family: "Jersey 25", sans-serif;
+    font-size: 1.1rem;
+    border: var(--border-thin) solid var(--color-black);
+}
+
+.data-table td {
+    padding: var(--spacing-md);
+    border: var(--border-thin) solid var(--color-black);
+}
+
+.data-table tbody tr {
+    transition: background 0.2s;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.data-table tbody tr:hover {
+    background: #f0f0f0;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border: var(--border-thin) solid var(--color-black);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.active {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+.status-badge.pending {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+.status-badge.closed {
+    background: var(--color-gray-medium);
+    color: #666;
+}
+
+/* Table Action Buttons */
+.table-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: var(--border-thin) solid var(--color-black);
+    background: var(--color-white);
+}
+
 /* ==========================================================================
    Tabs Layout (for role pages)
    ========================================================================== */
