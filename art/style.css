@@ -718,6 +718,105 @@ footer {
 }
 
 /* ==========================================================================
+   Tabs Layout (for role pages)
+   ========================================================================== */
+
+.folder {
+    max-width: 1200px;
+    margin: var(--spacing-xl) auto;
+    padding: 0 var(--spacing-xl);
+    width: 100%;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: -2px;
+    position: relative;
+    z-index: 10;
+}
+
+.tab {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    position: relative;
+    background: var(--color-white);
+    border: var(--border-medium) solid var(--color-black);
+    border-bottom: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+
+.tab:hover {
+    background: var(--color-gray-light);
+    transform: translateY(-2px);
+}
+
+.tab.active {
+    background: var(--color-white);
+    border-bottom: var(--border-medium) solid var(--color-white);
+    z-index: 20;
+    position: relative;
+    margin-bottom: -3px;
+    padding-bottom: calc(0.75rem + 3px);
+}
+
+.tab.active span {
+    font-weight: 700;
+}
+
+.content {
+    border: var(--border-medium) solid var(--color-black);
+    border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md);
+    position: relative;
+    width: 100%;
+    background: var(--color-white);
+    min-height: 400px;
+}
+
+.content__inner {
+    display: none;
+    padding: var(--spacing-xl);
+}
+
+.content__inner.active {
+    display: block;
+}
+
+.page {
+    padding: var(--spacing-xl);
+    border: var(--border-thin) solid var(--color-black);
+    background: var(--color-white);
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 31px,
+            var(--color-gray-medium) 31px,
+            var(--color-gray-medium) 32px
+        );
+    min-height: 300px;
+    line-height: 2;
+}
+
+.page p {
+    margin-bottom: var(--spacing-xl);
+}
+
+.page h3 {
+    font-family: "Jersey 25", sans-serif;
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+/* ==========================================================================
    Stats Grid
    ========================================================================== */
 
