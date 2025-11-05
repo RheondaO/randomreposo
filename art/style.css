@@ -1,8 +1,265 @@
 /* ==========================================================================
+   Custom Scrollbar Styling
+   ========================================================================== */
+
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-white);
+    border: 2px solid var(--color-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-black);
+    border: 2px solid var(--color-white);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-dark);
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-black) var(--color-white);
+}
+
+/* ==========================================================================
+   CRM Interface Styles
+   ========================================================================== */
+
+/* CRM Container */
+.crm-container {
+    max-width: 1400px;
+    margin: var(--spacing-xl) auto;
+    padding: 0 var(--spacing-xl);
+}
+
+.page-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Dashboard Stats Cards */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.stat-card {
+    border: var(--border-medium) solid var(--color-black);
+    padding: var(--spacing-lg);
+    background: var(--color-white);
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.05), transparent);
+    transform: rotate(45deg);
+    transition: all var(--transition-medium);
+    opacity: 0;
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+    animation: shimmer var(--transition-slow) infinite;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--color-purple-glow),
+                0 0 40px var(--color-blue-glow);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.stat-value {
+    font-family: "Jersey 25", sans-serif;
+    font-size: 2.5rem;
+    color: var(--color-black);
+}
+
+.stat-change {
+    font-size: 0.85rem;
+    margin-top: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.stat-change.positive {
+    color: #00aa00;
+}
+
+.stat-change.negative {
+    color: #cc0000;
+}
+
+/* CRM Main Layout */
+.crm-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* CRM Sidebar */
+.crm-sidebar {
+    border: var(--border-medium) solid var(--color-black);
+    padding: var(--spacing-lg);
+    background: var(--color-white);
+    height: fit-content;
+}
+
+.sidebar-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.sidebar-section:last-child {
+    margin-bottom: 0;
+}
+
+/* Filter Elements */
+.filter-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.filter-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+.filter-select,
+.filter-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: var(--border-thin) solid var(--color-black);
+    background: var(--color-white);
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.filter-select:focus,
+.filter-input:focus {
+    outline: none;
+    box-shadow: 0 0 15px var(--color-purple-glow),
+                0 0 30px rgba(0, 191, 255, 0.1);
+}
+
+.filter-checkbox {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    cursor: pointer;
+}
+
+.filter-checkbox input {
+    width: 18px;
+    height: 18px;
+    border: var(--border-thin) solid var(--color-black);
+    cursor: pointer;
+}
+
+.btn-filter {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--color-white);
+    border: var(--border-medium) solid var(--color-black);
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all var(--transition-fast);
+    margin-top: var(--spacing-md);
+}
+
+.btn-filter:hover {
+    background: var(--color-gray-light);
+    box-shadow: 0 0 20px var(--color-purple-glow),
+                0 0 40px var(--color-blue-glow);
+}
+
+.btn-filter:active {
+    transform: scale(0.98);
+}
+
+/* CRM Content Area */
+.crm-content {
+    border: var(--border-medium) solid var(--color-black);
+    background: var(--color-white);
+}
+
+/* CRM Tabs */
+.crm-tabs {
+    display: flex;
+    border-bottom: var(--border-medium) solid var(--color-black);
+    background: var(--color-white);
+}
+
+.crm-tab {
+    flex: 1;
+    padding: var(--spacing-md);
+    border: none;
+    border-right: var(--border-medium) solid var(--color-black);
+    background: var(--color-white);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.crm-tab:last-child {
+    border-right: none;
+}
+
+.crm-tab:hover {
+    background: var(--color-gray-light);
+}
+
+.crm-tab.active {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Table Cont/* ==========================================================================
    Portfolio Black & White Design System
    Main Stylesheet
    ========================================================================== */
+
+/* ==========================================================================
+   Google Fonts Import
+   ========================================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=Open+Sans:ital,wdth,wght@0,88.8,333;1,88.8,333&display=swap');
+
 /* ==========================================================================
    Base Styles & Reset
    ========================================================================== */
@@ -19,15 +276,15 @@
     --color-gray-light: #f5f5f5;
     --color-gray-medium: #e0e0e0;
     --color-gray-dark: #333333;
-
-    /* Warm iridescent colors */
-    --color-cherry-red: #ff0000;
-    --color-orange-glow: rgba(255, 140, 0, 0.2);
-    --color-cherry-red-glow: rgba(255, 0, 0, 0.3);
-    --color-cherry-red-glow-strong: rgba(255, 0, 0, 0.6);
-    --color-orange-glow-strong: rgba(255, 140, 0, 0.5);
-    --color-hot-pink-glow: rgba(255, 105, 180, 0.4);
-
+    --color-neon-green: #00ff00;
+    
+    /* Iridescent colors */
+    --color-purple-glow: rgba(138, 43, 226, 0.3);
+    --color-blue-glow: rgba(0, 191, 255, 0.2);
+    --color-purple-glow-strong: rgba(138, 43, 226, 0.5);
+    --color-blue-glow-strong: rgba(0, 191, 255, 0.3);
+    --color-pink-glow: rgba(255, 182, 193, 0.4);
+    
     /* Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -36,23 +293,22 @@
     --spacing-xl: 2rem;
     --spacing-2xl: 3rem;
     --spacing-3xl: 4rem;
-
+    
     /* Border */
     --border-thin: 2px;
     --border-medium: 3px;
     --border-thick: 4px;
     --border-extra-thick: 6px;
-
+    
     /* Border radius */
     --radius-sm: 2px;
     --radius-md: 8px;
-
+    
     /* Transitions */
     --transition-fast: 0.3s;
     --transition-medium: 0.5s;
     --transition-slow: 1.5s;
 }
-
 
 body {
     font-family: "Open Sans", sans-serif;
@@ -63,7 +319,6 @@ body {
     background: var(--color-white);
     color: var(--color-black);
     line-height: 1.6;
-    text-transform: lowercase;
 }
 
 /* ==========================================================================
@@ -74,7 +329,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Jersey 25", sans-serif;
     font-weight: 400;
     line-height: 1.2;
-    text-transform: lowercase;
 }
 
 h1 {
@@ -173,26 +427,26 @@ nav {
 }
 
 .loader {
-   width: 80px;
-   height: 80px;
-   border: var(--border-extra-thick) solid var(--color-cherry-red);
-   border-top: var(--border-extra-thick) solid transparent;
-   border-radius: 50%;
-   animation: spin 1s linear infinite;
-   position: relative;
+    width: 80px;
+    height: 80px;
+    border: var(--border-extra-thick) solid var(--color-black);
+    border-top: var(--border-extra-thick) solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: relative;
 }
 
 .loader::before {
-   content: '';
-   position: absolute;
-   top: -6px;
-   left: -6px;
-   right: -6px;
-   bottom: -6px;
-   border-radius: 50%;
-   border: var(--border-extra-thick) solid transparent;
-   border-top-color: var(--color-cherry-red);
-   animation: shimmer-load 2s ease-in-out infinite;
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 50%;
+    border: var(--border-extra-thick) solid transparent;
+    border-top-color: var(--color-black);
+    animation: shimmer-load 2s ease-in-out infinite;
 }
 
 @keyframes spin {
@@ -202,12 +456,12 @@ nav {
 
 @keyframes shimmer-load {
     0%, 100% {
-        box-shadow: 0 0 20px var(--color-cherry-red-glow),
-                    0 0 40px var(--color-orange-glow);
+        box-shadow: 0 0 20px var(--color-purple-glow),
+                    0 0 40px var(--color-blue-glow);
     }
     50% {
-        box-shadow: 0 0 40px var(--color-cherry-red-glow-strong),
-                    0 0 80px var(--color-orange-glow-strong);
+        box-shadow: 0 0 40px var(--color-purple-glow-strong),
+                    0 0 80px var(--color-blue-glow-strong);
     }
 }
 
@@ -215,11 +469,7 @@ nav {
     margin-top: var(--spacing-xl);
     font-family: "Jersey 25", sans-serif;
     font-size: 2.5rem;
-    color: var(--color-cherry-red); /* hot red text */
-    text-shadow: 
-        0 0 5px var(--color-cherry-red-glow),
-        0 0 10px var(--color-orange-glow),
-        0 0 15px var(--color-cherry-red-glow-strong);
+    color: var(--color-black);
     position: relative;
     width: 300px;
     height: 60px;
@@ -232,11 +482,6 @@ nav {
     text-align: center;
     animation: slideHat 1.5s ease-in-out;
     white-space: nowrap;
-    color: var(--color-cherry-red);
-    text-shadow: 
-        0 0 3px var(--color-cherry-red-glow),
-        0 0 6px var(--color-orange-glow),
-        0 0 9px var(--color-cherry-red-glow-strong);
 }
 
 @keyframes slideHat {
@@ -264,15 +509,14 @@ nav {
 
 .hero {
     max-width: 1200px;
-    margin: var(--spacing-xs) auto;
-    padding: 0 var(--spacing-xs);
+    margin: var(--spacing-3xl) auto;
+    padding: 0 var(--spacing-xl);
     text-align: center;
 }
 
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: var(--spacing-md);
-    margin-top: var(--spacing-xs);
     font-family: "Jersey 25", sans-serif;
 }
 
@@ -288,62 +532,65 @@ nav {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
-    align-items: flex-start; /* ← Aligns all job titles to the right */
-    width: 60%; /* ← Shortens total width by 40% */
-    margin-right: auto; /* ← Pushes the entire section to the right */
+    align-items: flex-start;
+    width: 100%;
 }
 
 .job-title {
     font-size: 75px;
     font-family: "Jersey 25", sans-serif;
-    color: var(--color-white);
-    font-weight: 600;
+    color: var(--color-black);
+    font-weight: 400;
     line-height: 1.2;
     text-decoration: none;
     display: block;
+    transition: all var(--transition-fast);
     position: relative;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    transition: all var(--transition-fast);
-    background-color: var(--color-black);
-    border: var(--border-extra-thick) solid var(--color-black);
-    box-sizing: border-box;
-    text-align: left; /* ← Ensures text aligns with the right edge */
-    width: 100%; /* ← Uses full available width (50% of container) */
 }
 
 .job-title::before {
     content: '';
     position: absolute;
-    inset: 0;
-    background: transparent;
-    transition: all var(--transition-fast) ease;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-left: var(--border-extra-thick) solid var(--color-black);
+    transition: width var(--transition-fast) ease;
     z-index: -1;
 }
 
 .job-title:hover::before {
+    width: 100%;
+    border: var(--border-extra-thick) solid var(--color-black);
     background: transparent;
+    box-shadow: 0 0 20px var(--color-purple-glow),
+                0 0 40px var(--color-blue-glow),
+                inset 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 .job-title:hover {
     transform: translateX(10px);
-    color: var(--color-cherry-red);
-   /* -webkit-text-stroke: 1px var(--color-black);
-    text-stroke: 1px var(--color-black); */
+    color: var(--color-neon-green);
+    text-shadow: 0 0 10px var(--color-neon-green),
+                 0 0 20px var(--color-neon-green),
+                 0 0 30px var(--color-neon-green);
+    -webkit-text-stroke: 1px var(--color-black);
+    text-stroke: 1px var(--color-black);
 }
 
 .job-title:active {
     transform: translateX(10px) scale(0.98);
 }
 
-/* .job-title:active::before {
-    background: radial-gradient(
-        circle at center,
-        var(--color-white) 0%,
-        var(--color-gray-medium) 50%,
-        var(--color-white) 100%
-    );
-} */
+.job-title:active::before {
+    background: radial-gradient(circle at center, var(--color-white) 0%, var(--color-gray-medium) 50%, var(--color-white) 100%);
+    box-shadow: 0 0 30px var(--color-purple-glow-strong),
+                0 0 60px var(--color-blue-glow-strong),
+                inset 0 0 30px var(--color-pink-glow);
+}
 
 /* ==========================================================================
    Buttons
@@ -388,7 +635,12 @@ nav {
 }
 
 .btn:hover {
-    background: var(--color-cherry-red);
+    background: linear-gradient(135deg, 
+        var(--color-white) 0%, 
+        var(--color-gray-light) 25%, 
+        var(--color-white) 50%, 
+        var(--color-gray-light) 75%, 
+        var(--color-white) 100%);
     box-shadow: 0 0 20px var(--color-purple-glow),
                 0 0 40px var(--color-blue-glow),
                 inset 0 0 20px rgba(255, 255, 255, 0.5);
@@ -521,23 +773,6 @@ nav {
 }
 
 /* ==========================================================================
-   Watermark
-   ========================================================================== */
-
-.watermark {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;  /* Full viewport height */
-  background: url("babyg.svg") no-repeat center center;
-  background-size: contain; /* or 'cover' if you want it to fill */
-  opacity: 0.08; /* Adjust fade strength */
-  pointer-events: none; /* Let clicks pass through */
-  z-index: 0;
-}
-
-/* ==========================================================================
    Footer
    ========================================================================== */
 
@@ -606,13 +841,21 @@ footer {
 }
 
 .social-links a:hover {
-    background: var(--color-cherry-red);
-    box-shadow: 0 0 20px var(--color-cherry-red-glow-strong),
+    background: linear-gradient(135deg, 
+        var(--color-white) 0%, 
+        var(--color-gray-light) 25%, 
+        var(--color-white) 50%, 
+        var(--color-gray-light) 75%, 
+        var(--color-white) 100%);
+    box-shadow: 0 0 20px var(--color-purple-glow),
                 0 0 40px var(--color-blue-glow);
 }
 
 .social-links a:active {
-    background: var (--color-white);
+    background: radial-gradient(circle at center, 
+        var(--color-white) 0%, 
+        var(--color-gray-medium) 50%, 
+        var(--color-white) 100%);
     box-shadow: 0 0 30px var(--color-purple-glow-strong),
                 0 0 60px var(--color-blue-glow-strong);
     transform: scale(0.95);
@@ -1437,7 +1680,6 @@ footer {
     
     h1 {
         font-size: 3.5rem;
-       
     }
 }
 
@@ -1477,12 +1719,6 @@ footer {
     
     h1 {
         font-size: 2.5rem;
-                margin: var(--spacing-2xl) 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    align-items: flex-start;
-    width: 100%;
     }
     
     h2 {
@@ -1502,7 +1738,7 @@ footer {
     }
     
     .job-title {
-        font-size: 125px;
+        font-size: 45px;
         padding: 0.5rem 1rem;
     }
     
@@ -1629,7 +1865,7 @@ footer {
 
 @media (prefers-color-scheme: dark) {
     /* Uncomment to enable dark mode */
-
+    /*
     body {
         background: var(--color-black);
         color: var(--color-white);
@@ -1654,6 +1890,7 @@ footer {
         background: var(--color-white);
         color: var(--color-black);
     }
+    */
 }
 
 /* ==========================================================================
