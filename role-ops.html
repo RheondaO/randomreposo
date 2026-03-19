@@ -15,26 +15,5 @@
 
   <p> Hello World 3.0 </p>
 
-    <script>
-        function switchTab(tabIndex) {
-            // Hide all tab contents
-            const tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(content => {
-                content.style.display = 'none';
-            });
-
-            // Remove active class from all tabs
-            const tabs = document.querySelectorAll('.crm-tab');
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-            });
-
-            // Show selected tab content
-            document.getElementById('tab-' + tabIndex).style.display = 'block';
-
-            // Add active class to selected tab
-            tabs[tabIndex].classList.add('active');
-        }
-    </script>
 </body>
 </html>
