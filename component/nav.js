@@ -6,7 +6,7 @@ export function loadNav() {
   navContainer.innerHTML = `
     <nav>
       <div class="nav-container">
-        <a href="index.html" class="logo">ai portfolio</a>
+        <a href="index.html" class="logo">sales portfolio</a>
         <ul class="nav-links">
           <li><a href="index.html">home</a></li>
           <li><a href="knowledgebase.html">knowledgebase</a></li>
