@@ -1,11 +1,11 @@
 // /component/head.js
 export function loadSharedHead({ title, description }) {
-  document.title = title || "AI Portfolio";
+  document.title = title || "Sales Portfolio";
 
   const headContent = `
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="${description || "AI Portfolio showcasing AI and automation projects."}" />
+    <meta name="description" content="${description || "Sales Portfolio showcasing sales centric automation and sales proficiency ."}" />
     
     <link rel="icon" type="image/png" href="./art/favicon.png" />
     <link rel="stylesheet" href="./art/style.css" />
