@@ -10,9 +10,9 @@ export function loadNav() {
         <ul class="nav-links">
           <li><a href="index.html">home</a></li>
           <li><a href="knowledgebase.html">knowledgebase</a></li>
-          <li><a href="agentlibrary.html">agent library</a></li>
-          <li><a href="thelab.html">the lab</a></li>
-          <li><a href="contact.html">contact</a></li>
+          <!-- <li><a href="agentlibrary.html">agent library</a></li> -->
+          <!-- <li><a href="thelab.html">the lab</a></li> -->
+          <!-- <li><a href="contact.html">contact</a></li> -->
         </ul>
       </div>
     </nav>
