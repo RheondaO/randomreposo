@@ -16,11 +16,11 @@ export function loadSharedHead({ title, description }) {
   document.addEventListener("DOMContentLoaded", async () => {
     const { loadNav } = await import("./nav.js");
     const { loadFooter } = await import("./footer.js");
-    const { loadLoader } = await import("./loader.js");
+   // const { loadLoader } = await import("./loader.js");
 
     
     loadNav();
     loadFooter();
-    loadLoader();
+   // loadLoader();
   });
 }
