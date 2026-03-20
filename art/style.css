@@ -103,8 +103,8 @@ a {
 }
 
 b {
-    background-color: var(--color-cherry-red);
-    font-weight: 300;
+    font-family: "Jersey 25", sans-serif;
+    color: var(--color-black);
 }
 
 /* ==========================================================================
@@ -284,7 +284,15 @@ nav {
 .hero p {
     font-size: 1.3rem;
     margin-bottom: var(--spacing-xl);
-    color: var(--color-gray-dark);
+    color: var(--color-black);
+}
+
+.hero b {
+    font-family: "Jersey 25", sans-serif;
+    background-color: var(--color-cherry-red);
+    color: var(--color-white);
+    padding-top: 0.5rem;
+    padding-bottom: 0.39rem;
 }
 
 /* Job Titles */
