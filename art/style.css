@@ -50,7 +50,7 @@
     /* Transitions */
     --transition-fast: 0.3s;
     --transition-medium: 0.5s;
-    --transition-slow: 1.5s;
+    --transition-slow: 2s;
 }
 
 
@@ -317,7 +317,7 @@ nav {
     position: relative;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: all var(--transition-slow);
     background-color: var(--color-black);
     border: var(--border-extra-thick) solid var(--color-black);
     box-sizing: border-box;
@@ -330,7 +330,7 @@ nav {
     position: absolute;
     inset: 0;
     background: transparent;
-    transition: all var(--transition-fast) ease;
+    transition: all var(--transition-slow) ease;
     z-index: -1;
 }
 
@@ -339,7 +339,7 @@ nav {
 }
 
 .job-title:hover {
-    transform: translateX(10px);
+    transform: translateX(500px);
     color: var(--color-cherry-red);
    /* -webkit-text-stroke: 1px var(--color-black);
     text-stroke: 1px var(--color-black); */
