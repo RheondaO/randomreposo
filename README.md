@@ -24,7 +24,7 @@ Core technical assets hosted solely in this repository
 	- [x] `lead_scoring_logic_v1.md`
 	- [x] `rag_policy_query_logic.md`
 
-- [ ] **Folder** `/docs` contains:
+- [x] **Folder** `/docs` contains:
  	- [x] `Mutual_Action_Plan.pdf`: Professional template for deal management
   	- [x] `RACR_Case_Study.pdf`:  PDF version of your high-impact $273M savings story
 	- [ ] **XYZ**
