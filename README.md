@@ -8,7 +8,7 @@ This checklist, deemed the **GitHub Source of Truth** provides a comprehensive b
 * IV. Other Important Stuff
 * V. Honorable Highlights
 
-## I. Global Repository Assets (*Source of Truth*)
+## I. Global Repository Assets
 
 ### `technical-sales-portfolio-assets`
 Core technical assets hosted solely in this repository
@@ -30,7 +30,7 @@ Core technical assets hosted solely in this repository
 	- [ ] **XYZ**
 	- [ ] **XYZ**
 
-- [ ] **Folder** `/screenshots`:
+- [x] **Folder** `/screenshots`:
 	- [ ] **XYZ**
 	- [ ] **XYZ** 
 	- [ ] **CRM Sandbox Screenshots** of HubSpot automations and lead-routing workflows
