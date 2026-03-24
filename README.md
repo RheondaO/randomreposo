@@ -14,9 +14,9 @@ This checklist, deemed the **GitHub Source of Truth** provides a comprehensive b
 Core technical assets hosted solely in this repository
 
 - [x] **Root README.md** (that's this checklist)
-- [ ] **Folder** `/code` contains:
-	- [ ] `sync_engine.py`: Integration middleware script including modular functions for OAuth2, rate-limiting, and recursive JSON mapping.
- 	- [ ] **Technical Spec/README**: Documentation for the `sync_engine.py` script highlighting the Use Case.
+- [x] **Folder** `/code` contains:
+	- [x] `sync_engine.py`: Integration middleware script including modular functions for OAuth2, rate-limiting, and recursive JSON mapping.
+ 	- [x] **Technical Spec/README**: Documentation for the `sync_engine.py` script highlighting the Use Case.
 - [ ] **Folder** `/prompts` contains the five essential `.md` prompt files:
 	- [ ] `architect_red_team.md`
 	- [ ] `demo_script_personalizer.md`
