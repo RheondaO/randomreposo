@@ -17,16 +17,18 @@ Core technical assets hosted solely in this repository
 - [x] **Folder** `/code` contains:
 	- [x] `sync_engine.py`: Integration middleware script including modular functions for OAuth2, rate-limiting, and recursive JSON mapping.
  	- [x] **Technical Spec/README**: Documentation for the `sync_engine.py` script highlighting the Use Case.
-- [ ] **Folder** `/prompts` contains the five essential `.md` prompt files:
-	- [ ] `architect_red_team.md`
-	- [ ] `demo_script_personalizer.md`
-	- [ ] `roi_calculator_generator.md`
-	- [ ] `lead_scoring_logic_v1.md`
-	- [ ] `rag_policy_query_logic.md`
+- [x] **Folder** `/prompts` contains the five essential `.md` prompt files:
+	- [x] `architect_red_team.md`
+	- [x] `demo_script_personalizer.md`
+	- [x] `roi_calculator_generator.md`
+	- [x] `lead_scoring_logic_v1.md`
+	- [x] `rag_policy_query_logic.md`
 
 - [ ] **Folder** `/docs` contains:
- 	- [ ] `Mutual_Action_Plan.pdf`: Professional template for deal management
-  	- [ ] `RACR_Case_Study.pdf`:  PDF version of your high-impact $273M savings story
+ 	- [x] `Mutual_Action_Plan.pdf`: Professional template for deal management
+  	- [x] `RACR_Case_Study.pdf`:  PDF version of your high-impact $273M savings story
+	- [ ] **XYZ**
+	- [ ] **XYZ**
 
 - [ ] **Folder** `/screenshots`:
 	- [ ] **XYZ**
