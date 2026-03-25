@@ -360,7 +360,9 @@ nav {
 
 .middle {
     margin: 0;
-    padding-left: 3rem;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    justify-items: center;
 }
 
 /* ==========================================================================
