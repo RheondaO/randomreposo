@@ -49,21 +49,21 @@ Each role page follows a standardized 5-section sequence to demonstrate my *Muta
 - [ ] Visual Workflow
 - [ ] AI Strategy Innovation Box
 - [ ] Blog Post
-- [x] Strategy Discovery
+- [x] Strategic Discovery
 
 ### Sales Consultant
 - [ ] Loom Video
 - [ ] Visual Workflow
 - [ ] AI Strategy Innovation Box
 - [ ] Blog Post
-- [x] Strategy Discovery
+- [x] Strategic Discovery
 
 ### SalesOps Engineer
 - [ ] Loom Video
 - [ ] Visual Workflow
 - [ ] AI Strategy Innovation Box
 - [ ] Blog Post
-- [x] Strategy Discovery
+- [x] Strategic Discovery
 
 ## III. The Knowledgebase
 Centralized section `knowledgebase.html` for a quick referenece in a How-To beginner-friendly format
