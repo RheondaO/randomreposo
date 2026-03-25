@@ -34,13 +34,25 @@
         
         <h4>Why 'Off-the-Shelf' Doesn't Always Cut IT: Why Big Companies Need Custom Integration Bridges.</h4>
         
-        <h3><b>Strategic Inquiry</b></h3>
-        <p><ul>
-            <li>Architecture Diagrams: Visual representations of how you’ve integrated AI or Automation tools into existing legacy infrastructures.</li>
-            <li>Proof of Value (POV) Tracker: A redacted template or case study showing how you define technical success criteria with a prospect.</li>
-            <li>The "Tech Stack" Ribbon: A focus on APIs, Webhooks, Python/Javascript snippets, and Security/Data Privacy (SOC2/GDPR) expertise.</li>
-            <li>Documentation Samples: Examples of "Implementation Guides" or technical FAQs you’ve authored to bridge the gap between sales and engineering.</li>
-        </ul></p>
+        <h3><b>Strategic Discovery (What we call 'Requirement Elicitation' & 'Scoping' where I come from)</b></h3>
+        <p>These questions were synthesized using AI to ensure they align with Challenger and Command of the Message sales methodologies. I use AI to simulate stakeholder pushback, allowing me to refine the discovery, and present an acute and outcome-oriented approach.
+        </p>
+        <p><ol>
+            <li>If we successfully automate this data sync via the Python middleware, what 'fail-safe' or circuit-breaker protocols does your team require to maintain data integrity during a third-party service outage?
+            </li>
+            <li>Beyond standard OAuth2, are there specific encryption-at-rest requirements for PII data as it moves through this transformation layer before hitting the production CRM?
+            </li>
+            <li>How does your current infrastructure handle API rate-limiting? Are we at risk of hitting thresholds that would delay real-time lead intelligence for the sales team?
+            </li>
+            <li>What is the internal 'Standard of Truth' for data conflicts? If the niche directory and the CRM have differing values for the same record, which system should the middleware prioritize?
+            </li>
+            <li>From a maintenance perspective, who on your engineering team will own the API keys and rotating secrets, and how do we integrate that into your existing CI/CD pipeline?
+            </li>
+            <li>How will your team audit the logs from this middleware? Do we need to push error logs to a centralized tool like Splunk or Datadog?
+            </li>
+            <li>If this integration scales from 1,000 to 100,000 records per month, what is the biggest infrastructure bottleneck you anticipate within your current HubSpot environment?
+            </li>
+        </ol></p>
 </section>
   </main>
   
