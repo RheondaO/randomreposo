@@ -405,6 +405,12 @@ nav {
     padding: 2.5rem;
 }
 
+.innovation-box a {
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 
 /* ==========================================================================
    Buttons
