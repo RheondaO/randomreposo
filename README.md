@@ -60,7 +60,7 @@ Each role page follows a standardized 5-section sequence to demonstrate my *Muta
 
 ### SalesOps Engineer
 - [ ] Loom Video
-- [ ] Visual Workflow
+- [x] Visual Workflow
 - [ ] AI Strategy Innovation Box
 - [ ] Blog Post
 - [x] Strategic Discovery
