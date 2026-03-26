@@ -29,7 +29,7 @@ The calculated probability of closing a deal, used to prioritize opportunities a
 
 
 ------------
-**Viewing:** `lead_scoring_logic_v1.md`
+**Viewing:** `lead_scoring_logic_v1.md` directly from [GitHub](https://github.com/RheondaO/randomreposo/blob/main/prompts/lead_scoring_logic_v1.md#the-prompt)
 
 
 
