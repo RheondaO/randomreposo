@@ -8,6 +8,7 @@
                 description: "Welcome to Rheonda’s Sales Portfolio."
             });
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
     </head>
     <body>
         <header id="nav"></header>
@@ -30,9 +31,29 @@
                 <h3><b>AI Strategy: Demo Script Personalizer</b></h3>
                 <p><b>This tool employs contextual data mapping to transform a prospect's raw 10-K risk factors into tailored "Feature -> Benefit -> Value" demo talk tracks. By automating the personalization of the narrative, it ensures the technical demonstration speaks the unique business language of the stakeholder.
                 </b></p>
-                <code>Innovation Box:
-                    XYZ
-                </code>
+                
+                <div class="innovation-box">
+        
+                        <div id="content">Loading content...</div>
+
+                        <script>
+                            const mdUrl = 'https://raw.githubusercontent.com/RheondaO/randomreposo/refs/heads/main/prompts/lead_scoring_logic_v1.md';
+
+                            async function loadMarkdown() {
+                                try {
+                                    const response = await fetch(mdUrl);
+                                    const text = await response.text();
+                                    // Convert Markdown to HTML and inject it
+                                    document.getElementById('content').innerHTML = marked.parse(text);
+                                } catch (error) {
+                                    console.error('Error fetching markdown:', error);
+                                    document.getElementById('content').innerHTML = 'Failed to load content.';
+                                }
+                            }
+
+                            loadMarkdown();
+                        </script>
+                </div>
                 
                 <h4>Demos Are Cool, But Stories Sell: How I Turned ServiceNow Logic Into Real Value for Leaders.</h4>
                 
