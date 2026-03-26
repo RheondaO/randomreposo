@@ -8,6 +8,7 @@
                 description: "Welcome to Rheonda’s Sales Portfolio."
             });
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
     </head>
     <body>
         <header id="nav"></header>
@@ -31,9 +32,35 @@
                 <h3><b>AI Strategy: Lead Scoring Algorithm & Logic</b></h3>
                 <p><b>This algorithm applies a multi-dimensional "Winnability" filter to public technographic data and 10-K reports to automatically score and prioritize inbound leads. This logic streamlines the sales engine by ensuring limited engineering resources are focused on opportunities with the highest probability of closing.
                 </b></p>
+                
+                
                 <code>Innovation Box:
                     XYZ
                 </code>
+                
+                <div class="innovation-box">
+        
+                        <div id="content">Loading content...</div>
+
+                        <script>
+                            const mdUrl = 'https://github.com/RheondaO/randomreposo/blob/bff9446e65c071d0da7bc6af2af1b0abfb6f0ed4/prompts/lead_scoring_logic_v1.md';
+                            
+                            async function loadMarkdown() {
+                                try {
+                                    const response = await fetch(mdUrl);
+                                    const text = await response.text();
+                                    // Convert Markdown to HTML and inject it
+                                    document.getElementById('content').innerHTML = marked.parse(text);
+                                } catch (error) {
+                                    console.error('Error fetching markdown:', error);
+                                    document.getElementById('content').innerHTML = 'Failed to load content.';
+                                }
+                            }
+                            
+                            loadMarkdown();
+                        </script>
+                </div>
+                </div>
                 
                 <h4>RevOps Is Just Engineering for Sales: Why Clean Data Is The Secret to Scaling Up.</h4>
                 
