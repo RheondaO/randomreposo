@@ -307,15 +307,15 @@ nav {
 }
 
 .job-title {
-    font-size: 75px;
+    font-size: 98px;
     font-family: "Jersey 25", sans-serif;
     color: var(--color-white);
-    font-weight: 600;
+    font-weight: 600px;
     line-height: 1.2;
     text-decoration: none;
     display: block;
     position: relative;
-    padding: 0.5rem 1rem;
+    padding: 4rem 1rem;
     cursor: pointer;
     transition: all var(--transition-slow);
     background-color: var(--color-black);
