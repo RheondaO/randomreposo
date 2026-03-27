@@ -358,13 +358,15 @@ nav {
     );
 } */
 
-.middle h1 h2 h3 h4 {
+.middle h1 h2 h3 h4 ol li{
     justify-items: center;
 }
 
 .middle {
-    margin-left: 15rem;
-    margin-right: 15rem;
+    max-width: 1111px;
+    margin: var(--spacing-xs) auto;
+    padding: 3rem;
+    
 }
 
 /* ==========================================================================
