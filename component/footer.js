@@ -7,9 +7,9 @@ export function loadFooter() {
   <div class="help-container">
     <div class="help-tooltip"> 
   <h4>Manifestation Targets <br>in Annual Income (Post-Tax): </h4>
-  <br><b>$333,888
+  <br><p><b>$333,888
   <br> $266,112
-  <br> $198,336</b>
+  <br> $198,336</p></b>
   <br><br><i>Gold Star if we define what that requires transparently.</i>
   <br>You can email me at <a href="mailto:rheondadotogletree@outlook.com">rheondadotogletree@outlook.com</a>
   </div>
