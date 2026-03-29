@@ -166,11 +166,12 @@ nav {
   position: absolute;
   top: 120%; /* Pops below the nav item */
   left: 50%;
+  width: max-content;
   transform: translateX(-50%) translateY(-10px);
   background: none;
   color: var(--color-black);
-  padding: 5px 10px;
-  font-size: 12px;
+  padding: 1px 2px;
+  font-size: 15px;
   border-radius: 5px;
   visibility: hidden;
   opacity: 0;
