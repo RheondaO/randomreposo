@@ -6,11 +6,12 @@ export function loadFooter() {
   footerContainer.innerHTML = `
   <div class="help-container">
     <div class="help-tooltip"> 
-  Manifestation Targets <br>(in $annual_income):
-  <br> $333,888
+  <h4>Manifestation Targets</h4><br>(in $AnnualIncome (Post-Tax)):
+  <br><b>$333,888
   <br> $266,112
-  <br> $198,336
+  <br> $198,336</b>
   <br><br>Gold Star if we define what that requires fully.
+  <br><a href="mailto:rheondadotogletree@outlook.com">rheondadotogletree@outlook.com</a>
   </div>
     <div class="help-button">?</div>
   </div>
