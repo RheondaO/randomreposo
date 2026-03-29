@@ -5,7 +5,12 @@ export function loadFooter() {
 
   footerContainer.innerHTML = `
   <div class="help-container">
-    <div class="help-tooltip">Not seeing a role? If it's Solutions Architect...!</div>
+    <div class="help-tooltip">We can also make a new role! I've done that a few times. emailto:rheondao@gmail.com
+  <br> Manifestation Targets:
+  <br> $333,888
+  <br> $266,112
+  <br> $198,336
+  <br><br>Gold Star if we define what that requires fully.
     <div class="help-button">?</div>
   </div>
     <div class="footer-content">
