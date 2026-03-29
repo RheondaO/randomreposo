@@ -4,6 +4,10 @@ export function loadFooter() {
   if (!footerContainer) return;
 
   footerContainer.innerHTML = `
+  <div class="help-container">
+    <div class="help-tooltip">Not seeing a role? If it's Solutions Architect...!</div>
+    <div class="help-button">?</div>
+  </div>
     <div class="footer-content">
       <p><i>This portfolio is a product of AI-Human collaboration, showcasing the ability to manage and lead AI tools for higher technical output.</i></p>
       <p>&copy; 2026 Property of Rheonda Dorothy Ogletree. Built with Transparency. All rights reserved.</p>
