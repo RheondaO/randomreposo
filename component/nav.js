@@ -9,7 +9,7 @@ export function loadNav() {
         <a href="index.html" class="logo">sales portfolio</a>
         <ul class="nav-links">
           <li><a href="index.html">home</a></li>
-          <li><a  href"knowledgebase.html#welcome">meet the admin</a></li>
+          <li><a href"knowledgebase.html#welcome">meet the admin</a></li>
           <li><a href="knowledgebase.html">knowledgebase</a></li>
           <!-- <li><a href="agentlibrary.html">agent library</a></li> -->
           <!-- <li><a href="thelab.html">the lab</a></li> -->
