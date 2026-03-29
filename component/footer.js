@@ -13,6 +13,7 @@ export function loadFooter() {
   <br><br>Gold Star if we define what that requires fully.
     <div class="help-button">?</div>
   </div>
+  </div>
     <div class="footer-content">
       <p><i>This portfolio is a product of AI-Human collaboration, showcasing the ability to manage and lead AI tools for higher technical output.</i></p>
       <p>&copy; 2026 Property of Rheonda Dorothy Ogletree. Built with Transparency. All rights reserved.</p>
