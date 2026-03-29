@@ -162,7 +162,7 @@ nav {
   top: 79%; /* Pops below the nav item */
   left: 80%;
   transform: translateX(-100%) translateY(-10px);
-  background: none
+  background: none;
   color: var(--color-black);
   padding: 4px 8px;
   font-size: 12px;
