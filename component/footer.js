@@ -5,8 +5,8 @@ export function loadFooter() {
 
   footerContainer.innerHTML = `
   <div class="help-container">
-    <div class="help-tooltip">We can also make a new role! I've done that a few times. emailto:rheondao@gmail.com
-  <br> Manifestation Targets:
+    <div class="help-tooltip"> 
+  Manifestation Targets:
   <br> $333,888
   <br> $266,112
   <br> $198,336
