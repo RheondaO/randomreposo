@@ -157,26 +157,31 @@ nav {
    Navigation Pop Up
    ========================================================================== */
 
-.nav-tooltip {
-  position: absolute;
-  top: 79%; /* Pops below the nav item */
-  left: 80%;
-  transform: translateX(-100%) translateY(-10px);
-  background: none;
-  color: var(--color-black);
-  padding: 4px 8px;
-  font-size: 12px;
-  border-radius: 4px;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.2s ease;
+.nav-links li.nav-item {
+  position: relative;
+  display: inline-block; /* Keeps them side-by-side */
 }
 
-.nav-tooltip:hover {
+.nav-tooltip {
+  position: absolute;
+  top: 120%; /* Pops below the nav item */
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: none;
+  color: var(--color-black);
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.nav-item:hover .nav-tooltip {
   visibility: visible;
   opacity: 1;
-  transform: translateX(-100%) translateY(-10px);
-  color: var(--color-black);
+  transform: translateX(-50%) translateY(0);
 }
 
 .disabled {
