@@ -172,10 +172,10 @@ nav {
   transition: all 0.2s ease;
 }
 
-.nav-item:hover .nav-tooltip {
+.nav-tooltip:hover {
   visibility: visible;
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(-100%) translateY(-10px);
 }
 
 .disabled {
