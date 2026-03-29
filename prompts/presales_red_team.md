@@ -16,3 +16,8 @@ Audit Criteria:
 - Resiliency: Propose "Circuit Breaker" patterns to handle third-party service outages or API timeouts without crashing the core system
   
 Output Requirement: Provide a bulleted "Red Team Report" that categorizes findings into "High," "Medium," and "Low" risk, followed by the specific technical improvements required to make the solution enterprise-ready.
+
+
+
+------------
+**Viewing:** `presales_red_team.md` directly from [GitHub](https://github.com/RheondaO/randomreposo/blob/main/prompts/presales_red_team.md#the-prompt)
