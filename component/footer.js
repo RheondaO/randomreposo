@@ -6,7 +6,7 @@ export function loadFooter() {
   footerContainer.innerHTML = `
   <div class="help-container">
     <div class="help-tooltip"> 
-  <h4>Manifestation Targets</h4><br>(in $AnnualIncome (Post-Tax)):
+  <h4>Manifestation Targets <br>in Annual Income (Post-Tax): </h4>
   <br><b>$333,888
   <br> $266,112
   <br> $198,336</b>
