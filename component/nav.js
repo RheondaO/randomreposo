@@ -19,6 +19,7 @@ export function loadNav() {
           <!-- <li><a href="contact.html">contact</a></li> -->
         </ul>
   </div>
+      </div>
     </nav>
   `;
 }
