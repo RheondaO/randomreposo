@@ -9,7 +9,6 @@ export function loadNav() {
         <a href="index.html" class="logo">sales portfolio</a>    
   <ul class="nav-links">
           <li><a href="index.html">home</a></li>
-  
         <li><a href="#" class="disabled">meet the admin</a>
         <span class="nav-tooltip">coming soon <3</span></li>
           <li><a href="#" class="disabled">knowledgebase</a>
