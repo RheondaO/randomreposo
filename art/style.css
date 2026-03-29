@@ -176,6 +176,7 @@ nav {
   visibility: visible;
   opacity: 1;
   transform: translateX(-100%) translateY(-10px);
+  color: var(--color-black);
 }
 
 .disabled {
