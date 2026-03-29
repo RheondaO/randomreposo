@@ -17,7 +17,7 @@ export function loadFooter() {
   </div>
     <div class="footer-content">
       <p><i>This portfolio is a product of AI-Human collaboration, showcasing the ability to manage and lead AI tools for higher technical output.</i></p>
-      <p>&copy; 2026 Property of Rheonda Dorothy Ogletree. Built with Transparency. All rights reserved.</p>
+      <p>&copy; 2026 Property of Rheonda Dorothy Ogletree. Built with Transparency. BizTech-Jargon-Friendly. All rights reserved.</p>
       <div class="social-links">
         <a href="https://github.com/RheondaO/randomreposo">Git</a>
         <a href="https://breathinganomalypseudonym.substack.com/">Sub</a>
