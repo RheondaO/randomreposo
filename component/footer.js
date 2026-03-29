@@ -11,6 +11,7 @@ export function loadFooter() {
   <br> $266,112
   <br> $198,336
   <br><br>Gold Star if we define what that requires fully.
+  </div>
     <div class="help-button">?</div>
   </div>
     <div class="footer-content">
@@ -22,6 +23,5 @@ export function loadFooter() {
         <a href="https://www.linkedin.com/in/rheondadogletree">Li</a>
       </div>
     </div>
-  </div>
   `;
 }
