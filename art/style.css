@@ -171,7 +171,7 @@ nav {
   background: none;
   color: var(--color-black);
   padding: 1px 2px;
-  font-size: 15px;
+  font-size: 22px;
   border-radius: 5px;
   visibility: hidden;
   opacity: 0;
@@ -225,10 +225,11 @@ nav {
   position: absolute;
   bottom: 60px;
   right: 0;
-  background-color: none;
+  background-color: whitesmoke;
+  font-size: 22px;
   color: var(--color-black);
   padding: 8px 12px;
-  border-radius: 8px;
+  border-radius: 20px;
   white-space: nowrap;
   visibility: hidden;
   opacity: 0;
@@ -240,6 +241,7 @@ nav {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
+  border-width: 2px;
 }
 
 /* ==========================================================================
