@@ -159,11 +159,11 @@ nav {
 
 .nav-tooltip {
   position: absolute;
-  top: 110%; /* Pops below the nav item */
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px);
-  background: #ff4757;
-  color: white;
+  top: 79%; /* Pops below the nav item */
+  left: 80%;
+  transform: translateX(-100%) translateY(-10px);
+  background: none
+  color: var(--color-black);
   padding: 4px 8px;
   font-size: 12px;
   border-radius: 4px;
