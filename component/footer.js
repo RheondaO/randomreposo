@@ -6,7 +6,7 @@ export function loadFooter() {
   footerContainer.innerHTML = `
   <div class="help-container">
     <div class="help-tooltip"> 
-  Manifestation Targets:
+  Manifestation Targets <br>(in $annual_income):
   <br> $333,888
   <br> $266,112
   <br> $198,336
