@@ -19,10 +19,10 @@ Core technical assets hosted solely in this repository
  	- [x] **Technical Spec/README**: Documentation for the `sync_engine.py` script highlighting the Use Case.
 - [x] **Folder** `/prompts` contains the five essential `.md` prompt files:
 	- [x] `architect_red_team.md`
-	- [x] `demo_script_personalizer.md`
-	- [x] `roi_calculator_generator.md`
+	- [x] `presales_red_team.md`
+	- [ ] `roi_calculator_generator.md`
 	- [x] `lead_scoring_logic_v1.md`
-	- [x] `rag_policy_query_logic.md`
+	- [ ] `rag_policy_query_logic.md`
 
 - [x] **Folder** `/docs` contains:
  	- [x] `Mutual_Action_Plan.pdf`: Professional template for deal management
@@ -44,11 +44,11 @@ Each role page follows a standardized 5-section sequence to demonstrate my *Muta
 - [ ] Blog Post
 - [x] Strategic Discovery
 
-### Sales Engineer
+### Presales Engineer
 - [ ] Loom Video
-- [ ] Visual Workflow
-- [ ] AI Strategy Innovation Box
-- [ ] Blog Post
+- [x] Visual Workflow
+- [x] AI Strategy Innovation Box
+- [x] Blog Post
 - [x] Strategic Discovery
 
 ### Sales Consultant
