@@ -16,9 +16,9 @@ Core technical assets hosted solely in this repository
 - [x] **Root README.md** (that's this checklist)
 - [x] **Folder** `/code` contains:
 	- [x] `sync_engine.py`: Integration middleware script including modular functions for OAuth2, rate-limiting, and recursive JSON mapping.
- 	- [x] **Technical Spec/README**: Documentation for the `sync_engine.py` script highlighting the Use Case.
+ 	- [ ] **Technical Spec/README**: Documentation for the `sync_engine.py` script highlighting the Use Case.
 - [x] **Folder** `/prompts` contains the five essential `.md` prompt files:
-	- [x] `architect_red_team.md`
+	- [ ] `architect_red_team.md`
 	- [x] `presales_red_team.md`
 	- [ ] `roi_calculator_generator.md`
 	- [x] `lead_scoring_logic_v1.md`
@@ -26,7 +26,7 @@ Core technical assets hosted solely in this repository
 
 - [x] **Folder** `/docs` contains:
  	- [x] `Mutual_Action_Plan.pdf`: Professional template for deal management
-  	- [x] `RACR_Case_Study.pdf`:  PDF version of your high-impact $273M savings story
+  	- [ ] `RACR_Case_Study.pdf`:  PDF version of your high-impact $273M savings story
 	- [ ] **XYZ**
 	- [ ] **XYZ**
 
@@ -61,8 +61,8 @@ Each role page follows a standardized 5-section sequence to demonstrate my *Muta
 ### SalesOps Engineer
 - [ ] Loom Video
 - [x] Visual Workflow
-- [ ] AI Strategy Innovation Box
-- [ ] Blog Post
+- [x] AI Strategy Innovation Box
+- [ ] Documents
 - [x] Strategic Discovery
 
 ## III. The Knowledgebase
@@ -72,11 +72,11 @@ Centralized section `knowledgebase.html` for a quick referenece in a How-To begi
 - [ ] **XYZ**
 - [ ] **XYZ**
 - [ ] **XYZ**
+- [ ] Tool Inventory
 
 ## IV. Other Important Stuff
 - [x] Global AI Disclosure Footer
-- [ ] Tool Inventory
-- [ ] Navigation Check
+- [x] Navigation Check
 - [ ] Mobile-Friendliness
 
 ## V. Honorable Highlights
@@ -99,7 +99,7 @@ Centralized section `knowledgebase.html` for a quick referenece in a How-To begi
 - [ ] Rapid Debugging & Root Cause Analysis (RCA)
 - [ ] Multi-Stakeholder Documenetation Synthesis
 
-### Advanced Technical Annotatiions for Visuals (most valuable for Solutions Engineer roles)
+### Advanced Technical Annotatiions for Visuals (for Solutions Engineer roles)
 - [ ] Protocol Labels
 - [ ] Hosting Environments
 - [ ] Reliablity Logic: explicitly mapping out the *Data Validation Loop* and *Error Handling Logic*
