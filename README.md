@@ -25,10 +25,12 @@ Core technical assets hosted solely in this repository
 	- [ ] `rag_policy_query_logic.md`
 
 - [x] **Folder** `/docs` contains:
- 	- [x] `Mutual_Action_Plan.pdf`: Professional template for deal management
-  	- [ ] `RACR_Case_Study.pdf`:  PDF version of your high-impact $273M savings story
-	- [ ] **XYZ**
-	- [ ] **XYZ**
+- [x] `Mutual_Action_Plan.pdf`: Professional template for deal management
+- [ ] `Solution_Design_Document.pdf` used to align IT, Security and Finance
+- [ ] `Success_Criteria.pdf`: Success Criteria Template
+- [ ] `Sales_to_Success.pdf`: Postsales Handoff Document
+- [ ] `Technical_Validation_Report.pdf` Master Document (Includes Everything)
+- [ ] `RACR_Case_Study.pdf`:  High-Impact $273M Savings Storytime
 
 - [x] **Folder** `/screenshots`:
 	- [ ] **XYZ**
