@@ -322,7 +322,7 @@ nav {
         0 0 10px var(--color-orange-glow),
         0 0 15px var(--color-cherry-red-glow-strong);
     position: relative;
-    width: 300px;
+    width: 500px;
     height: 60px;
     overflow: hidden;
 }
