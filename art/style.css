@@ -171,7 +171,7 @@ nav {
   background: none;
   color: var(--color-black);
   padding: 1px 2px;
-  font-size: 22px;
+  font-size: 18px;
   border-radius: 5px;
   visibility: hidden;
   opacity: 0;
@@ -493,6 +493,19 @@ nav {
     padding: 0;
     margin: 0;
 }
+
+/* ==========================================================================
+   Kpis
+   ========================================================================== */
+
+.kpis iframe{
+
+   width: 800px;
+   max-width: 800px;
+   
+}
+
+
 
 /* ==========================================================================
    Innovation Box

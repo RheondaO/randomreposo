@@ -16,19 +16,21 @@ Core technical assets hosted solely in this repository
 - [x] **Root README.md** (that's this checklist)
 - [x] **Folder** `/code` contains:
 	- [x] `sync_engine.py`: Integration middleware script including modular functions for OAuth2, rate-limiting, and recursive JSON mapping.
- 	- [x] **Technical Spec/README**: Documentation for the `sync_engine.py` script highlighting the Use Case.
+ 	- [ ] **Technical Spec/README**: Documentation for the `sync_engine.py` script highlighting the Use Case.
 - [x] **Folder** `/prompts` contains the five essential `.md` prompt files:
-	- [x] `architect_red_team.md`
-	- [x] `demo_script_personalizer.md`
-	- [x] `roi_calculator_generator.md`
+	- [ ] `architect_red_team.md`
+	- [x] `presales_red_team.md`
+	- [ ] `roi_calculator_generator.md`
 	- [x] `lead_scoring_logic_v1.md`
-	- [x] `rag_policy_query_logic.md`
+	- [ ] `rag_policy_query_logic.md`
 
 - [x] **Folder** `/docs` contains:
- 	- [x] `Mutual_Action_Plan.pdf`: Professional template for deal management
-  	- [x] `RACR_Case_Study.pdf`:  PDF version of your high-impact $273M savings story
-	- [ ] **XYZ**
-	- [ ] **XYZ**
+- [x] `Mutual_Action_Plan.pdf`: Professional template for deal management
+- [ ] `Solution_Design_Document.pdf` used to align IT, Security and Finance
+- [ ] `Success_Criteria.pdf`: Success Criteria Template
+- [ ] `Sales_to_Success.pdf`: Postsales Handoff Document
+- [ ] `Technical_Validation_Report.pdf` Master Document (Includes Everything)
+- [ ] `RACR_Case_Study.pdf`:  High-Impact $273M Savings Storytime
 
 - [x] **Folder** `/screenshots`:
 	- [ ] **XYZ**
@@ -44,11 +46,11 @@ Each role page follows a standardized 5-section sequence to demonstrate my *Muta
 - [ ] Blog Post
 - [x] Strategic Discovery
 
-### Sales Engineer
+### Presales Engineer
 - [ ] Loom Video
-- [ ] Visual Workflow
-- [ ] AI Strategy Innovation Box
-- [ ] Blog Post
+- [x] Visual Workflow
+- [x] AI Strategy Innovation Box
+- [x] Blog Post
 - [x] Strategic Discovery
 
 ### Sales Consultant
@@ -61,8 +63,8 @@ Each role page follows a standardized 5-section sequence to demonstrate my *Muta
 ### SalesOps Engineer
 - [ ] Loom Video
 - [x] Visual Workflow
-- [ ] AI Strategy Innovation Box
-- [ ] Blog Post
+- [x] AI Strategy Innovation Box
+- [ ] Documents
 - [x] Strategic Discovery
 
 ## III. The Knowledgebase
@@ -72,11 +74,11 @@ Centralized section `knowledgebase.html` for a quick referenece in a How-To begi
 - [ ] **XYZ**
 - [ ] **XYZ**
 - [ ] **XYZ**
+- [ ] Tool Inventory
 
 ## IV. Other Important Stuff
 - [x] Global AI Disclosure Footer
-- [ ] Tool Inventory
-- [ ] Navigation Check
+- [x] Navigation Check
 - [ ] Mobile-Friendliness
 
 ## V. Honorable Highlights
@@ -99,7 +101,7 @@ Centralized section `knowledgebase.html` for a quick referenece in a How-To begi
 - [ ] Rapid Debugging & Root Cause Analysis (RCA)
 - [ ] Multi-Stakeholder Documenetation Synthesis
 
-### Advanced Technical Annotatiions for Visuals (most valuable for Solutions Engineer roles)
+### Advanced Technical Annotatiions for Visuals (for Solutions Engineer roles)
 - [ ] Protocol Labels
 - [ ] Hosting Environments
 - [ ] Reliablity Logic: explicitly mapping out the *Data Validation Loop* and *Error Handling Logic*
