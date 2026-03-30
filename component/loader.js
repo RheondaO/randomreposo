@@ -43,7 +43,7 @@ class SiteLoader extends HTMLElement {
         }, 1500);
 
         currentHatIndex++;
-        setTimeout(showNextHat, 1500);
+        setTimeout(showNextHat, 1700);
       } else {
         // Fade out loader
         loadingScreen.style.transition = "opacity 1s ease";
