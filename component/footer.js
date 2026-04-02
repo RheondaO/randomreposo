@@ -22,6 +22,7 @@ export function loadFooter() {
         <a href="https://github.com/RheondaO/randomreposo">Git</a>
         <a href="https://breathinganomalypseudonym.substack.com/">Sub</a>
         <a href="https://www.linkedin.com/in/rheondadogletree">Li</a>
+        <a href"https://na2.hubs.ly/H04Fmwl0">Rés</a>
       </div>
     </div>
   `;
