@@ -411,7 +411,7 @@ nav {
     text-decoration: none;
     display: block;
     position: relative;
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
     cursor: pointer;
     transition: all var(--transition-slow);
     background-color: var(--color-black);
