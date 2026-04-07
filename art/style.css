@@ -497,7 +497,7 @@ nav {
     background: transparent;
     transition: all var(--transition-slow) ease;
     z-index: -1;
-    color: var(--color-white);
+    color: var(--color-black);
 }
 
 .job-title:hover::before {
