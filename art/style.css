@@ -458,7 +458,7 @@ nav {
 }
 
 .disabled-title:hover {
-    transform: translateX(500px);
+    transform: translateX(100px);
     color: var(--color-cherry-red);
    /* -webkit-text-stroke: 1px var(--color-black);
     text-stroke: 1px var(--color-black); */
