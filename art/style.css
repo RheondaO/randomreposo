@@ -429,6 +429,7 @@ nav {
 
    width: 100%;
    color: var(--color-black);
+   
 }
 
 .title-tooltip {
@@ -452,8 +453,8 @@ nav {
    
 }
 
- /*.disabled-title:hover::before {
-    background: transparent; */
+ .disabled-title:hover::before {
+    background: transparent;
 }
 
 .disabled-title:hover {
