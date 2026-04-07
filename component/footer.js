@@ -19,10 +19,10 @@ export function loadFooter() {
       <p><i>This portfolio is a product of AI-Human collaboration, showcasing the ability to manage and lead AI tools for higher technical output.</i></p>
       <p>&copy; 2026 Property of Rheonda Dorothy Ogletree. Built with Transparency. BizTech-Jargon-Friendly. All rights reserved.</p>
       <div class="social-links">
-        <a href="https://github.com/RheondaO/randomreposo">Git</a>
-        <a href="https://breathinganomalypseudonym.substack.com/">Sub</a>
-        <a href="https://www.linkedin.com/in/rheondadogletree">Li</a>
-        <a href="https://na2.hubs.ly/H04FmLg0">Rés</a>
+        <a href="https://github.com/RheondaO/randomreposo" target="_blank" rel="noopener noreferrer">Git</a>
+        <a href="https://breathinganomalypseudonym.substack.com/" target="_blank" rel="noopener noreferrer">Sub</a>
+        <a href="https://www.linkedin.com/in/rheondadogletree" target="_blank" rel="noopener noreferrer">Li</a>
+        <a href="https://na2.hubs.ly/H04FmLg0" target="_blank" rel="noopener noreferrer">Rés</a>
       </div>
     </div>
   `;
