@@ -431,7 +431,6 @@ nav {
     display: block;
     position: relative;
     padding: 2rem 1rem;
-    cursor: pointer;
     /* transition: all var(--transition-slow); */
     background-color: var(--color-black);
     border: var(--border-extra-thick) solid var(--color-black);
@@ -439,6 +438,61 @@ nav {
     text-align: left; /* ← Ensures text aligns with the right edge */
     width: 100%; /* ← Uses full available width (50% of container) */
 }
+
+.title-tooltip {
+  position: absolute;
+  top: 120%; /* Pops below the nav item */
+  left: 50%;
+  width: max-content;
+  transform: translateX(-50%) translateY(-10px);
+  background: none;
+  color: var(--color-black);
+  padding: 1px 2px;
+  font-size: 18px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.disabled-title::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    transition: all var(--transition-slow) ease;
+    z-index: -1;
+    color: var(--color-white);
+}
+
+.disabled-title:hover::before {
+    background: transparent;
+}
+
+.disabled-title:hover {
+    transform: translateX(500px);
+    color: var(--color-cherry-red);
+   /* -webkit-text-stroke: 1px var(--color-black);
+    text-stroke: 1px var(--color-black); */
+}
+
+.disabled-title:active {
+    transform: translateX(10px) scale(0.98);
+}
+
+.nav-item:hover .nav-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.disabled {
+  color: #888;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
 
 .job-title::before {
     content: '';
