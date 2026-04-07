@@ -7,6 +7,10 @@
    Base Styles & Reset
    ========================================================================== */
 
+html {
+background-color: var(--color-white: #ffffff;)
+}
+
 * {
     margin: 0;
     padding: 0;
