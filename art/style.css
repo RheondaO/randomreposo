@@ -494,7 +494,7 @@ nav {
 .disabled-title:hover .title-tooltip {
   visibility: visible;
   opacity: 1;
-  transform: translateY(-50%) translateX(105%);
+  transform: translateY(-48%) translateX(10%);
 }
 
 /* ==========================================================================
