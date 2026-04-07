@@ -428,9 +428,24 @@ nav {
    ========================================================================== */
 
 .disabled-title {
-
-   width: 100%;
-   color: var(--color-black);
+    font-size: 89px;
+    font-family: "Jersey 25", sans-serif;
+    color: var(--color-black);
+    font-weight: 600px;
+    line-height: 1.2;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    z-index: 2;
+    padding: 2rem 1rem;
+    cursor: pointer;
+    transition: all var(--transition-slow);
+    background-color: var(--color-black);
+    border: var(--border-extra-thick) solid var(--color-black);
+    box-sizing: border-box;
+    text-align: left; /* ← Ensures text aligns with the right edge */
+    width: 100%; /* ← Uses full available width (50% of container) */
+    overflow: visible;
    
 }
 
