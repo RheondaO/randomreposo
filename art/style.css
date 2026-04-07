@@ -487,7 +487,7 @@ nav {
     transform: translateX(10px) scale(0.98);
 }
 
-.job-title:hover .title-tooltip {
+.disabled-title:hover .title-tooltip {
   visibility: visible;
   opacity: 1;
   transform: translateY(-50%) translateX(105%);
