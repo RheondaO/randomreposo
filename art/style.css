@@ -450,7 +450,7 @@ nav {
 }
 
 .disabled-title::before {
-   
+   color: var(--color-black);
 }
 
  .disabled-title:hover::before {
