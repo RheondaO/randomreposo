@@ -468,15 +468,15 @@ nav {
     transform: translateX(10px) scale(0.98);
 }
 
-/* ==========================================================================
-  Active Job Titles
-   ========================================================================== */
-
-.job-titles:hover .title-tooltip {
+.job-title:hover .title-tooltip {
   visibility: visible;
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+
+/* ==========================================================================
+  Active Job Titles
+   ========================================================================== */
 
 .nav-item:hover .nav-tooltip {
   visibility: visible;
