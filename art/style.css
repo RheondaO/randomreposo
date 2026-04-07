@@ -457,8 +457,8 @@ nav {
     color: var(--color-white);
 }
 
-.disabled-title:hover::before {
-    background: transparent;
+ /*.disabled-title:hover::before {
+    background: transparent; */
 }
 
 .disabled-title:hover {
