@@ -448,13 +448,7 @@ nav {
 }
 
 .disabled-title::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: transparent;
-    transition: all var(--transition-slow) ease;
-    z-index: -1;
-    color: var(--color-white);
+   
 }
 
  /*.disabled-title:hover::before {
