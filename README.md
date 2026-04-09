@@ -35,7 +35,7 @@ Core technical assets hosted solely in this repository
 - [x] **Folder** `/screenshots`:
 	- [ ] **XYZ**
 	- [ ] **XYZ** 
-	- [x] **CRM Sandbox Screenshots** of HubSpot automations and lead-routing workflows
+	- [x] **CRM Sandbox Screenshots** of HubSpot automations and lead-routing workflows 
 ## II. Role-Specific Deliverables Masterlist
 Each role page follows a standardized 5-section sequence to demonstrate my *Mutability*
 
