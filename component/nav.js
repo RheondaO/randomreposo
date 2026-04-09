@@ -17,7 +17,7 @@ export function loadNav() {
 
         <li class="nav-item">
           <a href="#" class="disabled">knowledgebase</a>
-          <span class="nav-tooltip">coming soon <3</span>
+          <span class="nav-tooltip">I'm an AI power-user <3</span>
         </li>
       </ul>
   </div>
