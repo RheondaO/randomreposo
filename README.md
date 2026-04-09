@@ -39,6 +39,13 @@ Core technical assets hosted solely in this repository
 ## II. Role-Specific Deliverables Masterlist
 Each role page follows a standardized 5-section sequence to demonstrate my *Mutability*
 
+### Account Executive
+- [ ] Loom Video
+- [x] Visual Workflow
+- [ ] AI Strategy Innovation Box
+- [ ] Blog Post
+- [ ] Strategic Discovery
+
 ### Solutions Engineer
 - [ ] Loom Video
 - [ ] Visual Workflow
