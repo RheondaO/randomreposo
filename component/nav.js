@@ -16,8 +16,8 @@ export function loadNav() {
         </li>
 
         <li class="nav-item">
-          <a href="#" class="disabled">knowledgebase</a>
-          <span class="nav-tooltip">¡AI poweruser! </span>
+          <a href="knowledgebase.html">battlecards</a>
+          <span class="nav-tooltip">¡AI poweruser!</span>
         </li>
       </ul>
   </div>
