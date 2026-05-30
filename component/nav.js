@@ -14,12 +14,12 @@ export function loadNav() {
           <a href="knowledgebase.html#admin">meet the admin</a>
           <span class="nav-tooltip">¡AI poweruser!</span>
         </li>
-/*
+<!-------------
         <li class="nav-item">
           <a href="knowledgebase.html">battlecards</a>
           <span class="nav-tooltip">¡AI poweruser!</span>
         </li>
-*/
+------------->
       </ul>
   </div>
       </div>
