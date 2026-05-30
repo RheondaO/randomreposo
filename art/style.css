@@ -1232,6 +1232,107 @@ footer {
         .data-table tbody tr:hover {
             background: #f0f0f0;
         }
+/*-----------Battlecards----------------*/
+
+ .battlecard-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .battlecard-table th,
+        .battlecard-table td {
+            border: 2px solid #000000;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .battlecard-table th {
+            background: #000000;
+            color: #ffffff;
+            font-weight: 700;
+            font-family: "Jersey 25", sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .battlecard-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .battlecard-table tr:hover {
+            background: #f0f0f0;
+        }
+
+        .win-indicator {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            border: 2px solid #000000;
+            margin: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        .win-indicator.advantage {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .win-indicator.neutral {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .win-indicator.disadvantage {
+            background: #e0e0e0;
+            color: #666;
+        }
+
+        /* Objection Box */
+        .objection-box {
+            border: 3px solid #000000;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: #ffffff;
+        }
+
+        .objection-header {
+            font-family: "Jersey 25", sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #cc0000;
+        }
+
+        .objection-response {
+            background: #f0f0f0;
+            padding: 1rem;
+            border-left: 4px solid #000000;
+            margin-top: 1rem;
+        }
+
+        .objection-response strong {
+            font-weight: 700;
+        }
+
+        /* Messaging Box */
+        .messaging-box {
+            border: 3px solid #000000;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: #f9f9f9;
+        }
+
+        .messaging-title {
+            font-family: "Jersey 25", sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .messaging-copy {
+            padding: 1rem;
+            border-left: 4px solid #000000;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
 
         /* Status Badges */
         .status-badge {
