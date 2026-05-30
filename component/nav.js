@@ -11,8 +11,8 @@ export function loadNav() {
         <li><a href="index.html">home</a></li>
 
         <li class="nav-item">
-          <a href="#" class="disabled">meet the admin</a>
-          <span class="nav-tooltip">coming soon <3</span>
+          <a href="knowledgebase.html#admin">meet the admin</a>
+          <span class="nav-tooltip">¡AI poweruser!</span>
         </li>
 /*
         <li class="nav-item">
