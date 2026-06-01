@@ -76,12 +76,11 @@ Each role page follows a standardized 5-section sequence to demonstrate my *Muta
 
 ## III. The Knowledgebase
 Centralized section `knowledgebase.html` for a quick referenece in a How-To beginner-friendly format
-- [ ] **XYZ**
-- [ ] **XYZ**
-- [ ] **XYZ**
-- [ ] **XYZ**
-- [ ] **XYZ**
-- [ ] Tool Inventory
+- [x] Taskade
+- [ ] Notion
+- [ ] Make
+- [ ] Zapier
+- [ ] API Tools
 
 ## IV. Other Important Stuff
 - [x] Global AI Disclosure Footer
