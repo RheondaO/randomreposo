@@ -25,7 +25,7 @@ async function initComponents() {
   const hasLoadedBefore = sessionStorage.getItem("portfolio-loaded");
 
   if (!hasLoadedBefore) {
-    import("component/loader.js").then(({ loadLoader }) => {
+    import("./loader.js").then(({ loadLoader }) => {
       loadLoader();
       sessionStorage.setItem("portfolio-loaded", "true");
     });
@@ -38,12 +38,12 @@ async function initComponents() {
   }
 
   // 2. Kick off the navigation immediately without waiting for the loader
-  import("component/nav.js")
+  import("./nav.js")
   .then(({ loadNav }) => loadNav())
   .catch(err => console.error("Nav failed:", err));
 
   // 3. Kick off the footer immediately
-  import("component/footer.js").then(({ loadFooter }) => loadFooter());
+  import("./footer.js").then(({ loadFooter }) => loadFooter());
 }
 
  if (document.readyState === "loading") {
