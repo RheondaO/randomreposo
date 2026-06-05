@@ -2,6 +2,9 @@
 export function loadSharedHead({ title, description }) {
   document.title = title || "Sales Portfolio";
 
+  document.documentElement.style.backgroundColor = "#ffffff";
+  document.body.style.backgroundColor = "#ffffff";
+
   const headContent = `
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +16,7 @@ export function loadSharedHead({ title, description }) {
 
   document.head.insertAdjacentHTML("beforeend", headContent);
 
-  document.addEventListener("DOMContentLoaded", async () => {
+  async function initComponents() {
    const { loadLoader } = await import("./loader.js");
    const { loadNav } = await import("./nav.js");
    const { loadFooter } = await import("./footer.js");
@@ -22,5 +25,12 @@ export function loadSharedHead({ title, description }) {
     loadLoader();
     loadNav();
     loadFooter();
-  });
+  }
+
+  
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initComponents);
+  } else {
+    initComponents();
+  }
 }
