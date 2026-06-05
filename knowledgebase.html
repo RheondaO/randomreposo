@@ -83,7 +83,7 @@
         // Load section from URL hash on page load
         window.addEventListener('DOMContentLoaded', function() {
             const hash = window.location.hash.substring(1); // Remove the #
-            const activeSection = hash || sessionStorage.getItem('activeSection') || 'overview';
+            const activeSection = hash || sessionStorage.getItem('activeSection') || 'welcome';
             
             // Hide all sections first
             const sections = document.getElementsByClassName('content-section');
@@ -106,7 +106,8 @@
                 if (href === `#${activeSection}`) {
                     link.classList.add('active');
                 }
-            });
+            }); });
+            
     </script>
     </head>
     <body>
@@ -257,7 +258,6 @@
                 </div>
             </div>
         </div>
-    </div>
         
         </main> <footer id="footer"></footer>
     </body>
