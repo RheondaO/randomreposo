@@ -3,7 +3,10 @@ export function loadSharedHead({ title, description }) {
   document.title = title || "Sales Portfolio";
 
   document.documentElement.style.backgroundColor = "#ffffff";
-  document.body.style.backgroundColor = "#ffffff";
+
+  if (document.body) {
+    document.body.style.backgroundColor = "#ffffff";
+  }
 
   const headContent = `
     <meta charset="UTF-8" />
