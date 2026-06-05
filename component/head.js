@@ -16,14 +16,16 @@ export function loadSharedHead({ title, description }) {
     <link rel="stylesheet" href="./art/style.css" />
   `;
 
+  if (!document.querySelector('link[href="./art/style.css"]')) {
   document.head.insertAdjacentHTML("beforeend", headContent);
+}
   
 async function initComponents() {
 
   const hasLoadedBefore = sessionStorage.getItem("portfolio-loaded");
 
   if (!hasLoadedBefore) {
-    import("./loader.js").then(({ loadLoader }) => {
+    import("component/loader.js").then(({ loadLoader }) => {
       loadLoader();
       sessionStorage.setItem("portfolio-loaded", "true");
     });
@@ -36,10 +38,12 @@ async function initComponents() {
   }
 
   // 2. Kick off the navigation immediately without waiting for the loader
-  import("./nav.js").then(({ loadNav }) => loadNav());
+  import("component/nav.js")
+  .then(({ loadNav }) => loadNav())
+  .catch(err => console.error("Nav failed:", err));
 
   // 3. Kick off the footer immediately
-  import("./footer.js").then(({ loadFooter }) => loadFooter());
+  import("component/footer.js").then(({ loadFooter }) => loadFooter());
 }
 
  if (document.readyState === "loading") {
