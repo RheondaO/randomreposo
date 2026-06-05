@@ -22,7 +22,7 @@ export function loadFooter() {
         <a href="https://github.com/RheondaO/randomreposo" target="_blank" rel="noopener noreferrer">Git</a>
         <a href="https://breathinganomalypseudonym.substack.com/" target="_blank" rel="noopener noreferrer">Sub</a>
         <a href="https://www.linkedin.com/in/rheondadogletree" target="_blank" rel="noopener noreferrer">Li</a>
-        <a href="https://na2.hubs.ly/H04FmLg0" target="_blank" rel="noopener noreferrer">Rés</a>
+        <a href="https://docs.google.com/document/d/1TjGRbmNFlCzouPgVXYwRXTD4-xZNHi2qB_K7OfH1B-c/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Rés</a>
       </div>
     </div>
   `;
