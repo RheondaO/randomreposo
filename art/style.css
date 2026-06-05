@@ -17,6 +17,11 @@ background-color: var(--color-white: #ffffff;)
     box-sizing: border-box;
 }
 
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 :root { 
     --color-black: #000000;
     --color-white: #ffffff;
@@ -2298,7 +2303,7 @@ footer {
    ========================================================================== */
 
 .wiki-container {
-    display: flex;
+    align-items: flex-start;
     max-width: 1400px;
     margin: 0 auto;
     min-height: calc(100vh - 200px);
@@ -2308,11 +2313,13 @@ footer {
 .sidebar {
     width: 300px;
     background: var(--color-white);
+    box-sizing: border-box;
     border-right: var(--border-thick) solid var(--color-black);
     padding: var(--spacing-xl) 0;
     position: sticky;
     top: 89px;
-    height: calc(100vh - 89px);
+    /* height: calc(100vh - 89px); */
+    max-height: calc(100vh - 89px);
     overflow-y: auto;
 }
 
@@ -2373,6 +2380,7 @@ footer {
 /* Main Content Area */
 .main-content {
     flex: 1;
+    min-width: 0;
     padding: var(--spacing-2xl);
     background: var(--color-white);
 }
@@ -2470,6 +2478,8 @@ footer {
     width: 100%;
     border-collapse: collapse;
     margin: var(--spacing-lg) 0;
+    table-layout: fixed;
+    overflow-x: auto;
 }
 
 .wiki-table th,
@@ -2769,10 +2779,12 @@ footer {
         border-right: none;
         border-bottom: var(--border-thick) solid var(--color-black);
         display: none;
+        left: -100%;
     }
 
     .sidebar.mobile-open {
         display: block;
+        left: 0;
     }
 
     .mobile-menu-toggle {
