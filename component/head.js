@@ -18,21 +18,20 @@ export function loadSharedHead({ title, description }) {
   `;
 
   document.head.insertAdjacentHTML("beforeend", headContent);
-
-  async function initComponents() {
+  
+  document.addEventListener("DOMContentLoaded", async () => {
    const { loadLoader } = await import("./loader.js");
    const { loadNav } = await import("./nav.js");
    const { loadFooter } = await import("./footer.js");
    
-
-    loadLoader();
-    loadNav();
-    loadFooter();
-  }
+   loadLoader();
+   loadNav();
+   loadFooter();
+});
 
   
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initComponents);
+    document.addEventListener("DOMContentLoaded");
   } else {
     initComponents();
   }
