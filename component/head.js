@@ -18,20 +18,15 @@ export function loadSharedHead({ title, description }) {
 
   document.head.insertAdjacentHTML("beforeend", headContent);
   
-  async function initComponents() {
-  try {
-    const [loaderMod, navMod, footerMod] = await Promise.all([
-      import("./loader.js"),
-      import("./nav.js"),
-      import("./footer.js")
-    ]);
+async function initComponents() {
+  // 1. Kick off the loader immediately
+  import("./loader.js").then(({ loadLoader }) => loadLoader());
 
-    loaderMod.loadLoader();
-    navMod.loadNav();
-    footerMod.loadFooter();
-  } catch (error) {
-    console.error("Error loading components:", error);
-  }
+  // 2. Kick off the navigation immediately without waiting for the loader
+  import("./nav.js").then(({ loadNav }) => loadNav());
+
+  // 3. Kick off the footer immediately
+  import("./footer.js").then(({ loadFooter }) => loadFooter());
 }
 
  if (document.readyState === "loading") {
