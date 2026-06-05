@@ -3,9 +3,7 @@ export function loadSharedHead({ title, description }) {
   document.title = title || "Sales Portfolio";
 
   document.documentElement.style.backgroundColor = "#ffffff";
-  if (document.body) {
-    document.body.style.backgroundColor = "#ffffff";
-  }
+
 
   const headContent = `
     <meta charset="UTF-8" />
@@ -31,10 +29,14 @@ async function initComponents() {
     });
   
   } else {
-    const loaderElement = document.getElementById("loadLoader"); // Use your actual loader ID
+    const loaderElement = document.getElementById("loadLoader");
     if (loaderElement) {
       loaderElement.style.display = "none";
     }
+
+    if (document.body) {
+    document.body.style.backgroundColor = "#ffffff";
+  }
   }
 
   // 2. Kick off the navigation immediately without waiting for the loader
