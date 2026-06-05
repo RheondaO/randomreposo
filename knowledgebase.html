@@ -62,7 +62,7 @@
                 links.forEach(link => {
                     const text = link.textContent.toLowerCase();
                     if (text.includes(searchTerm)) {
-                        link.style.display = 'block';
+                        link.style.display = '';
                         link.style.backgroundColor = searchTerm ? '#fff3cd' : '';
                         sectionHasMatch = true;
                     } else {
