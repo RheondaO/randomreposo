@@ -14,13 +14,13 @@ export function loadSharedHead({ title, description }) {
   document.head.insertAdjacentHTML("beforeend", headContent);
 
   document.addEventListener("DOMContentLoaded", async () => {
+   const { loadLoader } = await import("./loader.js");
    const { loadNav } = await import("./nav.js");
    const { loadFooter } = await import("./footer.js");
-   const { loadLoader } = await import("./loader.js");
+   
 
-    
+    loadLoader();
     loadNav();
     loadFooter();
-    loadLoader();
   });
 }
