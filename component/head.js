@@ -3,7 +3,6 @@ export function loadSharedHead({ title, description }) {
   document.title = title || "Sales Portfolio";
 
   document.documentElement.style.backgroundColor = "#ffffff";
-
   if (document.body) {
     document.body.style.backgroundColor = "#ffffff";
   }
@@ -21,26 +20,22 @@ export function loadSharedHead({ title, description }) {
   
   async function initComponents() {
   try {
-    // Start downloading all three files simultaneously over the network
     const [loaderMod, navMod, footerMod] = await Promise.all([
       import("./loader.js"),
       import("./nav.js"),
       import("./footer.js")
     ]);
 
-    // Once all are downloaded, execute them cleanly
     loaderMod.loadLoader();
     navMod.loadNav();
     footerMod.loadFooter();
-    
   } catch (error) {
     console.error("Error loading components:", error);
   }
 }
 
-  
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded");
+ if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initComponents);
   } else {
     initComponents();
   }
