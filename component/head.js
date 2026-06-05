@@ -19,8 +19,21 @@ export function loadSharedHead({ title, description }) {
   document.head.insertAdjacentHTML("beforeend", headContent);
   
 async function initComponents() {
-  // 1. Kick off the loader immediately
-  import("./loader.js").then(({ loadLoader }) => loadLoader());
+
+  const hasLoadedBefore = sessionStorage.getItem("portfolio-loaded");
+
+  if (!hasLoadedBefore) {
+    import("./loader.js").then(({ loadLoader }) => {
+      loadLoader();
+      sessionStorage.setItem("portfolio-loaded", "true");
+    });
+  
+  } else {
+    const loaderElement = document.getElementById("loadLoader"); // Use your actual loader ID
+    if (loaderElement) {
+      loaderElement.style.display = "none";
+    }
+  }
 
   // 2. Kick off the navigation immediately without waiting for the loader
   import("./nav.js").then(({ loadNav }) => loadNav());
