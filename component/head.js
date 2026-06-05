@@ -19,15 +19,24 @@ export function loadSharedHead({ title, description }) {
 
   document.head.insertAdjacentHTML("beforeend", headContent);
   
-  document.addEventListener("DOMContentLoaded", async () => {
-   const { loadLoader } = await import("./loader.js");
-   const { loadNav } = await import("./nav.js");
-   const { loadFooter } = await import("./footer.js");
-   
-   loadLoader();
-   loadNav();
-   loadFooter();
-});
+  async function initComponents() {
+  try {
+    // Start downloading all three files simultaneously over the network
+    const [loaderMod, navMod, footerMod] = await Promise.all([
+      import("./loader.js"),
+      import("./nav.js"),
+      import("./footer.js")
+    ]);
+
+    // Once all are downloaded, execute them cleanly
+    loaderMod.loadLoader();
+    navMod.loadNav();
+    footerMod.loadFooter();
+    
+  } catch (error) {
+    console.error("Error loading components:", error);
+  }
+}
 
   
   if (document.readyState === "loading") {
