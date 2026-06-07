@@ -2303,6 +2303,7 @@ footer {
    ========================================================================== */
 
 .wiki-container {
+    display: flex;
     align-items: flex-start;
     max-width: 1400px;
     margin: 0 auto;
