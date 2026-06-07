@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
     <head>
         <script type="module">
@@ -8,8 +8,8 @@
                 description: "Welcome to Rheonda’s Sales Portfolio."
             });
         </script>
-        
-        <script>
+    
+    <script>
         function showSection(event, sectionId) {
             event.preventDefault(); // This is crucial - prevents default anchor behavior
             
@@ -62,7 +62,7 @@
                 links.forEach(link => {
                     const text = link.textContent.toLowerCase();
                     if (text.includes(searchTerm)) {
-                        link.style.display = '';
+                        link.style.display = 'block';
                         link.style.backgroundColor = searchTerm ? '#fff3cd' : '';
                         sectionHasMatch = true;
                     } else {
@@ -83,7 +83,7 @@
         // Load section from URL hash on page load
         window.addEventListener('DOMContentLoaded', function() {
             const hash = window.location.hash.substring(1); // Remove the #
-            const activeSection = hash || sessionStorage.getItem('activeSection') || 'welcome';
+            const activeSection = hash || sessionStorage.getItem('activeSection') || 'overview';
             
             // Hide all sections first
             const sections = document.getElementsByClassName('content-section');
@@ -108,15 +108,11 @@
                 }
             });
         });
-            
     </script>
-    </head>
-    
+        </head>
     <body>
         <header id="nav"></header>
-        
         <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰ Menu</button>
-        
         <div class="wiki-container">
             <aside class="sidebar" id="sidebar">
                 <div class="search-box">
@@ -132,7 +128,7 @@
             </div>
 
             <div class="sidebar-section">
-                <div class="sidebar-title">Taskade Affiliate Battlecard</div>
+                <div class="">Taskade Affiliate Battlecard</div>
                 <ul class="sidebar-list">
                     <li><a href="#battlecard-taskade" class="sidebar-link" onclick="showSection(event, 'battlecard-taskade')">Taskade Overview</a></li>
                     <li><a href="#quick-facts" class="sidebar-link" onclick="showSection(event, 'quick-facts')">Quick Facts</a></li>
@@ -258,12 +254,471 @@
                     <h4>Ultimate Spider-Man</h4>
                     <h4>Steven Universe</h4>
                     <h4>BumbleBee (transformers)</h4><br>
-</center>          
+                        
+</center>
+                    
                 </div>
             </div>
-    </main> 
-    </div>    
-    <footer id="footer"></footer>
+
+                 <div id="battlecard-taskade" class="content-section">
+                <div class="breadcrumbs">
+                    <span><a href="#welcome" onclick="showSection(event, 'welcome')">Home</a></span> <span>›</span> <span>Taskade</span> <span>›</span> <span>Taskade Battlecard</span></div>
+                <h1 class="page-title">Taskade Battlecard</h1>
+                <div class="content-box">
+                    <h2>What is Taskade?</h2>
+                    <p>Taskade is an AI-powered collaborative workspace designed for teams to build mind maps, documentation, and project management in one unified platform. It combines project management, note-taking, and AI assistance to streamline workflows.</p>
+                    <p>Target audience: Remote teams, distributed workforces, knowledge workers, creative teams, startup environments.</p>
+                </div>
+
+                 <div class="content-box">
+                    <h2>Taskade Value Proposition</h2>
+                    <div class="info-box">
+                        <div class="info-box-title">🎯 Core Value</div>
+                        <p>"One unified workspace for team collaboration, autonomous AI agents, and project execution—eliminate tool sprawl and automate manual work."</p>
+                    </div>
+
+                    <h3>Key Differentiators:</h3>
+                    <ul>
+                        <li>Agentic Orchestration vs. Static Copilots: Traditional PM software treats AI as an inline writing text box. Taskade treats AI as an autonomous colleague that can execute asynchronous background multi-step work loops unprompted.</li>
+                        <li>Unmatched Cost Efficiency: For a 10-person team, legacy project suites charging per-user fees plus AI add-ons cost hundreds of dollars monthly. Taskade Pro gives the entire 10-person team frontier AI access for flat-rate pricing.</li>
+                        <li>True Zero-Code Deployment: Generates fully functioning, self-updating internal tools and customer-facing portals that do not require software hosting infrastructure or code maintenance.</li>
+                    </ul>
+                </div>
+
+                   <div class="content-box">
+                    <h2>When to Use This Battlecard</h2>
+                    <ul>
+                        <li>Prospect interested in project management alternatives</li>
+                        <li>Customer considering migration from Asana/Monday.com</li>
+                        <li>Team looking for all-in-one collaboration platform</li>
+                        <li>Sales cycle where competitor is mentioned</li>
+                        <li>Evaluating AI-powered productivity tools</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h2>Quick Competitor Overview</h2>
+                    <table class="battlecard-table">
+                        <thead>
+                            <tr>
+                                <th>Competitor</th>
+                                <th>Primary Focus</th>
+                                <th>AI Integration</th>
+                                <th>Pricing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Asana</strong></td>
+                                <td>Enterprise task management, project portfolio alignment, and resource scheduling.</td>
+                                <td>Basic / Copilot (Asana Intelligence extracts smart summaries, highlights bottlenecks, drafts status updates).</td>
+                                <td>Per-Seat / Premium ($10.99–$24.99+ per user/mo; AI features add extra per-seat premiums).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Monday.com</strong></td>
+                                <td>Highly customized operational workflows, CRM pipelines, and low-code data columns.</td>
+                                <td>Moderate / Add-on (Monday AI writes formulas, translates text fields, and builds basic block-level automations).</td>
+                                <td>Per-Seat / High Scale ($9–$19+ per user/mo with strict 3-seat minimum restrictions).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jira</strong></td>
+                                <td>Technical agile sprint tracking, bug reporting, and product development roadmapping.</td>
+                                <td>Dev-Centric (Atlassian Intelligence automates issue editing, generates release notes, fixes JQL queries).</td>
+                                <td>Per-Seat / Corporate ($8.15–$16+ per user/mo; costs ramp up fast at enterprise tiers).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ClickUp</strong></td>
+                                <td>Feature-heavy "all-in-one" task management, document tracking, and whiteboards.</td>
+                                <td>Moderate / Assistant (ClickUp Brain acts as a central Q&A search over your tasks, summaries, and subtask generation).</td>
+                                <td>Per-Seat ($7–$12+ per user/mo plus a mandatory $5/user/mo add-on fee for ClickUp Brain AI).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Taskade</strong></td>
+                                <td>AI-native app generation, multi-agent automated workflows, and real-time execution.</td>
+                                <td>Advanced / Core Platform (Multi-model selection, prompt-to-app, autonomous background agent loops).</td>
+                                <td>Flat-Rate / Tiers (Pro is $16/mo flat for up to 10 users).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Quick Facts Section -->
+            <div id="quick-facts" class="content-section">
+                <div class="breadcrumbs">
+                     <span><a href="#welcome" onclick="showSection(event, 'welcome')">Home</a></span> <span>›</span> <span><a href="#battlecard-taskade" onclick="showSection(event, 'battlecard-taskade')">Taskade</a></span> <span>›</span> <span>Quick Facts</span>
+                </div>
+                <h1 class="page-title">Quick Facts</h1>
+
+                <div class="content-box">
+                    <h2>Company Profile</h2>
+                    <ul>
+                        <li><strong>Founded:</strong> 2017</li>
+                        <li><strong>Headquarters:</strong> San Francisco, CA</li>
+                        <li><strong>Funding:</strong> ~$5M (Seed Stage, backed by Y Combinator S19, Grishin Robotics, TRAC, and Altair Capital)</li>
+                        <li><strong>Employees:</strong> 5-15</li>
+                        <li><strong>CEO:</strong> John Xie (Co-founder & CEO)</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h2>Product Stats</h2>
+                    <ul>
+                        <li><strong>Users:</strong> Over 1 million+ global users</li>
+                        <li><strong>Free Tier:</strong> Yes (Generous features)</li>
+                        <li><strong>Pricing Tiers:</strong> Free, Starter ($6/mo), Pro ($16/mo), Business ($40/mo), Max/Enterprise ($200-$400/mo)</li>
+                        <li><strong>AI Features:</strong> Taskade Genesis framework (Vibe Coding — prompt-to-app generation), multi-agent orchestration, autonomous multi-agent loops, 15+ supported frontier models, custom workspace AI knowledge bases, and automatic AI model routing.</li>
+                        <li><strong>Export Options:</strong> Markdown, PDF, Plain Text, Image, HTML, and instant web app deployment/sharing link.</li>
+                        <li><strong>Integrations:</strong> 100+ native services via a durable workflow engine (Slack, Discord, Gmail, Google Calendar, HubSpot, Stripe, plus Model Context Protocol (MCP) support).</li>
+                        <li><strong>Mobile Apps:</strong> iOS, Android, Web</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h2>Key Features</h2>
+                    <ul>
+                        <li>Taskade Genesis (One-Prompt Apps): Users type what they want (e.g., "Build a client portal with an intake form and an AI assistant"), and Taskade generates the complete UI, backend database, automated workflows, and active AI agents.</li>
+                        <li>Multi-Model Frontier Brain: Allows per-agent frontier model selection. Teams can assign Anthropic's Claude for data writing, OpenAI's GPT for logical analysis, and Google Gemini for long-context research within the exact same project loop</li>
+                        <li>The Tree of Life Loop: A continuous system loop where Memory (database) feeds Intelligence (Agents), which triggers Execution (Automations), which instantly logs results back into Memory.</li>
+                        <li>Built-in Unified Communication: Unlike standard task tools, real-time collaboration includes multiplayer cursor tracking, chat, and native video conferencing inside the workspace, removing the need for external Zoom links.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Positioning Section -->
+            <div id="positioning" class="content-section">
+                <div class="breadcrumbs">
+                    <span><a href="#welcome" onclick="showSection(event, 'welcome')">Home</a></span> <span>›</span> <span><a href="#battlecard-taskade" onclick="showSection(event, 'battlecard-taskade')">Taskade</a></span> <span>›</span> <span>Positioning Strategy</span>
+                </div>
+                <h1 class="page-title">Positioning Strategy</h1>
+
+                <div class="content-box">
+                    <h2>Positioning Pillars</h2>
+
+                    <h3>1. AI-First Collaboration</h3>
+                    <p>"Why build separately when AI can execute with you? Taskade goes beyond basic chat prompts by introducing workspace-native AI agents that run autonomous background loops, updating your task boards and databases while you sleep."</p>
+
+                    <h3>2. One Platform, End-to-End Workflows</h3>
+                    <p>"Stop switching between project management, notes, and visual whiteboards. Do everything in Taskade."</p>
+
+                    <h3>3. Frictionless for Small Teams</h3>
+                    <p>"Enterprise-grade capabilities at disruptive, flat-rate team pricing."</p>
+
+                    <h3>4. Speed Over Complexity</h3>
+                    <p>"Get teams fully productive in minutes, not weeks, through Vibe Coding."</p>
+                </div>
+
+                <div class="messaging-box">
+                    <div class="messaging-title">🎤 30-Second Pitch</div>
+                    <div class="messaging-copy">
+                        "Taskade is an AI-native workspace where teams collaborate, automate, and execute projects 10x faster. Unlike traditional tools that force you to buy separate subscriptions for project management, mind mapping, team chat, and AI chatbots, Taskade unifies everything into a single platform. With our 7 dynamic visual views, you can flip an idea from a brainstorming mind map into an automated sprint board instantly. Best of all, it features workspace-native AI agents that operate as autonomous teammates—doing the heavy operational lifting so your team can focus on growth."
+                    </div>
+                </div>
+
+                <div class="messaging-box">
+                    <div class="messaging-title">💼 Enterprise Pitch</div>
+                    <div class="messaging-copy">
+                        "Taskade solves enterprise tool sprawl and severe context-switching costs by consolidating task management, knowledge bases, and multi-agent AI automation into a single, unified workspace. By replacing fragmented point solutions like Asana, Miro, and standalone AI chat subscriptions, Taskade dramatically lowers your Total Cost of Ownership (TCO) while slashing team onboarding times down to minutes. Through our text-to-workspace Genesis engine, business units deploy operational workflows instantly—eliminating administrative friction, driving higher team adoption, and letting your organization transition from manual planning to automated, agentic execution."
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div id="faq" class="content-section">
+                <div class="breadcrumbs">
+                    <span><a href="#welcome" onclick="showSection(event, 'welcome')">Home</a></span> <span>›</span> <span><a href="#battlecard-taskade" onclick="showSection(event, 'battlecard-taskade')">Taskade</a></span> <span>›</span> <span>FAQ</span>
+                </div>
+                <h1 class="page-title">Frequently Asked Questions</h1>
+
+                <div class="content-box">
+                    <h3>Q: Can we import data from Asana/Monday?</h3>
+                    <p><strong>A:</strong> Yes. Taskade features an AI-powered Import Tool. You can directly upload data from Asana, Monday.com, Notion, and Trello. Instead of weeks of manual data clean-up, Taskade's AI instantly parses your legacy files and formats them into native lists, kanban boards, or mind maps in minutes. We provide hands-on migration support for Pro and Business plans.</p>
+
+                    <h3>Q: What about offline access?</h3>
+                    <p><strong>A:</strong> Taskade fully supports offline workflows. Our native apps for iOS, Android, Mac, and Windows cache your active workspaces so you can view, create, and edit tasks completely offline. Once you reconnect to the internet, all local changes automatically and seamlessly sync back to your team's live cloud workspace in real time.</p>
+
+                    <h3>Q: Does AI cost extra?</h3>
+                    <p><strong>A:</strong> No, AI is natively built into the core pricing structure. Taskade does not charge a mandatory "per-user AI add-on fee" like legacy platforms. Instead, your flat-rate plan includes a massive monthly pool of shared AI credits (e.g., 50,000 credits/month on the Pro plan) to power your custom agents, prompt-to-app generations, and background automation loops. If your team exhausts their monthly pool, you can buy cheap pay-as-you-go credit top-offs without forcing an entire tier upgrade.</p>
+
+                    <h3>Q: Can we white-label Taskade?</h3>
+                    <p><strong>A:</strong> Yes. You can completely white-label client portals, dashboards, and internal apps. This feature unlocks on our Business tier and higher, allowing you to add your corporate logo, custom color palettes, and point the entire workspace to your own custom web domain without requiring a locked-in Enterprise contract.</p>
+
+                    <h3>Q: How is Taskade secure?</h3>
+                    <p><strong>A:</strong> Security is enterprise-grade. Taskade is fully SOC 2 Type II certified and GDPR compliant. All data transmission is secured using TLS 1.2 / AES-256 encryption at rest and in transit. Paid plans include 2FA (Two-Factor Authentication), and our Enterprise tier natively integrates with SAML-based Single Sign-On (SSO) providers alongside advanced role-based permissions.</p>
+
+                    <h3>Q: Can we integrate with [tool]?</h3>
+                    <p><strong>A:</strong> Yes. Taskade features a built-in workflow engine with 100+ native integrations covering major platforms like Slack, Gmail, Google Calendar, GitHub, and HubSpot. For highly specialized developer setups, our Enterprise plan supports custom webhooks, a robust REST API, and native Model Context Protocol (MCP) links to let your AI agents securely talk directly to your internal software infrastructure.</p>
+                </div>
+            </div>
+
+            <!-- vs Asana Section -->
+             <div id="vs-asana-taskade" class="content-section">
+                <div class="breadcrumbs"> 
+                    <span><a href="#welcome" onclick="showSection(event, 'welcome')">Home</a></span> <span>›</span> <span><a href="#battlecard-taskade" onclick="showSection(event, 'battlecard-taskade')">Taskade</a></span> <span>›</span> <span>Competitive Analysis</span> <span>›</span> <span>vs Asana</span></div>
+                <h1 class="page-title">Taskade vs Asana</h1>
+                 <div class="content-box">
+                     <h2>Competitive Positioning</h2>
+                     <p><strong>Asana's Strength:</strong> Enterprise-grade project management with complex workflow automation and team scaling.</p>
+                     <p><strong>Taskade's Advantage:</strong> AI-native collaboration with visual organization and flexible workflows that require less configuration.</p>
+
+                    <table class="battlecard-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Taskade</th>
+                                <th>Asana</th>
+                                <th>Winner</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>AI Integration</strong></td>
+                                <td>✓ Core feature, native multi-agent loops</td>
+                                <td>△ Limited, basic rule suggestions</td>
+                                <td><span class="win-indicator advantage">Taskade</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Learning Curve</strong></td>
+                                <td>✓ 15 min to proficient</td>
+                                <td>△ 2-3 weeks to full adoption</td>
+                                <td><span class="win-indicator advantage">Taskade</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pricing/User</strong></td>
+                                <td>✓ Flat-rate team tiers ($6-$40/month total)</td>
+                                <td>△ $10.99-30.49/user/month</td>
+                                <td><span class="win-indicator advantage">Taskade</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Visual Organization</strong></td>
+                                <td>✓ Mind maps, flexible views, org charts</td>
+                                <td>△ Timeline, board, list (limited)</td>
+                                <td><span class="win-indicator advantage">Taskade</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Enterprise Automation</strong></td>
+                                <td>△ Moderate</td>
+                                <td>✓ Advanced, complex multi-org workflows</td>
+                                <td><span class="win-indicator disadvantage">Asana</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Team Scaling</strong></td>
+                                <td>△ Good to 500+ users</td>
+                                <td>✓ Built for 10K+ corporate enterprises</td>
+                                <td><span class="win-indicator disadvantage">Asana</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Knowledge Work</strong></td>
+                                <td>✓ Live docs, persistent notes, brainstorming</td>
+                                <td>△ Structured project tracking only</td>
+                                <td><span class="win-indicator advantage">Taskade</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Integrations</strong></td>
+                                <td>△ 100+ native apps & MCP support</td>
+                                <td>✓ 200+ native enterprise integrations</td>
+                                <td><span class="win-indicator neutral">Tie</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+             </div>
+            
+            <div class="objection-box">
+                <div class="objection-header">Objection: "Asana is more established and trusted"</div>
+                <div class="objection-response">
+                    <strong>Response:</strong> "Asana is established, that's true. But established often means rigid and inflated. Taskade supports over 1 million users and is backed by Y Combinator—we aren't a flight risk. What matters to your bottom line is execution. If you have a team of 10–50 users, you are likely spending $150–$600+ every single month on Asana for a static task list. With Taskade, you get that same project logic, plus real-time mind mapping, built-in communication, and unlimited autonomous AI agents for flat-rate team pricing ($16–$40/month total for the tier, not per seat). You stop paying a premium for legacy features you don't touch."
+                </div>
+            </div>
+            
+            <div class="objection-box">
+                <div class="objection-header">Objection: "We've invested heavily in Asana workflows"</div>
+                <div class="objection-response">
+                    <strong>Response:</strong> "I completely understand—workflow migration sounds like a headache. But let's look at what you're actually maintaining. Taskade’s multi-view architecture covers 100% of Asana's list, kanban, and timeline views, but instantly flips them into mind maps or organizational charts for brainstorming—something Asana can't do without forcing you into an extra whiteboard tool. Because Taskade is built to be intuitive, teams adapt in less than a week. You will completely recoup the transition time within your first two months by slashing per-seat license costs and eliminating external tool sprawl."
+                </div>
+            </div> 
+
+            <div class="objection-box">
+                <div class="objection-header">Objection: "Asana just launched Asana Intelligence and AI teammates, so they have AI covered too."</div>
+                <div class="objection-response">
+                    <strong>Response:</strong> "There is a massive structural difference between an AI feature add-on and an AI-native engine. Asana's AI acts like a passive assistant—it requires you to manually prompt it to summarize a thread, draft a status update, or move a task card. It also meters you with strict monthly action limits. Taskade is an agentic orchestration platform. Our AI agents are digital teammates that run autonomously in the background 24/7. They don't just summarize your work; they actively research, write, trigger multi-step workflow automations, and update your database while your team is offline. Asana uses AI to talk about work; Taskade uses AI to actually execute the work."
+                </div>
+            </div> 
+        </div>
+            
+        <!-- vs Monday.com Section -->
+        <div id="vs-monday-taskade" class="content-section">
+            <div class="breadcrumbs"> 
+                <span><a href="#welcome" onclick="showSection(event, 'welcome')">Home</a></span> <span>›</span> <span><a href="#battlecard-taskade" onclick="showSection(event, 'battlecard-taskade')">Taskade</a></span> <span>›</span> <span>Competitive Analysis</span> <span>›</span> <span>vs Monday.com</span></div>
+
+            <h1 class="page-title">Taskade vs Monday.com</h1>
+            
+            <div class="content-box">
+                <h2>Quick Comparison</h2>
+                <p><strong>Monday.com's Strength:</strong> Highly visual, flexible "work OS" with strong no-code automation capabilities.</p>
+                <p><strong>Taskade's Advantage:</strong> AI-native with built-in collaborative thinking tools (mind maps, brainstorming) that Monday.com requires additional tools for.</p>
+
+                    <h3>Head-to-Head</h3>
+                    <table class="battlecard-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Taskade</th>
+                                <th>Monday.com</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AI Assistant</td>
+                                <td><strong>✓ Native</strong></td>
+                                <td>△ Basic</td>
+                            </tr>
+                            <tr>
+                                <td>Mind Mapping</td>
+                                <td><strong>✓ Yes</strong></td>
+                                <td>✗ Requires external</td>
+                            </tr>
+                            <tr>
+                                <td>Brainstorming Tools</td>
+                                <td><strong>✓ Built-in</strong></td>
+                                <td>✗ Requires external</td>
+                            </tr>
+                            <tr>
+                                <td>Documentation</td>
+                                <td><strong>✓ Yes</strong></td>
+                                <td>△ Limited</td>
+                            </tr>
+                            <tr>
+                                <td>No-Code Automation</td>
+                                <td>△ Moderate</td>
+                                <td><strong>✓ Advanced</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Templates</td>
+                                <td>✓ 100+</td>
+                                <td><strong>✓ 200+</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+            <div class="messaging-box">
+                <div class="messaging-title">Win Strategy: "Three Tools in One"</div>
+                <div class="messaging-copy">
+                    "Monday.com is great for project coordination, but teams add Miro for brainstorming, Notion for docs, and ChatGPT for writing. That's 4 subscriptions, 4 logins, 4 training sessions. Taskade consolidates all three into one workspace with AI built-in. One app, one learning curve, half the cost."
+                </div>
+            </div>
+        </div> 
+        
+           <!-- Key Messages Section -->
+        <div id="key-messages" class="content-section">
+                <div class="breadcrumbs">
+                    <span><a href="#welcome" onclick="showSection(event, 'welcome')">Home</a></span> <span>›</span> <span><a href="#battlecard-taskade" onclick="showSection(event, 'battlecard-taskade')">Taskade</a></span> <span>›</span> <span>Sales Enablement</span> <span>›</span> <span>Key Messages</span>
+                </div>
+                <h1 class="page-title">Key Messages</h1>
+
+                <div class="messaging-box">
+                    <div class="messaging-title">🎯 Message 1: One Tool. Unlimited Workflows.</div>
+                    <div class="messaging-copy">"Stop toggling between projects, notes, and brainstorming apps. Taskade brings everything together - mind maps, tasks, docs, and an AI assistant. Your team works in one place, sees everything, and ships faster."</div>
+                </div>
+
+                <div class="messaging-box">
+                    <div class="messaging-title">🎯 Message 2: AI That Actually Helps</div>
+                    <div class="messaging-copy">"ChatGPT is great, but you copy/paste your work into a browser tab. Taskade's AI is inside your workspace - help with writing, brainstorming, task breakdown, and automation. Never leave Taskade to get AI help."</div>
+                </div>
+
+                <div class="messaging-box">
+                    <div class="messaging-title">🎯 Message 3: Teams Move 40% Faster</div>
+                    <div class="messaging-copy">"Less configuration, more doing. Taskade's intuitive interface means teams are productive in 15 minutes, not weeks. Mind maps replace hours of meetings. AI brainstorms at team pace. You get working faster, not training longer."</div>
+                </div>
+
+                <div class="messaging-box">
+                    <div class="messaging-title">🎯 Message 4: Fraction of the Cost</div>
+                    <div class="messaging-copy">"A team of 20 on Asana costs $2,400/year + Miro, Notion, ChatGPT subscriptions. Same team on Taskade is $1,200/year, all-in. You don't choose Taskade over enterprise tools - you choose it instead of 4-5 tools."</div>
+                </div>
+        </div>
+
+            <!-- Objections Section -->
+            <div id="objections" class="content-section">
+                 <div class="breadcrumbs">
+                    <span><a href="#welcome" onclick="showSection(event, 'welcome')">Home</a></span> <span>›</span> <span><a href="#battlecard-taskade" onclick="showSection(event, 'battlecard-taskade')">Taskade</a></span> <span>›</span> <span>Sales Enablement</span> <span>›</span> <span>Handling Objections</span>
+                </div>
+
+              <h1 class="page-title">Handling Common Objections</h1>
+
+                <div class="objection-box">
+                    <div class="objection-header">"We're too invested in [Asana/Monday/Jira]"</div>
+                    <div class="objection-response">
+                        <strong>Response:</strong> "I understand - switching has a cost. Here's what we typically see: migration takes 2-3 weeks, and you're back to full productivity. You then save 30-40% annually on licensing while gaining AI and brainstorming built-in. Most teams see ROI in 6 months. We also run parallel for 30 days so you're never at risk."
+                    </div>
+                </div>
+
+                <div class="objection-box">
+                    <div class="objection-header">"Is Taskade stable enough for enterprise?"</div>
+                    <div class="objection-response">
+                        <strong>Response:</strong> "Yes. Taskade has 2M+ users, $7M in funding, enterprise customers including Fortune 500s, 99.9% uptime SLA, SOC 2 compliance, and data centers in multiple regions. We're backed by top-tier VCs. For teams under 1,000 users, Taskade is as stable and secure as any enterprise tool."
+                    </div>
+                </div>
+
+                <div class="objection-box">
+                    <div class="objection-header">"AI feels like a gimmick"</div>
+                    <div class="objection-response">
+                        <strong>Response:</strong> "Fair skepticism. But consider this: instead of copying work to ChatGPT and back, AI is part of your workflow. Write a task, AI clarifies scope. Brainstorm, AI suggests next steps. This isn't hype - it's 20 hours/month of work per person that AI handles. That's not a gimmick, it's ROI. Try it for 7 days. You'll see."
+                    </div>
+                </div>
+
+                <div class="objection-box">
+                    <div class="objection-header">"We need advanced automation/integrations"</div>
+                    <div class="objection-response">
+                        <strong>Response:</strong> "Taskade supports 500+ integrations via Zapier, plus native integrations with Slack, GitHub, and Salesforce. For advanced automation, you're typically building on top of Asana anyway - we give you the same power without the complexity. What specific integrations do you need? Let's validate we can support them."
+                    </div>
+                </div>
+
+                <div class="objection-box">
+                    <div class="objection-header">"Our team is not technical enough"</div>
+                    <div class="objection-response">
+                        <strong>Response:</strong> "That's exactly why Taskade wins here. If you can use Gmail and Google Docs, you can use Taskade in 15 minutes. No training needed. We have 2M users - engineers, creatives, marketers, executives. Taskade is built for humans, not engineers. Start a project this week, and your team will be teaching each other features within days."
+                    </div>
+                </div>
+            </div>
+
+            <!-- Use Cases Section -->
+            <div id="use-cases" class="content-section">
+                <div class="breadcrumbs">
+                    <span><a href="#welcome" onclick="showSection(event, 'welcome')">Home</a></span> <span>›</span> <span><a href="#battlecard-taskade" onclick="showSection(event, 'battlecard-taskade')">Taskade</a></span> <span>›</span> <span><a href="#sales-enaablement" onclick="showSection('sales-enablement')">Sales Enablement</a></span> <span>›</span> <span>Use Cases & Scenarios </span>
+                </div>
+                <h1 class="page-title">Use Cases + Ideas</h1>
+
+                <div class="content-box">
+                    <h2>Perfect Fit Scenarios</h2>
+
+                    <h3>📱 Startup + Lean Teams (5-50 people)</h3>
+                    <p>Startups are highly sensitive to seat-based cost compounding. Taskade Pro includes up to 10 users for $16/month flat (annual billing), meaning startups can scale their headcount without their software bill scaling linearly. It completely eliminates the need for separate subscriptions to Miro (mind mapping), ChatGPT/Claude (AI writing), and Asana (tasks).</p>
+
+                    <h3>🎨 Creative Teams + Design Studios (Agencies, Design Studios)</h3>
+                    <p>Creative workflows struggle with rigid, text-heavy databases. Taskade’s structural ability to instantly flip a project from a standard task checklist into a visual Mind Map or an Organizational Chart makes it perfect for brainstorming campaigns. Teams use native AI agents to dynamically generate copywriting drafts, marketing hooks, and brand concepts directly on the shared canvas.</p>
+
+                    <h3>📊 Product + Tech Teams</h3>
+                    <p>Great for teams mapping out feature rollouts without the bureaucratic bulk of Jira. Product managers use Mind Maps for visual roadmapping, flip to Kanban or Gantt views for sprint execution, and embed custom AI agents trained on their product documentation to auto-draft Product Requirement Documents (PRDs) and release notes.</p>
+
+                    <h3>🎓 Education, Research + Training</h3>
+                    <p>Taskade’s infinite-nesting outliner format allows educators to map massive curriculums visually. Because Taskade allows unlimited workspace collaborators and offers a robust Free tier alongside flat-rate class tiers, it bypasses the prohibitive per-seat licensing traps that lock schools out of Asana.</p>
+
+                    <h3>🤝 Consulting & Professional Services</h3>
+                    <p>Taskade’s Business Tier ($40/month flat) unlocks white-label portal sharing and custom domains. Consultants can build interactive client dashboards, use AI agents to automate routine status reporting, and securely share polished, branded workspaces with external stakeholders without paying for extra client seats.</p>
+                </div>
+
+                <div class="content-box">
+                    <h2>Wrong Fit Scenarios</h2>
+                    <ul>
+                        <li><strong>Massive Traditional Enterprises (5,000+ users):</strong> Consider Asana or Jira for scale</li>
+                        <li><strong>Continuous DevOps & CI/CD Heavy Engineering:</strong> Jira is better; Taskade is workflow-light on technical DevOps</li>
+                        <li><strong>Government & Highly Regulated Sectors (HIPAA/FedRAMP):</strong> Limited compliance options; traditional tools more mature</li>
+                        <li><strong>Organizations with Deep Legacy Enterprise Integration Needs:</strong> Monday/Asana better; Taskade is simpler</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        </main> <footer id="footer"></footer>
     </body>
-    
 </html>
