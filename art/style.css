@@ -1826,6 +1826,15 @@ footer {
             max-width: 1311px;
             margin: var(--spacing-xs) auto;
       }
+         .ae-middle h1 {
+            max-width: 1111px;
+            margin: var(--spacing-xs) auto;
+      }
+
+         .ae-middle p {
+            max-width: 1111px;
+            margin: var(--spacing-xs) auto;
+      }
 
         .ae-container {
             max-width: 1400px;
