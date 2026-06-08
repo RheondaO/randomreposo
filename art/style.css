@@ -25,12 +25,12 @@ background-color: var(--color-white)
 :root { 
     --color-black: #000000;
     --color-white: #ffffff;
-    --color-gray-light: var(--color-white)f5f5f5;
-    --color-gray-medium: var(--color-white)e0e0e0;
-    --color-gray-dark: var(--color-white)333333;
+    --color-gray-light: #f5f5f5;
+    --color-gray-medium: #e0e0e0;
+    --color-gray-dark: #333333;
 
     /* Warm iridescent colors */
-    --color-cherry-red: var(--color-white)ff0000;
+    --color-cherry-red: #ff0000;
     --color-orange-glow: rgba(255, 140, 0, 0.2);
     --color-cherry-red-glow: rgba(255, 0, 0, 0.3);
     --color-cherry-red-glow-strong: rgba(255, 0, 0, 0.6);
