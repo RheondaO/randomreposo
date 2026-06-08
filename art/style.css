@@ -1974,8 +1974,8 @@ footer {
 
         .kanban-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3),
-                        0 0 40px rgba(0, 191, 255, 0.2);
+          /*  box-shadow: 0 0 20px rgba(138, 43, 226, 0.3),
+                        0 0 40px rgba(0, 191, 255, 0.2); */
         }
 
         .kanban-card:active {
