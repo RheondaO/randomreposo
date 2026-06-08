@@ -1826,6 +1826,12 @@ footer {
 
 
   /* Main Container */
+
+      .ae-middle {
+      max-width: 1111px;
+      margin: var(--spacing-xs) auto;
+      padding: 3rem;
+      }
         .ae-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -2041,11 +2047,13 @@ footer {
         }
 
         /* Metrics Section */
+
         .metrics-section {
             border: 3px solid #000000;
             padding: 2rem;
             margin-bottom: 2rem;
             background: #f9f9f9;
+            text-align: center;
         }
 
         .metrics-title {
