@@ -1839,9 +1839,8 @@ footer {
 
         /* Hero Section */
         .ae-hero {
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
             border-bottom: 4px solid var(--color-black);
-            padding-bottom: 2rem;
         }
 
         .ae-title {
