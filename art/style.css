@@ -1827,15 +1827,14 @@ footer {
 
   /* Main Container */
 
-      .ae-middle {
-      max-width: 1111px;
-      margin: var(--spacing-xs) auto;
-      padding: 3rem;
+         .ae-middle {
+            max-width: 1311px;
+            margin: var(--spacing-xs) auto;
       }
+
         .ae-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 3rem 2rem;
         }
 
         /* Hero Section */
