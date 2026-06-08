@@ -2075,11 +2075,12 @@ footer {
         }
 
         .metric-label {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
+            font-family: "Jersey 25", sans-serif;
+            color: var(--color-black);
+           
         }
 
         .metric-value {
