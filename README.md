@@ -48,7 +48,7 @@ Each role page follows a standardized 5-section sequence to demonstrate my *Muta
 ### Account Executive
 - [ ] Loom Video
 - [x] Visual Workflow
-- [ ] AI Strategy Innovation Box
+- [x] AI Strategy Innovation Box
 - [ ] Blog Post
 - [ ] Strategic Discovery
 
@@ -108,7 +108,7 @@ Centralized section `knowledgebase.html` for a quick referenece in a How-To begi
 
 - *The Takeaway*: Final strategic advice for the reader
 
-### Gemini Protocol Methodology
+### AI Protocol Methodology
 - [ ] Instructional Prompting & Architechture Design
 - [ ] Rapid Debugging & Root Cause Analysis (RCA)
 - [ ] Multi-Stakeholder Documenetation Synthesis
