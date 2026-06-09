@@ -49,14 +49,11 @@ Each role page follows a standardized 5-section sequence to demonstrate my *Muta
 - [ ] Loom Video
 - [x] Visual Workflow
 - [x] AI Strategy Innovation Box
-- [ ] Blog Post
-- [ ] Strategic Discovery
 
 ### Solutions Engineer
 - [ ] Loom Video
 - [ ] Visual Workflow
 - [ ] AI Strategy Innovation Box
-- [ ] Blog Post
 - [x] Strategic Discovery
 
 ### Presales Engineer
