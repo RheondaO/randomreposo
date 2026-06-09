@@ -2097,8 +2097,10 @@ footer {
         }
 
         .metric-description {
-            font-size: 0.95rem;
-            color: #333;
+            font-family: "Jersey 25", sans-serif;
+            font-size: 1rem;
+            color: var(--color-black);
+            font-weight: 600;
         }
 
         /* Resources Section */
