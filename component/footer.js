@@ -25,5 +25,5 @@ export function loadFooter() {
         <a href="https://docs.google.com/document/d/1TjGRbmNFlCzouPgVXYwRXTD4-xZNHi2qB_K7OfH1B-c/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Rés</a>
       </div>
     </div>
-  `;
+  `
 }
