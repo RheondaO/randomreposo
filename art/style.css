@@ -2013,6 +2013,7 @@ footer {
             color: #333;
             margin-bottom: 1rem;
             line-height: 1.5;
+            text-align: justify;
         }
 
         .card-tags {
