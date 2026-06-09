@@ -1909,6 +1909,9 @@ footer {
 
         .progress-icon {
             font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         /* Kanban Board */
