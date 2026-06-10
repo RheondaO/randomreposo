@@ -2853,7 +2853,7 @@ footer {
         font-size: 1.1rem;
     }
     
-    .job-title {
+    .job-title, .disabled-title {
         font-size: 125px;
         padding: 0.5rem 1rem;
     }
