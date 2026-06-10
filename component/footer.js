@@ -9,7 +9,7 @@ export function loadFooter() {
   <h4>Manifestation Targets <br>in Annual Income (Post-Tax): </h4>
   <br><p><b>$333,888
   <br> $266,112
-  <br> $198,336</p></b>
+  <br> $198,336</b></p>
   <br><i>Gold Star if we define what that requires transparently.</i>
   <br>You can email me at <a href="mailto:rheondadotogletree@outlook.com">rheondadotogletree@outlook.com</a>
   </div>
