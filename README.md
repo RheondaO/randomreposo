@@ -88,7 +88,7 @@ Centralized section `knowledgebase.html` for a quick referenece in a How-To begi
 ## IV. Other Important Stuff
 - [x] Global AI Disclosure Footer
 - [x] Navigation Check
-- [ ] Mobile-Friendliness
+- [x] Mobile-Friendliness
 
 ## V. Honorable Highlights
 ### Universal Blog Post Template 
