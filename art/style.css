@@ -2982,10 +2982,10 @@ footer {
 
 /* ==========================================================================
    Dark Mode Support (Optional - can be activated via JS)
-   ========================================================================= */
+   ========================================================================= 
 
 @media (prefers-color-scheme: dark) {
-    /* Uncomment to enable dark mode */
+    /* Uncomment to enable dark mode 
 
     body {
         background: var(--color-black);
