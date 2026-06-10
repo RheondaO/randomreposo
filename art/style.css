@@ -62,7 +62,6 @@ background-color: var(--color-white)
     --transition-slow: 2s;
 }
 
-
 body {
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
@@ -73,6 +72,10 @@ body {
     color: var(--color-black);
     line-height: 1.6;
     text-transform: lowercase;
+}
+
+eb-ui { 
+   display: none;
 }
 
 /* ==========================================================================
