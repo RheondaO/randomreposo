@@ -541,7 +541,6 @@ nav {
   visibility: visible;
   opacity: 1;
   transform: translateY(-48%) translateX(10%);
-  font-size: 0.8rem;
 }
 
 .battle-tooltip {
@@ -2946,6 +2945,11 @@ footer {
     .job-title, .disabled-title {
         font-size: 32px;
     }
+
+   .title-tooltip {
+      font-size: 0.8rem;
+
+   }
     
     .stats-grid {
         grid-template-columns: 1fr;
