@@ -11,7 +11,7 @@ export function loadFooter() {
   <br> $266,112
   <br> $198,336</b></p>
   <br><i>Gold Star if we define what that requires transparently.</i>
-  <br>Open to remote & relocation opportunities</a>
+  <br>Open to Remote, 25%+ Travel, & Relocation opportunities</a>
   </div>
     <div class="help-button">?</div>
   </div>
