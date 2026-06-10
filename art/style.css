@@ -2942,7 +2942,7 @@ footer {
         width: 100%;
     }
     
-    .job-title {
+    .job-title, .disabled-title {
         font-size: 32px;
     }
     
