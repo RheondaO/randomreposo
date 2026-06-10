@@ -11,7 +11,7 @@ export function loadFooter() {
   <br> $266,112
   <br> $198,336</b></p>
   <br><i>Gold Star if we define what that requires transparently.</i>
-  <br>You can email me at <a href="mailto:rheondadotogletree@outlook.com">rheondadotogletree@outlook.com</a>
+  <br>Open to remote & relocation opportunities</a>
   </div>
     <div class="help-button">?</div>
   </div>
