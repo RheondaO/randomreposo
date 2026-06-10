@@ -18,9 +18,8 @@ export function loadSharedHead({ title, description }) {
    const { loadFooter } = await import("./footer.js");
    const { loadLoader } = await import("./loader.js");
 
-    
+    loadLoader();
     loadNav();
     loadFooter();
-    loadLoader();
   });
 }
