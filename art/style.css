@@ -320,7 +320,7 @@ nav {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity var(--transition-medium) ease-out;
+    transition: opacity var(--transition-slow) ease-out;
 }
 
 .loading-screen.fade-out {
