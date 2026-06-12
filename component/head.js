@@ -8,15 +8,6 @@ export function loadSharedHead({ title, description }) {
     <meta name="description" content="${description || "Sales Portfolio showcasing Mutability"}" />
     
     <link rel="icon" type="image/png" href="./art/favicon.png" />
-
-<style>
-  /* The ultimate instant shield before any script initializes */
-  html:not(.loader-initialized) body {
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-</style>
-
     <link rel="stylesheet" href="./art/style.css" />
   `;
 
