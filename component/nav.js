@@ -22,7 +22,7 @@ export function loadNav() {
   `;
 
   // 2. Target the specific home/index navigation links
-  const indexLinks = navContainer.querySelectorAll('a[href="rheondao.github.io/randomreposo/"]');
+  const indexLinks = navContainer.querySelectorAll('a[href="https://rheondao.github.io/randomreposo/"]');
 
   indexLinks.forEach(link => {
     link.addEventListener('click', (e) => {
