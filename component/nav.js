@@ -21,7 +21,7 @@ export function loadNav() {
     </nav>
   `;
 
- // 1. Target all navigation links globally since all pages now share a loader
+  // 1. Target all navigation links globally since all pages now share a loader
   const navLinks = navContainer.querySelectorAll('a');
 
   navLinks.forEach(link => {
@@ -31,10 +31,17 @@ export function loadNav() {
       // Skip tracking if it's an inline link placeholder or an action snippet
       if (!targetUrl || targetUrl.startsWith('javascript:')) return;
 
+      // CRUCIAL BUG FIX: If clicking an anchor hash on the CURRENT page, 
+      // let the browser handle it naturally without fading out!
+      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+      const [targetPath, targetHash] = targetUrl.split('#');
+      if ((targetPath === currentPath || !targetPath) && targetHash) {
+        return; 
+      }
+
       e.preventDefault();
 
       // 2. QUICKEST STRIKE: Apply the outward navigation mask to the document root.
-      // This immediately shields layout structures before the browser processes navigation.
       document.documentElement.classList.add('navigating-out');
 
       // 3. Unhide the site-loader element explicitly on the current window framework
@@ -51,7 +58,7 @@ export function loadNav() {
         }
       }
 
-      // 4. Match your runQuickLoader lifecycle exactly to hold the screen mask cleanly
+      // 4. Hold the screen mask cleanly for 350ms, then swap pages
       setTimeout(() => {
         window.location.href = targetUrl;
       }, 350); 
