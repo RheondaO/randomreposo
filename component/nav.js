@@ -7,10 +7,10 @@ export function loadNav() {
   navContainer.innerHTML = `
     <nav>
       <div class="nav-container">
-        <a href="https://rheondao.github.io/randomreposo/" class="logo">sales portfolio</a>    
+        <a href="index.html" class="logo">sales portfolio</a>    
         <ul class="nav-links">
           <li class="nav-item">
-            <a href="https://rheondao.github.io/randomreposo/">home</a>
+            <a href="index.html">home</a>
           </li>
           <li class="nav-item">
             <a href="knowledgebase.html#admin">meet the admin</a>
@@ -22,7 +22,7 @@ export function loadNav() {
   `;
 
   // 2. Target the specific home/index navigation links
-  const indexLinks = navContainer.querySelectorAll('a[href="https://rheondao.github.io/randomreposo/"]');
+  const indexLinks = navContainer.querySelectorAll('a[href="index.html"]');
 
   indexLinks.forEach(link => {
     link.addEventListener('click', (e) => {
