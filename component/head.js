@@ -73,6 +73,7 @@ export function loadSharedHead({ title, description }) {
     }
     // Other pages: no loader at all
 
-    */
   });
 }
+
+    */
