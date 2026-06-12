@@ -483,10 +483,9 @@ nav {
 .disabled-title {
     font-size: 89px;
     font-family: "Jersey 25", sans-serif;
-    color: var(--color-black);
+    color: var(--color-white);
     font-weight: 600px;
     line-height: 1.2;
-    text-decoration: none;
     display: block;
     position: relative;
     z-index: 2;
