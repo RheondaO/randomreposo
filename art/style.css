@@ -218,7 +218,7 @@ nav {
   width: max-content;
   transform: translateX(-50%) translateY(-10px);
   background: none;
-  color: var(--color-gray-light);
+  color: var(--color-black);
   padding: 1px 2px;
   font-size: 18px;
   border-radius: 5px;
