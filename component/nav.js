@@ -1,5 +1,5 @@
 // /component/nav.js
-export function loadNav() {
+export async function loadNav() {
   const nav = document.querySelector('nav');
   if (!nav) return;
 
@@ -7,40 +7,37 @@ export function loadNav() {
   let isNavigating = false;
   const NAVIGATION_DELAY = 500; // 500ms delay between clicks
 
+  // Import loader
+  const { SiteLoader } = await import('./loader.js');
+
   // Get all nav links
   const navLinks = nav.querySelectorAll('a');
 
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      // Prevent rapid navigation
-      if (isNavigating) {
-        e.preventDefault();
-        return;
-      }
-
-      // Check if it's an external link or same page
       const href = link.getAttribute('href');
       const isSamePage = href === window.location.pathname || 
                          href === window.location.href;
 
-      if (isSamePage) {
+      // Don't prevent default for same page or if already navigating
+      if (isSamePage || isNavigating) {
         e.preventDefault();
-        return; // Don't navigate
+        return;
       }
 
-      // Mark as navigating
+      // Prevent rapid navigation
+      e.preventDefault();
       isNavigating = true;
 
-      // Show loader
-      const { SiteLoader } = await import('./loader.js');
+      // Show loader (just the ring, no hats)
       SiteLoader.showLoader();
 
-      // Allow navigation after brief delay
+      // Navigate after delay
       setTimeout(() => {
         window.location.href = href;
       }, NAVIGATION_DELAY);
 
-      // Reset flag after full transition
+      // Reset flag
       setTimeout(() => {
         isNavigating = false;
       }, NAVIGATION_DELAY + 1000);
