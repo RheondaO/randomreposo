@@ -1,6 +1,7 @@
 // components/loader.js
 class SiteLoader extends HTMLElement {
   connectedCallback() {
+    document.documentElement.classList.add('loader-initialized');
     // Check if this is the user's first landing in this browser session
     const isFirstVisit = !sessionStorage.getItem("loaderShown");
 
