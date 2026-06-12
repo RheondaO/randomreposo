@@ -22,7 +22,7 @@ export function loadNav() {
   `;
 
   // 2. Target the specific home/index navigation links
-  const indexLinks = navContainer.querySelectorAll('a[href="index.html"]');
+  const indexLinks = navContainer.querySelectorAll('a[href="/index.html"]');
 
   indexLinks.forEach(link => {
     link.addEventListener('click', (e) => {
