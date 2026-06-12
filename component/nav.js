@@ -44,14 +44,14 @@ export function loadNav() {
       // 2. QUICKEST STRIKE: Apply the outward navigation mask to the document root.
       document.documentElement.classList.add('navigating-out');
 
-      // 3. Unhide the site-loader element explicitly on the current window framework
+// 3. Unhide the site-loader element explicitly on the current window framework
       const siteLoader = document.querySelector('site-loader');
       if (siteLoader) {
         const loadingScreen = siteLoader.querySelector('#loadingScreen');
         if (loadingScreen) {
+          // Simply toggle the visibility block; let the stylesheet handle positioning!
           loadingScreen.style.display = 'block';
           
-          // Let the engine map the display state block rule, then smoothly balance opacity
           requestAnimationFrame(() => {
             loadingScreen.style.opacity = '1';
           });
