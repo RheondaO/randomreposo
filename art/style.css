@@ -351,7 +351,7 @@ nav {
    animation: shimmer-load 2s ease-in-out infinite;
 }
 
-/* If the skip-loader flag is active, hide the loader element instantly */
+/* If the skip-loader flag is active, hide the loader element instantly 
 .skip-loader .loader-wrapper,
 .skip-loader #loader {
   display: none !important;
@@ -359,7 +359,7 @@ nav {
   visibility: hidden !important;
   transition: none !important;
 }
-
+*/
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
