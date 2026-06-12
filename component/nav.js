@@ -8,7 +8,8 @@ export function loadNav() {
       <div class="nav-container">
         <a href="index.html" class="logo">sales portfolio</a>    
   <ul class="nav-links">
-        <li><a href="index.html">home</a></li>
+        <li class="nav-item">
+        <a href="index.html">home</a></li>
 
         <li class="nav-item">
           <a href="knowledgebase.html#admin">meet the admin</a>
