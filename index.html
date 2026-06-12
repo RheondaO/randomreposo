@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<style>
+  /* The ultimate instant shield before any script initializes */
+  html:not(.loader-initialized) body {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+</style>
+  
   <script type="module">
     import { loadSharedHead } from "./component/head.js";
 
