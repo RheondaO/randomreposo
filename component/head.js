@@ -7,11 +7,11 @@ export function loadSharedHead({ title, description }) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="${description || "Sales Portfolio showcasing Mutability"}" />
     
-    <!-- FOUC Prevention: Hide body until loader fades -->
     <style>
       body {
         visibility: hidden;
         opacity: 0;
+        transition: visibility 0s, opacity 0.5s ease-out;
       }
       .loading-screen {
         visibility: visible !important;
@@ -26,12 +26,29 @@ export function loadSharedHead({ title, description }) {
 
   const loadComponents = async () => {
     try {
-      // Load ALL components in PARALLEL (not sequential)
       const [{ loadNav }, { loadFooter }, { loadLoader }] = await Promise.all([
         import("./nav.js"),
         import("./footer.js"),
         import("./loader.js")
       ]);
+      
+      loadNav();
+      loadFooter();
+      loadLoader(); // This now triggers body reveal when complete
+      
+    } catch (error) {
+      console.error("Error loading components:", error);
+      document.body.style.visibility = "visible";
+      document.body.style.opacity = "1";
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", loadComponents);
+  } else {
+    loadComponents();
+  }
+}
       
       // Start loader immediately (shows while others load)
       loadLoader();
