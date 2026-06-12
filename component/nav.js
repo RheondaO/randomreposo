@@ -3,7 +3,7 @@ export function loadNav() {
   const navContainer = document.getElementById("nav");
   if (!navContainer) return;
 
-  // 1. Inject the navigation HTML structure
+  // Inject the navigation HTML structure
   navContainer.innerHTML = `
     <nav>
       <div class="nav-container">
@@ -21,40 +21,40 @@ export function loadNav() {
     </nav>
   `;
 
-  // 2. Target all navigation links globally since all pages now have the loader
+ // 1. Target all navigation links globally since all pages now share a loader
   const navLinks = navContainer.querySelectorAll('a');
 
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const targetUrl = link.getAttribute('href');
 
-      // Skip processing if it's an empty trigger, an anchor section hash on the same page, or missing href
+      // Skip tracking if it's an inline link placeholder or an action snippet
       if (!targetUrl || targetUrl.startsWith('javascript:')) return;
 
       e.preventDefault();
 
-      // 1. QUICKEST STRIKE: Force an instant state via the root document element.
-      // This bypasses the JS paint-render queue delay entirely.
+      // 2. QUICKEST STRIKE: Apply the outward navigation mask to the document root.
+      // This immediately shields layout structures before the browser processes navigation.
       document.documentElement.classList.add('navigating-out');
 
-      // 2. Look for the site-loader element to ensure the UI states align
+      // 3. Unhide the site-loader element explicitly on the current window framework
       const siteLoader = document.querySelector('site-loader');
       if (siteLoader) {
         const loadingScreen = siteLoader.querySelector('#loadingScreen');
         if (loadingScreen) {
           loadingScreen.style.display = 'block';
           
-          // Let the browser paint the display block rule, then smoothly transition opacity
+          // Let the engine map the display state block rule, then smoothly balance opacity
           requestAnimationFrame(() => {
             loadingScreen.style.opacity = '1';
           });
         }
       }
 
-      // 3. Hold the page context firmly for 350ms-400ms before changing locations
+      // 4. Match your runQuickLoader lifecycle exactly to hold the screen mask cleanly
       setTimeout(() => {
         window.location.href = targetUrl;
-      }, 350);
+      }, 350); 
     });
   });
 }
