@@ -92,18 +92,25 @@ eb-ui {
    display: none;
 }
 
-
+/* Default state: hidden and out of the way */
 #loadingScreen {
+  display: none;
+  background-color: var(--color-white, #ffffff);
+  z-index: 999999;
+}
+
+/* Active state: Triggers ONLY during link clicks to force dead-centering */
+html.navigating-out #loadingScreen {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
-  display: none; /* Controlled cleanly by your nav.js toggle */
+  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   background-color: #ffffff !important;
-  z-index: 999999 !important; /* Forces it to sit above subpage sidebars */
+  opacity: 0; /* Starts transparent, ready for the rAF opacity ramp */
 }
 
 /* ==========================================================================
