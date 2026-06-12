@@ -9,7 +9,7 @@ export function loadSharedHead({ title, description }) {
       <meta name="description" content="${description || "Sales Portfolio showcasing Mutability"}" />
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://googleapis.com/css2?family=Jersey+25&family=Open+Sans:ital,wdth,wght@0,88.8,333;1,88.8,333&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Open+Sans:ital,wdth,wght@0,88.8,333;1,88.8,333&display=swap" rel="stylesheet">
       <link rel="icon" type="image/png" href="./art/favicon.png" />
       <link rel="stylesheet" href="./art/style.css" />
     `;
