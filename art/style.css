@@ -92,14 +92,14 @@ eb-ui {
    display: none;
 }
 
-/* Default state: hidden and out of the way */
+/* Default state: hidden and out of the way 
 #loadingScreen {
   display: none;
   background-color: var(--color-white, #ffffff);
   z-index: 999999;
 }
 
-/* Active state: Triggers ONLY during link clicks to force dead-centering */
+/* Active state: Triggers ONLY during link clicks to force dead-centering
 html.navigating-out #loadingScreen {
   position: fixed !important;
   top: 0 !important;
