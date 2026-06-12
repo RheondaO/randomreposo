@@ -65,11 +65,11 @@ class SiteLoader extends HTMLElement {
     // Just show the ring for 1 second (page switching)
     setTimeout(() => {
       this.fadeOutLoader(loadingScreen);
-    }, 1000);
+    }, 2000);
   }
 
   fadeOutLoader(loadingScreen) {
-    loadingScreen.style.transition = "opacity 0.5s ease-out";
+    loadingScreen.style.transition = "opacity 1s ease-out";
     loadingScreen.style.opacity = "0";
 
     setTimeout(() => {
