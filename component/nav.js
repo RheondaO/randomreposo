@@ -7,10 +7,10 @@ export function loadNav() {
   navContainer.innerHTML = `
     <nav>
       <div class="nav-container">
-        <a href="rheondao.github.io/randomreposo/" class="logo">sales portfolio</a>    
+        <a href="https://rheondao.github.io/randomreposo/" class="logo">sales portfolio</a>    
         <ul class="nav-links">
           <li class="nav-item">
-            <a href="rheondao.github.io/randomreposo/">home</a>
+            <a href="https://rheondao.github.io/randomreposo/">home</a>
           </li>
           <li class="nav-item">
             <a href="knowledgebase.html#admin">meet the admin</a>
