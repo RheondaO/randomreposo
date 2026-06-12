@@ -63,8 +63,8 @@ class SiteLoader extends HTMLElement {
     // Keep the infinity ring spinning briefly during page switches (e.g., 1.2 seconds)
     // and then initiate a faster fade out sequence.
     setTimeout(() => {
-      this.fadeOut(loadingScreen, 1000); // Shorter 500ms fade out for snappier transitions
-    }, 3000);
+      this.fadeOut(loadingScreen, 1000); // 1s fade out for transitions
+    }, 1000);
   }
 
   fadeOut(element, fadeDuration) {
