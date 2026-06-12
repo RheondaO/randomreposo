@@ -7,23 +7,6 @@
    Base Styles & Reset
    ========================================================================== */
 
-html {
-background-color: var(--color-white)
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 :root { 
     --color-black: #000000;
     --color-white: #ffffff;
@@ -62,6 +45,29 @@ background-color: var(--color-white)
     --transition-fast: 0.3s;
     --transition-medium: 0.5s;
     --transition-slow: 2s;
+}
+
+html {
+background-color: var(--color-white)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Forces the background context to stay solid during sudden clicks */
+html.navigating-out body {
+  overflow: hidden;
+  background-color: var(--color-white, #ffffff) !important;
 }
 
 body {
