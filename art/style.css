@@ -495,7 +495,7 @@ nav {
 .disabled-title {
     font-size: 89px;
     font-family: "Jersey 25", sans-serif;
-    color: var(--color-white);
+    color: var(--color-gray-dark);
     font-weight: 600px;
     line-height: 1.2;
     display: block;
@@ -504,7 +504,7 @@ nav {
     padding: 2rem 1rem;
     cursor: pointer;
     transition: all var(--transition-slow);
-    background-color: var(--color-black);
+    background-color: var(--color-gray-medium);
     border: var(--border-extra-thick) solid var(--color-black);
     box-sizing: border-box;
     text-align: left; /* ← Ensures text aligns with the right edge */
@@ -521,7 +521,7 @@ nav {
   width: max-content;
   transform: translateX(-50%) translateY(-10px);
   background: none;
-  color: var(--color-white);
+  color: var(--color-black);
   padding: 8px 15px;
   font-size: 22px;
   border-radius: 5px;
