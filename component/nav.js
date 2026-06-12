@@ -50,7 +50,7 @@ export function loadNav() {
       // 3. Hold the page context firmly for 400ms before changing locations
       setTimeout(() => {
         window.location.href = targetUrl;
-      }, 400);
+      }, 1000);
     });
   });
 }
