@@ -1,13 +1,15 @@
 // components/loader.js
 class SiteLoader extends HTMLElement {
   connectedCallback() {
-    // Only run on index page
-    const isIndexPage = window.location.pathname === "/" || 
-                        window.location.pathname.endsWith("index.html");
-    
-    if (!isIndexPage) return;
+    // Only show once per session
+  if (sessionStorage.getItem("loaderShown")) {
+      this.style.display = "none";
 
-    const isFirstVisit = !sessionStorage.getItem("loaderShown");
+      // Show page content immediately if loader already shown
+      const pageContent = document.getElementById("page-content");
+      if (pageContent) pageContent.style.display = "block";
+      return;
+    }
 
     // Build loader
     this.innerHTML = `
@@ -17,20 +19,8 @@ class SiteLoader extends HTMLElement {
       </div>
     `;
 
-    const loadingScreen = this.querySelector('.loading-screen');
-    const hatContainer = this.querySelector('#hatContainer');
+    sessionStorage.setItem("loaderShown", "true");
 
-    if (isFirstVisit) {
-      // FIRST VISIT: Show hats animation
-      sessionStorage.setItem("loaderShown", "true");
-      this.showHatsAnimation(hatContainer, loadingScreen);
-    } else {
-      // RETURNING: Just show loader ring, fade immediately
-      this.showQuickLoader(loadingScreen);
-    }
-  }
-
-  showHatsAnimation(hatContainer, loadingScreen) {
     const hats = [
       "dad hat", "easter sunday hat", "top hat", "baseball cap",
       "beanie", "beret", "cowboy hat", "bucket hat",
@@ -38,8 +28,10 @@ class SiteLoader extends HTMLElement {
     ];
 
     let currentHatIndex = 0;
+    const hatContainer = this.querySelector('#hatContainer');
+    const loadingScreen = this.querySelector('.loading-screen');
 
-    const showNextHat = () => {
+    function showNextHat() {
       if (currentHatIndex < hats.length) {
         const hatElement = document.createElement('div');
         hatElement.className = 'hat-name';
@@ -53,28 +45,22 @@ class SiteLoader extends HTMLElement {
         currentHatIndex++;
         setTimeout(showNextHat, 1700);
       } else {
-        // All hats done - fade out
-        this.fadeOutLoader(loadingScreen);
+        // Fade out loader
+        loadingScreen.style.transition = "opacity 1s ease";
+        loadingScreen.style.opacity = "0";
+
+        setTimeout(() => {
+          loadingScreen.style.display = "none";
+
+          // Show page content
+          const pageContent = document.getElementById("page-content");
+          if (pageContent) pageContent.style.display = "block";
+        }, 1000);
       }
-    };
+    }
 
+    // Start animation immediately
     showNextHat();
-  }
-
-  showQuickLoader(loadingScreen) {
-    // Just show the ring for 1 second (page switching)
-    setTimeout(() => {
-      this.fadeOutLoader(loadingScreen);
-    }, 2000);
-  }
-
-  fadeOutLoader(loadingScreen) {
-    loadingScreen.style.transition = "opacity 1s ease-out";
-    loadingScreen.style.opacity = "0";
-
-    setTimeout(() => {
-      loadingScreen.style.display = "none";
-    }, 500);
   }
 }
 
