@@ -1,62 +1,53 @@
-// /component/nav.js
-export function loadNav() {
-  const navContainer = document.getElementById("nav");
-  if (!navContainer) return;
+// component/head.js
+export function loadSharedHead({ title, description }) {
+  document.title = title || "Sales Portfolio";
+  
+  // 1. Guard check: Only insert head content if the stylesheet doesn't exist yet
+  if (!document.querySelector('link[href="./art/style.css"]')) {
+    const headContent = `
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="description" content="${description || "Sales Portfolio showcasing Mutability"}"/>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Open+Sans:ital,wdth,wght@0,88.8,333;1,88.8,333&display=swap" rel="stylesheet">
+      <link rel="icon" type="image/png" href="./art/favicon.png"/>
+      <link rel="stylesheet" href="./art/style.css"/>
+    `;
+    document.head.insertAdjacentHTML("beforeend", headContent);
+  } else {
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", description || "Sales Portfolio showcasing Mutability");
+  }
 
-  navContainer.innerHTML = `
-    <nav>
-      <div class="nav-container">
-        <a href="index.html" class="logo">sales portfolio</a>    
-        <ul class="nav-links">
-          <li class="nav-item">
-            <a href="index.html">home</a>
-          </li>
-          <li class="nav-item">
-            <a href="knowledgebase.html#admin">meet the admin</a>
-            <span class="nav-tooltip">¡AI poweruser!</span>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  `;
+  // 2. Execution Wrapper: This fires off components safely
+  const initializeComponents = async () => {
+    try {
+      // Import your framework layout modules in parallel
+      const [
+        { loadNav },
+        { loadFooter },
+        _ // This imports and registers 'site-loader' element lifecycle hooks automatically
+      ] = await Promise.all([
+        import("./nav.js"),
+        import("./footer.js"),
+        import("./loader.js")
+      ]);
 
-  const navLinks = navContainer.querySelectorAll('a');
+      // Execute layout injections
+      loadNav();
+      loadFooter();
+    } catch (error) {
+      console.error("Failed to safely initialize dynamic modules:", error);
+      // Failsafe rescue: Lift the CSS shield if a module fails to parse
+      document.documentElement.classList.add('loader-initialized');
+    }
+  };
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const targetUrl = link.getAttribute('href');
-
-      if (!targetUrl || targetUrl.startsWith('javascript:')) return;
-
-      // Avoid blocking native hash switches on the exact same page path
-      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-      const [targetPath, targetHash] = targetUrl.split('#');
-      if ((targetPath === currentPath || !targetPath) && targetHash) {
-        return; 
-      }
-
-      e.preventDefault();
-
-      // 1. Trigger outbound navigation mask instantly
-      document.documentElement.classList.add('navigating-out');
-
-      // 2. Look for the site-loader element to smoothly transition opacity
-      const siteLoader = document.querySelector('site-loader');
-      if (siteLoader) {
-        const loadingScreen = siteLoader.querySelector('#loadingScreen');
-        if (loadingScreen) {
-          // Let the browser register the .navigating-out display rules first,
-          // then smoothly ramp the opacity to 1 over the page content.
-          requestAnimationFrame(() => {
-            loadingScreen.style.opacity = '1';
-          });
-        }
-      }
-
-      // 3. Hand-off page change right as loader reaches max fade state
-      setTimeout(() => {
-        window.location.href = targetUrl;
-      }, 350); 
-    });
-  });
+  // 3. READINESS CHECK: If the DOM is already parsed by the browser, execute immediately!
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeComponents);
+  } else {
+    initializeComponents();
+  }
 }
