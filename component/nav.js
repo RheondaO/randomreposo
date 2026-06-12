@@ -26,24 +26,31 @@ export function loadNav() {
 
   indexLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      // Prevent the immediate page tear-down flash
       e.preventDefault();
+      const targetUrl = link.getAttribute('href');
 
-      // Look for the site-loader element on the current page
+      // 1. QUICKEST STRIKE: Force an instant state via the root document element.
+      // This bypasses the JS paint-render queue delay entirely.
+      document.documentElement.classList.add('navigating-out');
+
+      // 2. Look for the site-loader element to ensure the UI states align
       const siteLoader = document.querySelector('site-loader');
       if (siteLoader) {
         const loadingScreen = siteLoader.querySelector('#loadingScreen');
         if (loadingScreen) {
-          // Immediately pop the loader back to full visibility 
           loadingScreen.style.display = 'block';
-          loadingScreen.style.opacity = '1';
+          
+          // Let the browser paint the display block rule, then smoothly transition opacity
+          requestAnimationFrame(() => {
+            loadingScreen.style.opacity = '1';
+          });
         }
       }
 
-      // Hold the transition barrier for 400ms before shifting locations
+      // 3. Hold the page context firmly for 400ms before changing locations
       setTimeout(() => {
-        window.location.href = link.getAttribute('href');
-      }, 2000);
+        window.location.href = targetUrl;
+      }, 400);
     });
   });
 }
