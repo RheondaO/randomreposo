@@ -21,13 +21,17 @@ export function loadNav() {
     </nav>
   `;
 
-  // 2. Target the specific home/index navigation links
-  const indexLinks = navContainer.querySelectorAll('a[href="/index.html"]');
+  // 2. Target all navigation links globally since all pages now have the loader
+  const navLinks = navContainer.querySelectorAll('a');
 
-  indexLinks.forEach(link => {
+  navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
       const targetUrl = link.getAttribute('href');
+
+      // Skip processing if it's an empty trigger, an anchor section hash on the same page, or missing href
+      if (!targetUrl || targetUrl.startsWith('javascript:')) return;
+
+      e.preventDefault();
 
       // 1. QUICKEST STRIKE: Force an instant state via the root document element.
       // This bypasses the JS paint-render queue delay entirely.
@@ -47,10 +51,10 @@ export function loadNav() {
         }
       }
 
-      // 3. Hold the page context firmly for 400ms before changing locations
+      // 3. Hold the page context firmly for 350ms-400ms before changing locations
       setTimeout(() => {
         window.location.href = targetUrl;
-      }, 400);
+      }, 350);
     });
   });
 }
