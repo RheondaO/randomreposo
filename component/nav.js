@@ -7,10 +7,10 @@ export function loadNav() {
   navContainer.innerHTML = `
     <nav>
       <div class="nav-container">
-        <a href="index.html" class="logo">sales portfolio</a>    
+        <a href="rheondao.github.io/randomreposo/" class="logo">sales portfolio</a>    
         <ul class="nav-links">
           <li class="nav-item">
-            <a href="index.html">home</a>
+            <a href="rheondao.github.io/randomreposo/">home</a>
           </li>
           <li class="nav-item">
             <a href="knowledgebase.html#admin">meet the admin</a>
@@ -22,7 +22,7 @@ export function loadNav() {
   `;
 
   // 2. Target the specific home/index navigation links
-  const indexLinks = navContainer.querySelectorAll('a[href="index.html"]');
+  const indexLinks = navContainer.querySelectorAll('a[href="rheondao.github.io/randomreposo/"]');
 
   indexLinks.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -43,7 +43,7 @@ export function loadNav() {
       // Hold the transition barrier for 400ms before shifting locations
       setTimeout(() => {
         window.location.href = link.getAttribute('href');
-      }, 400);
+      }, 2000);
     });
   });
 }
