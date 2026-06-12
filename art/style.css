@@ -64,10 +64,16 @@ background-color: var(--color-white)
     padding: 0;
 }
 
-/* Forces the background context to stay solid during sudden clicks */
+/* Universal FOUC Prevention Mask */
+html:not(.loader-initialized) body {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  background-color: #ffffff !important;
+}
+
+/* Outbound transition coverage */
 html.navigating-out body {
   overflow: hidden;
-  background-color: var(--color-white, #ffffff) !important;
 }
 
 body {
