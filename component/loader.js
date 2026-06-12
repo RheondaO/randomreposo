@@ -63,7 +63,7 @@ class SiteLoader extends HTMLElement {
     // and then initiate a faster fade out sequence.
     setTimeout(() => {
       this.fadeOut(loadingScreen, 1000); // Shorter 500ms fade out for snappier transitions
-    }, 1200);
+    }, 3000);
   }
 
   fadeOut(element, fadeDuration) {
