@@ -110,8 +110,8 @@ html.navigating-out #loadingScreen {
   align-items: center !important;
   justify-content: center !important;
   background-color: #ffffff !important;
-  opacity: 0; /* Starts transparent, ready for the rAF opacity ramp */
-}
+  opacity: 0; /* Starts transparent, ready for the rAF opacity ramp 
+}*/
 
 /* ==========================================================================
    Typography
