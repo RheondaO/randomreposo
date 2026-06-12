@@ -3,7 +3,6 @@ export function loadNav() {
   const navContainer = document.getElementById("nav");
   if (!navContainer) return;
 
-  // Inject the navigation HTML structure
   navContainer.innerHTML = `
     <nav>
       <div class="nav-container">
@@ -21,18 +20,15 @@ export function loadNav() {
     </nav>
   `;
 
-  // 1. Target all navigation links globally since all pages now share a loader
   const navLinks = navContainer.querySelectorAll('a');
 
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const targetUrl = link.getAttribute('href');
 
-      // Skip tracking if it's an inline link placeholder or an action snippet
       if (!targetUrl || targetUrl.startsWith('javascript:')) return;
 
-      // CRUCIAL BUG FIX: If clicking an anchor hash on the CURRENT page, 
-      // let the browser handle it naturally without fading out!
+      // Avoid blocking native hash switches on the exact same page path
       const currentPath = window.location.pathname.split('/').pop() || 'index.html';
       const [targetPath, targetHash] = targetUrl.split('#');
       if ((targetPath === currentPath || !targetPath) && targetHash) {
@@ -41,24 +37,23 @@ export function loadNav() {
 
       e.preventDefault();
 
-      // 2. QUICKEST STRIKE: Apply the outward navigation mask to the document root.
+      // 1. Trigger outbound navigation mask instantly
       document.documentElement.classList.add('navigating-out');
 
-// 3. Unhide the site-loader element explicitly on the current window framework
+      // 2. Look for the site-loader element to smoothly transition opacity
       const siteLoader = document.querySelector('site-loader');
       if (siteLoader) {
         const loadingScreen = siteLoader.querySelector('#loadingScreen');
         if (loadingScreen) {
-          // Simply toggle the visibility block; let the stylesheet handle positioning!
-          loadingScreen.style.display = 'block';
-          
+          // Let the browser register the .navigating-out display rules first,
+          // then smoothly ramp the opacity to 1 over the page content.
           requestAnimationFrame(() => {
             loadingScreen.style.opacity = '1';
           });
         }
       }
 
-      // 4. Hold the screen mask cleanly for 350ms, then swap pages
+      // 3. Hand-off page change right as loader reaches max fade state
       setTimeout(() => {
         window.location.href = targetUrl;
       }, 350); 
