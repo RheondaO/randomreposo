@@ -64,6 +64,22 @@ background-color: var(--color-white)
     padding: 0;
 }
 
+/* Hide custom elements until they are defined/registered */
+site-loader:not(:defined) {
+    visibility: hidden;
+}
+
+/* Ensure the loader itself is hidden until we are ready to show it */
+.loading-screen {
+    visibility: hidden; 
+    /* ... your other fixed positioning styles ... */
+}
+
+/* Class added by JS to trigger the fade-in */
+.loading-screen.is-visible {
+    visibility: visible;
+}
+
 /* Universal FOUC Prevention Mask */
 html:not(.loader-initialized) body {
   opacity: 0 !important;
