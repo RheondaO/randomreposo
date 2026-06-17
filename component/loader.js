@@ -1,11 +1,13 @@
 // components/loader.js
 class SiteLoader extends HTMLElement {
-  connectedCallback() {
+connectedCallback() {
     document.documentElement.classList.add('loader-initialized');
-    // Check if this is the user's first landing in this browser session
+    
+    // 1. Force the loader to be a direct child of body to ensure fixed positioning works globally
+    document.body.appendChild(this);
+
     const isFirstVisit = !sessionStorage.getItem("loaderShown");
 
-    // Build the core loader structure (The spinner/infinity ring is always present)
     this.innerHTML = `
       <div class="loading-screen" id="loadingScreen">
         <div class="loader"></div>
