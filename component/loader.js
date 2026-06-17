@@ -88,3 +88,13 @@ connectedCallback() {
 }
 
 customElements.define('site-loader', SiteLoader);
+
+// At the bottom of loader.js, after the class definition
+customElements.whenDefined('site-loader').then(() => {
+    // This code runs once the browser has registered the element
+    const loader = document.querySelector('site-loader');
+    const screen = loader.querySelector('#loadingScreen');
+    if (screen) {
+        screen.classList.add('is-visible');
+    }
+});
