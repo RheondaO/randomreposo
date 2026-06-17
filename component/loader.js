@@ -1,11 +1,19 @@
 // components/loader.js
 class SiteLoader extends HTMLElement {
-connectedCallback() {
+  connectedCallback() {
+    // 1. TELEPORTATION GUARD
+    // If this element is spawned inside the nav or any container other than the body,
+    // hide it instantly and move it to the <body>.
+    if (this.parentNode !== document.body) {
+      this.style.display = 'none'; // Prevent any nav-bar rendering completely
+      document.body.appendChild(this);
+      return; // EXIT IMMEDIATELY. Moving it triggers connectedCallback again safely.
+    }
+
+    // 2. INITIALIZE (Now safely running exclusively as a direct child of <body>)
+    this.style.display = 'block'; 
     document.documentElement.classList.add('loader-initialized');
     
-    // 1. Force the loader to be a direct child of body to ensure fixed positioning works globally
-    document.body.appendChild(this);
-
     const isFirstVisit = !sessionStorage.getItem("loaderShown");
 
     this.innerHTML = `
@@ -88,13 +96,3 @@ connectedCallback() {
 }
 
 customElements.define('site-loader', SiteLoader);
-
-// At the bottom of loader.js, after the class definition
-customElements.whenDefined('site-loader').then(() => {
-    // This code runs once the browser has registered the element
-    const loader = document.querySelector('site-loader');
-    const screen = loader.querySelector('#loadingScreen');
-    if (screen) {
-        screen.classList.add('is-visible');
-    }
-});
