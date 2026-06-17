@@ -1,30 +1,24 @@
 // components/loader.js
 class SiteLoader extends HTMLElement {
   connectedCallback() {
-    // 1. TELEPORTATION GUARD
-    // If this element is spawned inside the nav or any container other than the body,
-    // hide it instantly and move it to the <body>.
-    if (this.parentNode !== document.body) {
-      this.style.display = 'none'; // Prevent any nav-bar rendering completely
-      document.body.appendChild(this);
-      return; // EXIT IMMEDIATELY. Moving it triggers connectedCallback again safely.
-    }
-
-    // 2. INITIALIZE (Now safely running exclusively as a direct child of <body>)
-    this.style.display = 'block'; 
     document.documentElement.classList.add('loader-initialized');
-    
     const isFirstVisit = !sessionStorage.getItem("loaderShown");
 
-    this.innerHTML = `
-      <div class="loading-screen" id="loadingScreen">
-        <div class="loader"></div>
-        <div class="loading-text" id="hatContainer"></div>
-      </div>
+    // 1. Create the loading screen div completely in memory
+    const loadingScreen = document.createElement('div');
+    loadingScreen.className = 'loading-screen';
+    loadingScreen.id = 'loadingScreen';
+    
+    // 2. Inject your exact original inner layout
+    loadingScreen.innerHTML = `
+      <div class="loader"></div>
+      <div class="loading-text" id="hatContainer"></div>
     `;
 
-    const loadingScreen = this.querySelector('#loadingScreen');
-    const hatContainer = this.querySelector('#hatContainer');
+    // 3. Pop it out directly to the <body> so it breaks out of the nav container's CSS
+    document.body.appendChild(loadingScreen);
+
+    const hatContainer = loadingScreen.querySelector('#hatContainer');
 
     if (isFirstVisit) {
       // 1. ALL OUT MODE: First time opening the site
@@ -83,9 +77,8 @@ class SiteLoader extends HTMLElement {
 
     setTimeout(() => {
       element.style.display = "none";
+      element.remove(); // Clean up the DOM element completely after fading out
       
-      // Safety: If you are using head.js inline-CSS to prevent layout flash, 
-      // explicitly make sure the body elements recover here:
       document.body.style.visibility = "visible";
       document.body.style.opacity = "1";
 
