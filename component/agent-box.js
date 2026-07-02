@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // 1. Create the container div
     const trayContainer = document.createElement("div");
-    trayContainer.id = "bottom-agent-tray";
+    trayContainer.id = "bottom-agent-box";
     trayContainer.style.cssText = `
         position: fixed;
         bottom: 0;
