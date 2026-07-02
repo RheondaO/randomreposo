@@ -38,13 +38,9 @@
     const title = document.createElement("span");
     title.className = "agent-title";
     title.textContent = "Sales Portfolio Site Agent";
-    const badge = document.createElement("span");
-    badge.className = "agent-badge";
-    badge.textContent = "Active System";
 
     header.appendChild(toggleBtn);
     header.appendChild(title);
-    header.appendChild(badge);
     
     boxContainer.appendChild(header);
     boxContainer.appendChild(contentContainer);
