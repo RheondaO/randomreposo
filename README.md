@@ -46,7 +46,7 @@ Core technical assets hosted solely in this repository
 Each role page follows a standardized 5-section sequence to demonstrate my *Mutability*
 
 ### Account Executive
-- [ ] Loom Video
+- [ ] Loom Video (Email Attachment)
 - [x] Visual Workflow
 - [x] AI Strategy Innovation Box
 
@@ -57,21 +57,21 @@ Each role page follows a standardized 5-section sequence to demonstrate my *Muta
 - [x] Strategic Discovery
 
 ### Presales Engineer
-- [ ] Loom Video
+- [ ] Loom Video (Email Attachment)
 - [x] Visual Workflow
 - [x] AI Strategy Innovation Box
 - [x] Blog Post
 - [x] Strategic Discovery
 
 ### Sales Consultant
-- [ ] Loom Video
+- [ ] Loom Video 
 - [ ] Visual Workflow
 - [ ] AI Strategy Innovation Box
 - [ ] Blog Post
 - [x] Strategic Discovery
 
 ### SalesOps Engineer
-- [ ] Loom Video
+- [ ] Loom Video (Email Attachment)
 - [x] Visual Workflow
 - [x] AI Strategy Innovation Box
 - [ ] Documents
