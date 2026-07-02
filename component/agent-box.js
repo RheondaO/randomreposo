@@ -151,25 +151,18 @@ contentContainer.innerHTML = `
         transition: all 0.3s ease;
     `;
 
-    // 5. Toggle functionality
-    let isExpanded = true;
+// 5. Toggle functionality
+let isExpanded = true;
 
-    toggleBtn.addEventListener('click', () => {
-        isExpanded = !isExpanded;
-
-        if (isExpanded) {
-            // Expand
-            contentContainer.style.height = '350px';
-            spacer.style.height = '414px';
-            toggleBtn.innerHTML = '−';
-            boxContainer.style.bottom = '0';
-        } else {
-            // Collapse
-            contentContainer.style.height = '0px';
-            spacer.style.height = '72px';
-            toggleBtn.innerHTML = '+';
-        }
-    });
+toggleBtn.addEventListener('click', () => {
+    isExpanded = !isExpanded;
+    
+    // Toggle a class on the wrapper instead of updating individual inline styles
+    boxContainer.classList.toggle('is-collapsed', !isExpanded);
+    
+    // Update the button indicator
+    toggleBtn.innerHTML = isExpanded ? '−' : '+';
+});
 
     // 6. API Messaging Engine Configuration
     const PROXY_URL = "https://taskade-bridge-6zkc.vercel.app/api/chat"; // Your Vercel production domain
@@ -210,21 +203,17 @@ contentContainer.innerHTML = `
             botMsg.style.cssText = "color: #000000; background: #f5f5f5; padding: 10px 14px; border-radius: 2px; align-self: flex-start; max-width: 80%; border-left: 3px solid #000000;";
             botMsg.textContent = data.reply;
             log.appendChild(botMsg);
-        } catch (error) {
-  return new Response(
-    JSON.stringify({
-      message: error.message,
-      stack: error.stack
-    }),
-    {
-      status: 500,
-      headers: {
-        ...corsHeaders,
-        "Content-Type": "application/json"
-      }
-    }
-  );
-}
+        }   catch (error) {
+            loadingMsg.remove();
+
+            // Display an error message natively in the chat UI
+            const errorMsg = document.createElement("div");
+            errorMsg.style.cssText = "color: #ff0000; background: #fff0f0; padding: 10px 14px; border-radius: 2px; align-self: flex-start; max-width: 80%; border-left: 3px solid #ff0000; font-size: 12px;";
+            errorMsg.textContent = "System Error: Unable to establish link to operational layer.";
+            
+            log.appendChild(errorMsg);
+            console.error("Agent Box Fetch Error:", error);
+        }
         log.scrollTop = log.scrollHeight;
     }
 
@@ -235,7 +224,6 @@ contentContainer.innerHTML = `
     boxContainer.querySelectorAll(".starter-btn").forEach(btn => {
         btn.addEventListener("click", () => handleMessage(btn.getAttribute("data-msg")));
     });
-
 
 // Safely mount elements only when the DOM body is available
     function mountAgentBox() {
