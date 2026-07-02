@@ -38,7 +38,7 @@ export function loadSharedHead({ title, description }) {
       loadNav();
       loadFooter();
 
-// PLACE IT HERE: Dynamic script injection for the full-width bot tray
+      // PLACE IT HERE: Dynamic script injection for the full-width bot box
       if (!document.getElementById("bottom-agent-box")) {
         const trayScript = document.createElement("script");
         trayScript.src = "./component/agent-box.js";
@@ -46,8 +46,6 @@ export function loadSharedHead({ title, description }) {
         document.head.appendChild(trayScript);
       }
 
-
-      
     } catch (error) {
       console.error("Failed to safely initialize dynamic modules:", error);
       // Failsafe rescue: Lift the CSS shield if a module fails to parse
