@@ -14,7 +14,7 @@
         background-color: #ffffff;
         border-top: 4px solid #000000;
         box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
-        z-index: 999999;
+        z-index: 8888;
         font-family: "Open Sans", sans-serif;
         font-optical-sizing: auto;
         font-weight: 333;
