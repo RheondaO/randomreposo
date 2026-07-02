@@ -56,7 +56,6 @@
     boxContainer.classList.add('is-collapsed');
     spacer.classList.add('is-collapsed');
     toggleBtn.innerHTML = '+'; // Set icon to '+' for collapsed state
-    });
 
     const log = boxContainer.querySelector("#agent-chat-log");
     const input = boxContainer.querySelector("#agent-input-field");
