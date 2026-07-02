@@ -3,7 +3,7 @@
     if (document.getElementById("bottom-agent-box")) return;
 
     const PROXY_URL = "https://taskade-bridge-6zkc.vercel.app/api/chat";
-    const TASKADE_AGENT_ID = "01KWGATDTJQG6668FVM21A6CNZ";
+    const TASKADE_AGENT_ID = "01KWGASZ1PP57ENZTYPPST43XR";
     
     // 1. Create the container div
     const boxContainer = document.createElement("div");
