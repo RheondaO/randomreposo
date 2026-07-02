@@ -3,6 +3,9 @@
     // Safety check: Don't inject if it somehow bypassed the head.js guard 
     if (document.getElementById("bottom-agent-box")) return;
 
+    // YOUR VERCEL PROXY URL HERE
+    const PROXY_URL = "https://vercel.com/rogle1/taskade-bridge/";
+
     // 1. Create the container div
     const boxContainer = document.createElement("div");
     boxContainer.id = "bottom-agent-box";
