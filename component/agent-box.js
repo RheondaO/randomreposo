@@ -161,7 +161,7 @@
                     message: "Hello", // Or a specific trigger phrase for your agent
                     agentId: TASKADE_AGENT_ID 
                 })
-            });
+            })
             const data = await res.json();
             
             // Clear any placeholders and insert the real greeting
