@@ -834,7 +834,7 @@ nav {
     color: #ffffff;
     border: none;
     padding: 0 32px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
@@ -848,7 +848,7 @@ nav {
     padding: 10px 14px;
     border-radius: 2px;
     align-self: flex-start;
-    max-width: 80%;
+    max-width: 51%;
     border-left: 3px solid #000000;
 }
 
@@ -858,7 +858,7 @@ nav {
     padding: 10px 14px;
     border-radius: 2px;
     align-self: flex-end;
-    max-width: 80%;
+    max-width: 51%;
     text-align: left;
 }
 
@@ -866,7 +866,7 @@ nav {
     color: #666666;
     font-style: italic;
     align-self: flex-start;
-    font-size: 12px;
+    font-size: 14px;
     padding: 4px 14px;
 }
 
@@ -878,7 +878,7 @@ nav {
     align-self: flex-start;
     max-width: 80%;
     border-left: 3px solid #ff0000;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 /* 6. Push Spacer (Footer Margin) */
@@ -897,9 +897,6 @@ nav {
 #agent-box-spacer.is-collapsed {
     height: 72px; 
 }
-
-
-
 
 /* ==========================================================================
    Slide Deck
