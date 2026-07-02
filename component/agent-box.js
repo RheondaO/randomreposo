@@ -76,7 +76,6 @@ contentContainer.innerHTML = `
     </div>
 `;
 
-
     // Toggle button (left side)
     const toggleBtn = document.createElement("button");
     toggleBtn.innerHTML = "−";
@@ -139,33 +138,12 @@ contentContainer.innerHTML = `
     header.appendChild(title);
     header.appendChild(badge);
 
-    // 3. Create content container
-    const contentContainer = document.createElement("div");
-    contentContainer.id = "agent-content";
-    contentContainer.style.cssText = `
-        height: 350px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        background-color: #ffffff;
-    `;
 
-    contentContainer.innerHTML = `
-        <iframe 
-            allow="clipboard-read; clipboard-write" 
-            src="https://www.taskade.com/a/01KWGATDTJQG6668FVM21A6CNZ" 
-            width="100%" 
-            height="350" 
-            frameborder="0" 
-            allowfullscreen
-            style="display: block; border: none;"
-        ></iframe>
-    `;
-
-    // 4. Assemble box
+    // 3. Assemble box
     boxContainer.appendChild(header);
     boxContainer.appendChild(contentContainer);
 
-    // 5. Create a spacer at the bottom of the body so content isn't permanently hidden
+    // 4. Create a spacer at the bottom of the body so content isn't permanently hidden
     const spacer = document.createElement("div");
     spacer.id = "agent-box-spacer";
     spacer.style.cssText = `
@@ -173,7 +151,7 @@ contentContainer.innerHTML = `
         transition: all 0.3s ease;
     `;
 
-    // 6. Toggle functionality
+    // 5. Toggle functionality
     let isExpanded = true;
 
     toggleBtn.addEventListener('click', () => {
@@ -193,7 +171,7 @@ contentContainer.innerHTML = `
         }
     });
 
-    // 6.5 API Messaging Engine Configuration
+    // 6 API Messaging Engine Configuration
     const PROXY_URL = "https://taskade-bridge-6zkc.vercel.app/api/chat"; // Your Vercel production domain
     const log = boxContainer.querySelector("#agent-chat-log");
     const input = boxContainer.querySelector("#agent-input-field");
@@ -246,7 +224,7 @@ contentContainer.innerHTML = `
         btn.addEventListener("click", () => handleMessage(btn.getAttribute("data-msg")));
     });
 
-    // 7. Inject both elements cleanly into the live DOM
+    // 6. Inject both elements cleanly into the live DOM
     document.body.appendChild(boxContainer);
     document.body.appendChild(spacer);
 })();
