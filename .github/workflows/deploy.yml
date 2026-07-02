@@ -5,6 +5,11 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# 1. Add Concurrency Control to prevent deployment queue clashes
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 permissions:
   contents: read
   pages: write
@@ -15,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
+      # 2. Map the deployment output URL directly to your GitHub UI
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,9 +30,10 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./  # Change to the folder where your HTML files live
+          path: "."  # Root directory where your HTML/JS files live
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
