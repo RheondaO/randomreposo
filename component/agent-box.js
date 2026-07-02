@@ -225,4 +225,19 @@ contentContainer.innerHTML = `
     });
 
 
+// Safely mount elements only when the DOM body is available
+    function mountAgentBox() {
+        if (!document.body) {
+            window.addEventListener('DOMContentLoaded', mountAgentBox);
+            return;
+        }
+        if (document.getElementById("bottom-agent-box")) return;
+        
+        document.body.appendChild(boxContainer);
+        if (typeof spacer !== 'undefined') {
+            document.body.appendChild(spacer);
+        }
+    }
+
+    mountAgentBox();
 })();
