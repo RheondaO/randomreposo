@@ -109,7 +109,7 @@
             const res = await fetch(PROXY_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ prompt: "Hello", agentId: TASKADE_AGENT_ID })
+                body: JSON.stringify({ prompt: text, agentId: TASKADE_AGENT_ID })
             });
             const data = await res.json();
             const staticMsg = log.querySelector(".msg-bot-welcome");
