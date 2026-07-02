@@ -1,6 +1,6 @@
 // component/agent-box.js
 (function () {
-    // Safety check: Don't inject if it somehow bypassed the head.js guard
+    // Safety check: Don't inject if it somehow bypassed the head.js guard 
     if (document.getElementById("bottom-agent-box")) return;
 
     // 1. Create the container div
