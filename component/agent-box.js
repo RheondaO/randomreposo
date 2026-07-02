@@ -187,9 +187,62 @@ contentContainer.innerHTML = `
         } else {
             // Collapse
             contentContainer.style.height = '0px';
-            spacer.style.height = '0px';
+            spacer.style.height = '72px';
             toggleBtn.innerHTML = '+';
         }
+    });
+
+    // 6.5 API Messaging Engine Configuration
+    const PROXY_URL = "https://taskade-bridge.vercel.app/api/chat"; // Your Vercel production domain
+    const log = boxContainer.querySelector("#agent-chat-log");
+    const input = boxContainer.querySelector("#agent-input-field");
+    const sendBtn = boxContainer.querySelector("#agent-send-trigger");
+
+    async function handleMessage(text) {
+        if (!text.trim()) return;
+
+        // Display user message bubble natively
+        const userMsg = document.createElement("div");
+        userMsg.style.cssText = "color: #ffffff; background: #000000; padding: 10px 14px; border-radius: 2px; align-self: flex-end; max-width: 80%; text-align: left;";
+        userMsg.textContent = text;
+        log.appendChild(userMsg);
+        log.scrollTop = log.scrollHeight;
+        input.value = "";
+
+        // Display minimalist typing state
+        const loadingMsg = document.createElement("div");
+        loadingMsg.style.cssText = "color: #666666; font-style: italic; align-self: flex-start; font-size: 12px; padding: 4px 14px;";
+        loadingMsg.textContent = "Analyzing system parameters...";
+        log.appendChild(loadingMsg);
+        log.scrollTop = log.scrollHeight;
+
+        try {
+            const res = await fetch(PROXY_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: text })
+            });
+            const data = await res.json();
+            
+            loadingMsg.remove();
+
+            // Display clear black & white bot markdown reply
+            const botMsg = document.createElement("div");
+            botMsg.style.cssText = "color: #000000; background: #f5f5f5; padding: 10px 14px; border-radius: 2px; align-self: flex-start; max-width: 80%; border-left: 3px solid #000000;";
+            botMsg.textContent = data.reply;
+            log.appendChild(botMsg);
+        } catch (err) {
+            loadingMsg.textContent = "Connection error. Protocol failed.";
+        }
+        log.scrollTop = log.scrollHeight;
+    }
+
+    // Attach DOM Action Listeners
+    sendBtn.addEventListener("click", () => handleMessage(input.value));
+    input.addEventListener("keypress", (e) => { if (e.key === "Enter") handleMessage(input.value); });
+    
+    boxContainer.querySelectorAll(".starter-btn").forEach(btn => {
+        btn.addEventListener("click", () => handleMessage(btn.getAttribute("data-msg")));
     });
 
     // 7. Inject both elements cleanly into the live DOM
