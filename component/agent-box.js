@@ -77,8 +77,6 @@ contentContainer.innerHTML = `
 `;
 
 
-
-    
     // Toggle button (left side)
     const toggleBtn = document.createElement("button");
     toggleBtn.innerHTML = "−";
