@@ -26,7 +26,7 @@
             <button class="starter-btn" data-msg="What happens to our institutional valuation tracking if our early commercial data layer isn't structured to survive Series A due diligence?">[ RISK: DUE DILIGENCE ]</button>
         </div>
         <div class="agent-input-container">
-            <input type="text" id="agent-input-field" placeholder="Query the system infrastructure..." />
+            <input type="text" id="agent-input-field" placeholder="Ask a Question: Business, Sales, & Rheonda's Portfolio Approach." />
             <button id="agent-send-trigger">Send</button>
         </div>
     `;
@@ -36,7 +36,7 @@
     toggleBtn.innerHTML = "−";
     const title = document.createElement("span");
     title.className = "agent-title";
-    title.textContent = "🤖 Autonomous GTM Infrastructure Agent";
+    title.textContent = "Sales Portfolio Site Agent";
     const badge = document.createElement("span");
     badge.className = "agent-badge";
     badge.textContent = "Active System";
@@ -83,7 +83,7 @@
                 body: JSON.stringify({ 
                     message: text,
                     agentId: TASKADE_AGENT_ID 
-                }) // <--- Fixed Syntax Error here
+                })
             });
             const data = await res.json();
             loadingMsg.remove();
