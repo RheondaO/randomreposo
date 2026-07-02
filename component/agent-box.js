@@ -19,7 +19,7 @@
     contentContainer.id = "agent-content";
     contentContainer.innerHTML = `
         <div id="agent-chat-log">
-            <div class="msg-bot-welcome">Initializing system handshake...</div>
+            <div class="msg-bot-welcome">> Welcome! I am the site agent trained directly on Rheonda’s 7+ years of expertise in software engineering, SaaS & Big data architectures, and programmatic revenue operations. Use the interface below to asks how Rheonda could neutralizes common operational risks!</div>
         </div>
         <div id="agent-starters-box">
             <button class="starter-btn" data-msg="What is the compounding operational tax on our core technical team if we delay hiring a developer-turned-GTM operator?">[ RISK: ENG VELOCITY ]</button>
@@ -74,7 +74,7 @@
 
         const loadingMsg = document.createElement("div");
         loadingMsg.className = "msg-loading";
-        loadingMsg.textContent = "Analyzing system parameters...";
+        loadingMsg.textContent = "~*Elevator Jazz*~";
         log.appendChild(loadingMsg);
 
         try {
