@@ -4,6 +4,7 @@
 
     const PROXY_URL = "https://taskade-bridge-6zkc.vercel.app/api/chat";
     const TASKADE_AGENT_ID = "01KWGATDTJQG6668FVM21A6CNZ";
+    
     // 1. Create the container div
     const boxContainer = document.createElement("div");
     boxContainer.id = "bottom-agent-box";
@@ -148,5 +149,33 @@
             document.body.appendChild(spacer);
         }
     }
+   // ... existing setup code ...
+
+    // NEW: Function to trigger the agent's initial greeting
+    async function fetchAgentGreeting() {
+        try {
+            const res = await fetch(PROXY_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ 
+                    message: "Hello", // Or a specific trigger phrase for your agent
+                    agentId: TASKADE_AGENT_ID 
+                })
+            });
+            const data = await res.json();
+            
+            // Clear any placeholders and insert the real greeting
+            log.innerHTML = ""; 
+            const botMsg = document.createElement("div");
+            botMsg.className = "msg-bot-welcome";
+            botMsg.textContent = data.reply;
+            log.appendChild(botMsg);
+        } catch (error) {
+            console.error("Failed to fetch initial greeting:", error);
+        }
+    }
+
+    // Call this after mounting
     mountAgentBox();
+    fetchAgentGreeting(); // <--- Trigger the dynamic greeting
 })();
