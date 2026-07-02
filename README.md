@@ -36,11 +36,11 @@ Core technical assets hosted solely in this repository
 	- [ ] **XYZ**
 	- [ ] **XYZ** 
 	- [x] **CRM Sandbox Screenshots** of HubSpot automations and lead-routing workflows
- 		- [x] **Outreach Swimlanes** https://rheondao.github.io/randomreposo/screenshots/Contacts ｜ Outreach Swimlanes (4_7_2026 4：33：48 AM).html
-		- [x] **SDR Dashboard** https://rheondao.github.io/randomreposo/screenshots/Reports dashboard (4_7_2026 3：51：01 AM).html
-		- [x] **Outreach Cadance Daily Agenda** https://rheondao.github.io/randomreposo/screenshots/Reports dashboard (4_7_2026 4：26：55 AM).html
-		- [x] **Pipeline Health** https://rheondao.github.io/randomreposo/screenshots/Reports dashboard (4_7_2026 4：30：48 AM).html
-		- [x] **Company Record** https://rheondao.github.io/randomreposo/screenshots/Vanta (4_7_2026 4：15：11 AM).html
+ 		- [x] **Outreach Swimlanes**
+		- [x] **SDR Dashboard**
+		- [x] **Outreach Cadance Daily Agenda**
+		- [x] **Pipeline Health**
+		- [x] **Company Record**
 	
 ## II. Role-Specific Deliverables Masterlist
 Each role page follows a standardized 5-section sequence to demonstrate my *Mutability*
