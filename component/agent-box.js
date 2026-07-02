@@ -42,16 +42,11 @@
     
     const badge = document.createElement("span");
     badge.className = "agent-badge";
-    badge.textContent = "Active System";
-    
-    const helpTooltip = document.createElement("span");
-    helpTooltip.className = "help-tooltip";
-    helpTooltip.textContent = "?";
+    badge.textContent = "?";
     
     header.appendChild(toggleBtn);
     header.appendChild(title);
     header.appendChild(badge);
-    header.appendChild(helpTooltip);
     
     boxContainer.appendChild(header);
     boxContainer.appendChild(contentContainer);
