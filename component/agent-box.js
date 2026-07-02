@@ -196,7 +196,7 @@ contentContainer.innerHTML = `
     });
 
     // 6.5 API Messaging Engine Configuration
-    const PROXY_URL = "https://taskade-bridge.vercel.app/api/chat"; // Your Vercel production domain
+    const PROXY_URL = "https://taskade-bridge-6zkc.vercel.app/api/chat"; // Your Vercel production domain
     const log = boxContainer.querySelector("#agent-chat-log");
     const input = boxContainer.querySelector("#agent-input-field");
     const sendBtn = boxContainer.querySelector("#agent-send-trigger");
