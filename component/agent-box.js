@@ -210,9 +210,21 @@ contentContainer.innerHTML = `
             botMsg.style.cssText = "color: #000000; background: #f5f5f5; padding: 10px 14px; border-radius: 2px; align-self: flex-start; max-width: 80%; border-left: 3px solid #000000;";
             botMsg.textContent = data.reply;
             log.appendChild(botMsg);
-        } catch (err) {
-            loadingMsg.textContent = "Connection error. Protocol failed.";
-        }
+        } catch (error) {
+  return new Response(
+    JSON.stringify({
+      message: error.message,
+      stack: error.stack
+    }),
+    {
+      status: 500,
+      headers: {
+        ...corsHeaders,
+        "Content-Type": "application/json"
+      }
+    }
+  );
+}
         log.scrollTop = log.scrollHeight;
     }
 
