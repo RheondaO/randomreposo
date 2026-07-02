@@ -39,6 +39,43 @@
         gap: 2rem;
     `;
 
+    // 3. Create content container (Replace your current Section 3)
+const contentContainer = document.createElement("div");
+contentContainer.id = "agent-content";
+contentContainer.style.cssText = `
+    height: 350px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+`;
+
+contentContainer.innerHTML = `
+    <!-- Chat History Log View -->
+    <div id="agent-chat-log" style="flex: 1; overflow-y: auto; padding: 20px; background-color: #ffffff; display: flex; flex-direction: column; gap: 12px; font-size: 13px; line-height: 1.6; border-bottom: 1px solid #e0e0e0;">
+        <div style="color: #000000; background: #f5f5f5; padding: 10px 14px; border-radius: 2px; align-self: flex-start; max-width: 80%; border-left: 3px solid #000000;">
+            Welcome to my autonomous systems portfolio layer. I am an AI agent trained directly on Rheonda’s expertise. Ask me an engineering evaluation question or click an organizational risk vector below.
+        </div>
+    </div>
+
+    <!-- System Quick Starters Box -->
+    <div id="agent-starters-box" style="display: flex; gap: 8px; padding: 8px 20px; background: #fafafa; overflow-x: auto; white-space: nowrap; border-bottom: 1px solid #eeeeee;">
+        <button class="starter-btn" data-msg="What is the compounding operational tax on our core technical team if we delay hiring a developer-turned-GTM operator?" style="background: #ffffff; border: 1px solid #000000; color: #000000; padding: 6px 12px; font-size: 11px; cursor: pointer; font-weight: 600;">[ RISK: ENG VELOCITY ]</button>
+        <button class="starter-btn" data-msg="If we do not deploy an automated, dual-track outbound framework immediately, how much capitalized market share do we risk bleeding?" style="background: #ffffff; border: 1px solid #000000; color: #000000; padding: 6px 12px; font-size: 11px; cursor: pointer; font-weight: 600;">[ RISK: MARKET CAPTURE ]</button>
+        <button class="starter-btn" data-msg="What happens to our institutional valuation tracking if our early commercial data layer isn't structured to survive Series A due diligence?" style="background: #ffffff; border: 1px solid #000000; color: #000000; padding: 6px 12px; font-size: 11px; cursor: pointer; font-weight: 600;">[ RISK: DUE DILIGENCE ]</button>
+    </div>
+
+    <!-- Native Prompt Input -->
+    <div style="display: flex; background: #ffffff; padding: 0;">
+        <input type="text" id="agent-input-field" placeholder="Query the system infrastructure..." style="flex: 1; border: none; padding: 16px 24px; font-size: 13px; outline: none; color: #000000;" />
+        <button id="agent-send-trigger" style="background: #000000; color: #ffffff; border: none; padding: 0 32px; font-size: 12px; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 1px;">Send</button>
+    </div>
+`;
+
+
+
+    
     // Toggle button (left side)
     const toggleBtn = document.createElement("button");
     toggleBtn.innerHTML = "−";
