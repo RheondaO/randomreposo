@@ -4,9 +4,10 @@
 
     const PROXY_URL = "https://taskade-bridge-6zkc.vercel.app/api/chat";
     const TASKADE_AGENT_ID = "01KWGASZ1PP57ENZTYPPST43XR";
+    const TASKADE_SPACE_ID = "CFs3dPyCmejxQ5FP"; 
     
     // 1. Create the container div
-    const boxContainer = document.createElement("div");
+    const boxContainer = document.createElement("div"); 
     boxContainer.id = "bottom-agent-box";
 
     // 2. Create header with toggle button
@@ -82,7 +83,8 @@
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ 
                     prompt: text,
-                    agentId: TASKADE_AGENT_ID 
+                    agentId: TASKADE_AGENT_ID,
+                    spaceId: TASKADE_SPACE_ID
                 })
             });
             const data = await res.json();
