@@ -105,11 +105,11 @@
 
     async function fetchAgentGreeting() {
         try {
-            console.log("Sending to API:", JSON.stringify({ prompt: text, agentId: TASKADE_AGENT_ID }));
+            console.log("Sending to API:", JSON.stringify({ prompt: text, agentId: TASKADE_AGENT_ID, spaceID: TASKADE_SPACE_ID}));
             const res = await fetch(PROXY_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ prompt: text, agentId: TASKADE_AGENT_ID })
+                body: JSON.stringify({ prompt: text, agentId: TASKADE_AGENT_ID, spaceId: TASKADE_SPACE_ID })
             });
             const data = await res.json();
             const staticMsg = log.querySelector(".msg-bot-welcome");
