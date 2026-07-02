@@ -171,7 +171,7 @@ contentContainer.innerHTML = `
         }
     });
 
-    // 6 API Messaging Engine Configuration
+    // 6. API Messaging Engine Configuration
     const PROXY_URL = "https://taskade-bridge-6zkc.vercel.app/api/chat"; // Your Vercel production domain
     const log = boxContainer.querySelector("#agent-chat-log");
     const input = boxContainer.querySelector("#agent-input-field");
@@ -224,7 +224,5 @@ contentContainer.innerHTML = `
         btn.addEventListener("click", () => handleMessage(btn.getAttribute("data-msg")));
     });
 
-    // 6. Inject both elements cleanly into the live DOM
-    document.body.appendChild(boxContainer);
-    document.body.appendChild(spacer);
+
 })();
