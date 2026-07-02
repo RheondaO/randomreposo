@@ -4,7 +4,7 @@
     if (document.getElementById("bottom-agent-box")) return;
 
     // YOUR VERCEL PROXY URL HERE
-    const PROXY_URL = "https://taskade-bridge.vercel.app/api/chat;
+    const PROXY_URL = "https://taskade-bridge-6zkc.vercel.app/api/chat";
 
     // 1. Create the container div
     const boxContainer = document.createElement("div");
