@@ -41,22 +41,28 @@
     const badge = document.createElement("span");
     badge.className = "agent-badge";
     badge.textContent = "Active System";
+    const toggleBtn = document.createElement("button");
+    toggleBtn.className = "agent-toggle-btn";
+    toggleBtn.innerHTML = "−";
 
     header.appendChild(toggleBtn);
     header.appendChild(title);
     header.appendChild(badge);
+    
+    if (helpTooltipElement) {
+    header.appendChild(helpTooltipElement);
+    }
+    
     boxContainer.appendChild(header);
     boxContainer.appendChild(contentContainer);
 
     const spacer = document.createElement("div");
     spacer.id = "agent-box-spacer";
 
-    let isExpanded = true;
-    toggleBtn.addEventListener('click', () => {
-        isExpanded = !isExpanded;
-        boxContainer.classList.toggle('is-collapsed', !isExpanded);
-        spacer.classList.toggle('is-collapsed', !isExpanded);
-        toggleBtn.innerHTML = isExpanded ? '−' : '+';
+    let isExpanded = false;
+    boxContainer.classList.add('is-collapsed');
+    spacer.classList.add('is-collapsed');
+    toggleBtn.innerHTML = '+'; // Set icon to '+' for collapsed state
     });
 
     const log = boxContainer.querySelector("#agent-chat-log");
