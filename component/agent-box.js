@@ -101,7 +101,9 @@
             const res = await fetch(PROXY_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ message: text })
+                body: JSON.stringify({ 
+                    message: text,
+                    agentId: TASKADE_AGENT_ID
             });
             const data = await res.json();
             loadingMsg.remove();
