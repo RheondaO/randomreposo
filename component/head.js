@@ -42,7 +42,7 @@ export function loadSharedHead({ title, description }) {
       if (!document.getElementById("bottom-agent-box")) {
         const boxScript = document.createElement("script");
         boxScript.src = "./component/agent-box.js";
-        boxScript.defer = true;
+        boxScript.defer = true; // Ensures the DOM is loaded before execution
         document.head.appendChild(boxScript);
       }
 
