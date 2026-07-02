@@ -34,14 +34,19 @@
 
     const toggleBtn = document.createElement("button");
     toggleBtn.className = "agent-toggle-btn";
-    toggleBtn.innerHTML = "−";
+    toggleBtn.innerHTML = "+"; 
+    
     const title = document.createElement("span");
     title.className = "agent-title";
     title.textContent = "Sales Portfolio Site Agent";
     
+    const badge = document.createElement("span");
+    badge.className = "agent-badge";
+    badge.textContent = "Active System";
+    
     const helpTooltip = document.createElement("span");
     helpTooltip.className = "help-tooltip";
-    helpTooltip.textContent = "?"; // Or your icon
+    helpTooltip.textContent = "?";
     
     header.appendChild(toggleBtn);
     header.appendChild(title);
@@ -51,16 +56,22 @@
     boxContainer.appendChild(header);
     boxContainer.appendChild(contentContainer);
 
-    
-
     const spacer = document.createElement("div");
     spacer.id = "agent-box-spacer";
 
     let isExpanded = false;
     boxContainer.classList.add('is-collapsed');
     spacer.classList.add('is-collapsed');
-    toggleBtn.innerHTML = '+'; // Set icon to '+' for collapsed state
+    
+    toggleBtn.addEventListener("click", () => {
+        isExpanded = !isExpanded;
+        boxContainer.classList.toggle('is-collapsed', !isExpanded);
+        spacer.classList.toggle('is-collapsed', !isExpanded);
+        toggleBtn.innerHTML = isExpanded ? '−' : '+';
+    });
 
+
+    
     const log = boxContainer.querySelector("#agent-chat-log");
     const input = boxContainer.querySelector("#agent-input-field");
     const sendBtn = boxContainer.querySelector("#agent-send-trigger");
