@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     // 1. Create the container div
-    const trayContainer = document.createElement("div");
-    trayContainer.id = "bottom-agent-box";
-    trayContainer.style.cssText = `
+    const boxContainer = document.createElement("div");
+    boxContainer.id = "bottom-agent-box";
+    boxContainer.style.cssText = `
         position: fixed;
         bottom: 0;
         left: 0;
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
     // 2. Add the header and the Taskade iframe
-    trayContainer.innerHTML = `
+    boxContainer.innerHTML = `
         <div style="padding: 10px 20px; background-color: #ffffff; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
             <span style="font-weight: bold; color: #007bff; font-size: 14px;">
                 🤖 Autonomous GTM Infrastructure Evaluation Agent
@@ -40,6 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     spacer.style.height = "410px";
 
     // 4. Inject both elements cleanly into the live DOM
-    document.body.appendChild(trayContainer);
+    document.body.appendChild(boxContainer);
     document.body.appendChild(spacer);
 });
