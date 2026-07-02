@@ -46,10 +46,6 @@
     header.appendChild(title);
     header.appendChild(badge);
     
-    if (helpTooltipElement) {
-    header.appendChild(helpTooltipElement);
-    }
-    
     boxContainer.appendChild(header);
     boxContainer.appendChild(contentContainer);
 
