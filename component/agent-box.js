@@ -38,12 +38,20 @@
     const title = document.createElement("span");
     title.className = "agent-title";
     title.textContent = "Sales Portfolio Site Agent";
-
+    
+    const helpTooltip = document.createElement("span");
+    helpTooltip.className = "help-tooltip";
+    helpTooltip.textContent = "?"; // Or your icon
+    
     header.appendChild(toggleBtn);
     header.appendChild(title);
+    header.appendChild(badge);
+    header.appendChild(helpTooltip);
     
     boxContainer.appendChild(header);
     boxContainer.appendChild(contentContainer);
+
+    
 
     const spacer = document.createElement("div");
     spacer.id = "agent-box-spacer";
@@ -125,6 +133,9 @@
     sendBtn.addEventListener("click", () => handleMessage(input.value));
     input.addEventListener("keypress", (e) => { if (e.key === "Enter") handleMessage(input.value); });
     boxContainer.querySelectorAll(".starter-btn").forEach(btn => {
-        btn.addEventListener("click", () => handleMessage(btn.getAttribute("data-msg")));
+    btn.addEventListener("click", () => handleMessage(btn.getAttribute("data-msg")));
     });
+
+    header.appendChild(badge);
+    header.appendChild(helpTooltip);
 })();
