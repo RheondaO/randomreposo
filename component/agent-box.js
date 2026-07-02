@@ -41,9 +41,6 @@
     const badge = document.createElement("span");
     badge.className = "agent-badge";
     badge.textContent = "Active System";
-    const toggleBtn = document.createElement("button");
-    toggleBtn.className = "agent-toggle-btn";
-    toggleBtn.innerHTML = "−";
 
     header.appendChild(toggleBtn);
     header.appendChild(title);
