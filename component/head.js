@@ -40,10 +40,10 @@ export function loadSharedHead({ title, description }) {
 
       // PLACE IT HERE: Dynamic script injection for the full-width bot box
       if (!document.getElementById("bottom-agent-box")) {
-        const trayScript = document.createElement("script");
-        trayScript.src = "./component/agent-box.js";
-        trayScript.defer = true;
-        document.head.appendChild(trayScript);
+        const boxScript = document.createElement("script");
+        boxScript.src = "./component/agent-box.js";
+        boxScript.defer = true;
+        document.head.appendChild(boxScript);
       }
 
     } catch (error) {
