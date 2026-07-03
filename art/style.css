@@ -941,7 +941,7 @@ nav {
 /* 1. Position the wrapper inside the relative flex header */
 #bottom-agent-box .help-container {
     position: absolute;
-    right: 8rem; /* Puts it perfectly to the left of your .agent-badge (which is at 1.5rem) */
+    right: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
