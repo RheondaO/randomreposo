@@ -888,6 +888,56 @@ nav {
 }
 
 /* ==========================================
+   Help Badge & Tooltip Extension
+   ========================================== */
+
+/* The interactive rectangular badge button itself */
+#bottom-agent-box .help-badge-btn {
+    position: absolute;
+    right: 8rem; /* Places it nicely to the left of the .agent-badge (which is at 1.5rem) */
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 0px; /* Sharp rectangular badge edges */
+    transition: all 0.3s ease;
+}
+
+#bottom-agent-box .help-badge-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* The popup content text bubble container */
+#bottom-agent-box .help-tooltip-content {
+    display: none; /* Controlled via JS toggle or hover class */
+    position: absolute;
+    bottom: 125%; /* Pops up cleanly above the header bar */
+    right: 8rem;   /* Aligns directly above the badge button */
+    width: 240px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 3px solid #000000;
+    padding: 12px;
+    font-size: 13px;
+    border-radius: 0px; /* Sharp rectangular badge shape */
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 8888;
+}
+
+/* Show state when the badge is active/hovered */
+#bottom-agent-box .help-badge-btn:hover + .help-tooltip-content,
+#bottom-agent-box .help-tooltip-content.is-active {
+    display: block;
+}
+
+
+
+/* ==========================================
    7. COLLAPSED INFRASTRUCTURE STATE
    ========================================== */
 #bottom-agent-box.is-collapsed #agent-content {
