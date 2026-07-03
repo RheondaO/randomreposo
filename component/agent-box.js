@@ -39,10 +39,22 @@
     const title = document.createElement("span");
     title.className = "agent-title";
     title.textContent = "Toggle a Site Agent";
-    
+
+    <div class="help-container">
+    <div class="help-tooltip"> 
+ 
+        <h4>Manifestation Targets <br>in Annual Income (Post-Tax): </h4>
+        <br><p><b>$333,888
+        <br> $266,112
+        <br> $198,336</b></p>
+        <br><i>Gold Star if we define what that requires transparently.</i>
+        <br>Open to Remote, 25%+ Travel, & Relocation opportunities</a>
+
+    <div class="help-button">
     const badge = document.createElement("span");
     badge.className = "agent-badge";
-    badge.textContent = "𝄃𝄃𝄂𝄂𝄀𝄁𝄃𝄂𝄂𝄃";
+    badge.textContent = "𝄃𝄃𝄂𝄂𝄀𝄁𝄃𝄂𝄂𝄃";</div>
+        </div>
     
     header.appendChild(toggleBtn);
     header.appendChild(title);
