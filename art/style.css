@@ -12,7 +12,7 @@
     --color-white: #ffffff;
     --color-gray-light: #f5f5f5;
     --color-gray-medium: #e0e0e0;
-    --color-gray-dark: #333333;
+    --color-gray-dark: #333333; 
 
     /* Warm iridescent colors */
     --color-cherry-red: #ff0000;
@@ -949,7 +949,7 @@ nav {
 
 /* 2. Shape the button into a sharp, rectangular badge */
 #bottom-agent-box .help-button {
-    background-color: #000000;
+    background-color: var(--color-cherry-red);
     color: #ffffff;
     border: 3px solid #ffffff;
     padding: 1.25rem 4.1rem;
@@ -957,7 +957,7 @@ nav {
     font-weight: 600;
     letter-spacing: 1px;
     cursor: pointer;
-    border-radius: 0px; /* Completely square/rectangular edges */
+    border-radius: 8px; /* Completely square/rectangular edges */
     transition: all 0.3s ease;
     white-space: nowrap;
 }
