@@ -42,7 +42,7 @@
     
     const badge = document.createElement("span");
     badge.className = "agent-badge";
-    badge.textContent = "?";
+    badge.textContent = "𝄃𝄃𝄂𝄂𝄀𝄁𝄃𝄂𝄂𝄃";
     
     header.appendChild(toggleBtn);
     header.appendChild(title);
