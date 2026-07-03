@@ -974,7 +974,7 @@ nav {
     display: none; /* Toggle with JS or hover layout */
     /* position: absolute; */
     bottom: 140%; /* Sits cleanly directly above the bar */
-    right: 0;
+    right: 19px;
     width: 380px;
     background-color: var(--color-gray-light);
     color: #000000;
