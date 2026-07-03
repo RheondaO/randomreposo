@@ -953,7 +953,7 @@ nav {
     color: #ffffff;
     border: 3px solid #ffffff;
     padding: 1.25rem 4.1rem;
-    font-size: 0.85rem;
+    font-size: 2.2rem;
     font-weight: 600;
     letter-spacing: 1px;
     cursor: pointer;
@@ -983,6 +983,7 @@ nav {
     border-radius: 0px; /* Enforces the rectangular look */
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
     z-index: 9999;
+    text-align: center;
 }
 
 /* Simple hover trigger rule to reveal it safely */
