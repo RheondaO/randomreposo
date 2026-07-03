@@ -972,7 +972,7 @@ nav {
 /* 3. Style the popup tooltip into a crisp rectangular card above the bar */
 #bottom-agent-box .help-tooltip {
     display: none; /* Toggle with JS or hover layout */
-    position: absolute;
+    /* position: absolute; */
     bottom: 140%; /* Sits cleanly directly above the bar */
     right: 0;
     width: 380px;
@@ -984,6 +984,8 @@ nav {
     line-height: 1.5;
     border-radius: 0px; /* Enforces the rectangular look */
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transform: translateY(10px);
     z-index: 9999;
     text-align: center;
 }
