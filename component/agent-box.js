@@ -22,11 +22,12 @@
             <div class="msg-bot-welcome">Welcome! I am a friendly site agent trained directly on my admin's experience and expertise. Use the interface below to asks me questions!</div>
         </div>
         <div id="agent-starters-box">
-            <button class="starter-btn" data-msg="?">[ Quick Start ]</button>
-            <button class="starter-btn" data-msg="?">[ Meet the Admin ]</button>
-            <button class="starter-btn" data-msg="?">[ Meet the SalesHub Manager ]</button>
-            <button class="starter-btn" data-msg="?">[ Just Chat ]</button>
-            <button class="starter-btn" data-msg="?">[ Feeling Lucky ]</button>
+            <button class="starter-btn" data-msg="/quick-start">[ Quick Start ]</button>
+            <button class="starter-btn" data-msg="/meet-the-admin">[ Meet the Admin ]</button>
+            <button class="starter-btn" data-msg="/meet-the-saleshub-manager">[ Meet the SalesHub Manager ]</button>
+            <button class="starter-btn" data-msg="/just-chat">[ Just Chat ]</button>
+            <button class="starter-btn" data-msg="/feeling-lucky">[ Feeling Lucky ]</button>
+            <button class="starter-btn" data-msg="/i-d-k">[ Not Sure? ]</button>
         </div>
         <div class="agent-input-container">
             <input type="text" id="agent-input-field" placeholder="Start Typing..."/>
