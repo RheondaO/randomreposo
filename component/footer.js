@@ -4,17 +4,6 @@ export function loadFooter() {
   if (!footerContainer) return;
 
   footerContainer.innerHTML = `
-  <div class="help-container">
-    <div class="help-tooltip"> 
-  <h4>Manifestation Targets <br>in Annual Income (Post-Tax): </h4>
-  <br><p><b>$333,888
-  <br> $266,112
-  <br> $198,336</b></p>
-  <br><i>Gold Star if we define what that requires transparently.</i>
-  <br>Open to Remote, 25%+ Travel, & Relocation opportunities</a>
-  </div>
-    <div class="help-button">?</div>
-  </div>
     <div class="footer-content">
       <p><i>This portfolio is a product of AI-Human collaboration, showcasing the ability to manage and lead AI tools for higher technical output.</i></p>
       <p>&copy; 2026 Property of Rheonda Dorothy Ogletree. Built with Transparency. BizTech-Jargon-Friendly. All rights reserved.</p>
@@ -26,3 +15,15 @@ export function loadFooter() {
       </div>
     </div> `
 }
+
+/* <div class="help-container">
+    <div class="help-tooltip"> 
+  <h4>Manifestation Targets <br>in Annual Income (Post-Tax): </h4>
+  <br><p><b>$333,888
+  <br> $266,112
+  <br> $198,336</b></p>
+  <br><i>Gold Star if we define what that requires transparently.</i>
+  <br>Open to Remote, 25%+ Travel, & Relocation opportunities</a>
+  </div>
+    <div class="help-button">?</div>
+  </div> */
