@@ -24,6 +24,7 @@
         <div id="agent-starters-box">
             <button class="starter-btn" data-msg="?">[ Quick Start ]</button>
             <button class="starter-btn" data-msg="?">[ Meet the Admin ]</button>
+            <button class="starter-btn" data-msg="?">[ Meet the SalesHub Manager ]</button>
             <button class="starter-btn" data-msg="?">[ Just Chat ]</button>
             <button class="starter-btn" data-msg="?">[ Feeling Lucky ]</button>
         </div>
