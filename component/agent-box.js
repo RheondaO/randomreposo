@@ -1,4 +1,4 @@
-    // component/agent-box.js
+// component/agent-box.js
 (function () {
     if (document.getElementById("bottom-agent-box")) return;
 
@@ -40,25 +40,23 @@
     title.className = "agent-title";
     title.textContent = "Toggle a Site Agent";
 
-    <div class="help-container">
-    <div class="help-tooltip"> 
- 
-        <h4>Manifestation Targets <br>in Annual Income (Post-Tax): </h4>
-        <br><p><b>$333,888
-        <br> $266,112
-        <br> $198,336</b></p>
-        <br><i>Gold Star if we define what that requires transparently.</i>
-        <br>Open to Remote, 25%+ Travel, & Relocation opportunities</a>
-
-    <div class="help-button">
-    const badge = document.createElement("span");
-    badge.className = "agent-badge";
-    badge.textContent = "𝄃𝄃𝄂𝄂𝄀𝄁𝄃𝄂𝄂𝄃";</div>
+    // 4. Create the Tooltip & Badge Component securely
+    const helpContainer = document.createElement("div");
+    helpContainer.className = "help-container";
+    helpContainer.innerHTML = `
+        <div class="help-tooltip"> 
+            <h4>Manifestation Targets <br>in Annual Income (Post-Tax): </h4>
+            <br><p><b>$333,888<br> $266,112<br> $198,336</b></p>
+            <br><i>Gold Star if we define what that requires transparently.</i>
+            <br>Open to Remote, 25%+ Travel, & Relocation opportunities
         </div>
+        <div class="help-button">𝄃𝄃𝄂𝄂𝄀𝄁𝄃𝄂𝄂𝄃</div>
+    `;
     
+    // Assemble the header
     header.appendChild(toggleBtn);
     header.appendChild(title);
-    header.appendChild(badge);
+    header.appendChild(helpContainer);
     
     boxContainer.appendChild(header);
     boxContainer.appendChild(contentContainer);
@@ -76,8 +74,6 @@
         spacer.classList.toggle('is-collapsed', !isExpanded);
         toggleBtn.innerHTML = isExpanded ? '−' : '+';
     });
-
-
     
     const log = boxContainer.querySelector("#agent-chat-log");
     const input = boxContainer.querySelector("#agent-input-field");
@@ -125,11 +121,14 @@
 
     async function fetchAgentGreeting() {
         try {
-            console.log("Sending to API:", JSON.stringify({ prompt: text, agentId: TASKADE_AGENT_ID, spaceID: TASKADE_SPACE_ID}));
             const res = await fetch(PROXY_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ prompt: text, agentId: TASKADE_AGENT_ID, spaceId: TASKADE_SPACE_ID })
+                body: JSON.stringify({ 
+                    prompt: "Hello", // Replaced undefined variable reference with a standard initial greeting
+                    agentId: TASKADE_AGENT_ID, 
+                    spaceId: TASKADE_SPACE_ID 
+                })
             });
             const data = await res.json();
             const staticMsg = log.querySelector(".msg-bot-welcome");
@@ -151,9 +150,6 @@
     sendBtn.addEventListener("click", () => handleMessage(input.value));
     input.addEventListener("keypress", (e) => { if (e.key === "Enter") handleMessage(input.value); });
     boxContainer.querySelectorAll(".starter-btn").forEach(btn => {
-    btn.addEventListener("click", () => handleMessage(btn.getAttribute("data-msg")));
+        btn.addEventListener("click", () => handleMessage(btn.getAttribute("data-msg")));
     });
-
-    header.appendChild(badge);
-    header.appendChild(helpTooltip);
 })();
