@@ -963,8 +963,8 @@ nav {
 }
 
 #bottom-agent-box .help-button:hover {
-    background-color: var(--color-cherry-red);
-    color: #000000;
+    background-color: #ffffff;
+    color: var(--color-gray-light);
 }
 
 /* 3. Style the popup tooltip into a crisp rectangular card above the bar */
