@@ -985,7 +985,7 @@ nav {
     border-radius: 0px; /* Enforces the rectangular look */
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
     position: relative;
-    transform: translateY(10px);
+    transform: translateY(-50px);
     z-index: 9999;
     text-align: center;
 }
