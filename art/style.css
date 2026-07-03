@@ -300,7 +300,6 @@ nav {
 
 /* --- Bottom Right Floating Bubble --- */
 .help-container {
-  position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 8888;
