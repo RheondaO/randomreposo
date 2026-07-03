@@ -957,7 +957,7 @@ nav {
     font-weight: 600;
     letter-spacing: 1px;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 0px;
     transition: all 0.3s ease;
     white-space: nowrap;
 }
@@ -974,7 +974,7 @@ nav {
     bottom: 140%; /* Sits cleanly directly above the bar */
     right: 0;
     width: 380px;
-    background-color: #ffffff;
+    background-color: var(--color-gray-light);
     color: #000000;
     border: 4px solid #000000; /* Matches the thick theme borders */
     padding: 16px;
