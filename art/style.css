@@ -9,7 +9,7 @@
 
 :root { 
     --color-black: #000000;
-    --color-white: var(--color-white);
+    --color-white: #ffffff;
     --color-gray-light: #f5f5f5;
     --color-gray-medium: #e0e0e0;
     --color-gray-dark: #333333;
@@ -83,7 +83,7 @@ site-loader:not(:defined) {
 html:not(.loader-initialized) body {
   opacity: 0 !important;
   visibility: hidden !important;
-  background-color: var(--color-white) !important;
+  background-color: #ffffff !important;
 }
 
 /* Outbound transition coverage */
@@ -110,7 +110,7 @@ eb-ui {
 /* Default state: hidden and out of the way 
 #loadingScreen {
   display: none;
-  background-color: var(--color-white, var(--color-white));
+  background-color: var(--color-white, #ffffff);
   z-index: 999999;
 }
 
@@ -124,7 +124,7 @@ html.navigating-out #loadingScreen {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  background-color: var(--color-white) !important;
+  background-color: #ffffff !important;
   opacity: 0; /* Starts transparent, ready for the rAF opacity ramp 
 }*/
 
@@ -696,7 +696,7 @@ nav {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: var(--color-white);
+    background-color: #ffffff;
     border-top: 4px solid #000000;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
     z-index: 7777;
@@ -714,7 +714,7 @@ nav {
 #bottom-agent-box .agent-header {
     padding: 1rem;
     background-color: #000000;
-    color: var(--color-white);
+    color: #ffffff;
     border-bottom: 4px solid #000000;
     display: flex;
     justify-content: center;
@@ -728,7 +728,7 @@ nav {
     font-family: "Jersey 25", sans-serif;
     font-weight: 400;
     font-size: 1.2rem;
-    color: var(--color-white);
+    color: #ffffff;
     text-align: center;
     flex: 1;
 }
@@ -738,9 +738,9 @@ nav {
     position: absolute;
     right: 1.5rem;
     font-size: 0.85rem;
-    color: var(--color-white);
+    color: #ffffff;
     background: transparent;
-    border: 2px solid var(--color-white);
+    border: 2px solid #ffffff;
     padding: 0.25rem 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -752,9 +752,9 @@ nav {
     left: 1.5rem;
     width: 40px;
     height: 40px;
-    border: 3px solid var(--color-white);
-    background-color: var(--color-white);
-    color: var(--color-black);
+    border: 3px solid #ffffff;
+    background-color: #000000;
+    color: #ffffff;
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
@@ -775,7 +775,7 @@ nav {
     height: 350px;
     overflow: hidden;
     transition: all 0.3s ease;
-    background-color: var(--color-white);
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
 }
@@ -784,7 +784,7 @@ nav {
     flex: 1;
     overflow-y: auto;
     padding: 20px;
-    background-color: var(--color-white);
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -804,7 +804,7 @@ nav {
 }
 
 #agent-starters-box .starter-btn {
-    background: var(--color-white);
+    background: #ffffff;
     border: 1px solid #000000;
     color: #000000;
     padding: 6px 12px;
@@ -816,7 +816,7 @@ nav {
 /* Input Row Elements */
 .agent-input-container {
     display: flex;
-    background: var(--color-white);
+    background: #ffffff;
     padding: 0;
 }
 
@@ -831,7 +831,7 @@ nav {
 
 #agent-send-trigger {
     background: #000000;
-    color: var(--color-white);
+    color: #ffffff;
     border: none;
     padding: 0 32px;
     font-size: 14px;
@@ -853,7 +853,7 @@ nav {
 }
 
 .msg-user {
-    color: var(--color-white);
+    color: #ffffff;
     background: #000000;
     padding: 10px 14px;
     border-radius: 2px;
