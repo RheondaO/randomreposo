@@ -19,15 +19,15 @@
     contentContainer.id = "agent-content";
     contentContainer.innerHTML = `
         <div id="agent-chat-log">
-            <div class="msg-bot-welcome">Welcome! I am the site agent trained directly on Rheonda’s 7+ years of expertise in software engineering, SaaS & Big data architectures, and programmatic revenue operations. Use the interface below to asks how Rheonda could neutralizes common operational risks!</div>
+            <div class="msg-bot-welcome">Welcome! I am a friendly site agent trained directly on my admin's experience and expertise. Use the interface below to asks me questions!</div>
         </div>
         <div id="agent-starters-box">
-            <button class="starter-btn" data-msg="What is the compounding operational tax on our core technical team if we delay hiring a developer-turned-GTM operator?">[ RISK: ENG VELOCITY ]</button>
-            <button class="starter-btn" data-msg="If we do not deploy an automated, dual-track outbound framework immediately, how much capitalized market share do we risk bleeding?">[ RISK: MARKET CAPTURE ]</button>
-            <button class="starter-btn" data-msg="What happens to our institutional valuation tracking if our early commercial data layer isn't structured to survive Series A due diligence?">[ RISK: DUE DILIGENCE ]</button>
+            <button class="starter-btn" data-msg="?">[ Quick Start ]</button>
+            <button class="starter-btn" data-msg="?">[ Meet the Admin ]</button>
+            <button class="starter-btn" data-msg="?">[ Just Chat ]</button>
         </div>
         <div class="agent-input-container">
-            <input type="text" id="agent-input-field" placeholder="Ask a Question: Business, Sales, & Rheonda's Portfolio Approach." />
+            <input type="text" id="agent-input-field" placeholder="Start Typing..."/>
             <button id="agent-send-trigger">Send</button>
         </div>
     `;
