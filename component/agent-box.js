@@ -38,7 +38,7 @@
     
     const title = document.createElement("span");
     title.className = "agent-title";
-    title.textContent = "Sales Portfolio Site Agent";
+    title.textContent = "Site Agent";
     
     const badge = document.createElement("span");
     badge.className = "agent-badge";
