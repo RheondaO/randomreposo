@@ -790,6 +790,7 @@ nav {
     font-size: 13px;
     line-height: 1.6;
     border-bottom: 1px solid #e0e0e0;
+    white-space: pre-wrap
 }
 
 #agent-starters-box {
