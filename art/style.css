@@ -934,7 +934,61 @@ nav {
     display: block;
 }
 
+/* ==========================================
+   Help Badge & Tooltip Box Integration
+   ========================================== */
 
+/* 1. Position the wrapper inside the relative flex header */
+#bottom-agent-box .help-container {
+    position: absolute;
+    right: 8rem; /* Puts it perfectly to the left of your .agent-badge (which is at 1.5rem) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 2. Shape the button into a sharp, rectangular badge */
+#bottom-agent-box .help-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 0px; /* Completely square/rectangular edges */
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+#bottom-agent-box .help-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* 3. Style the popup tooltip into a crisp rectangular card above the bar */
+#bottom-agent-box .help-tooltip {
+    display: none; /* Toggle with JS or hover layout */
+    position: absolute;
+    bottom: 140%; /* Sits cleanly directly above the bar */
+    right: 0;
+    width: 280px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 4px solid #000000; /* Matches the thick theme borders */
+    padding: 16px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 0px; /* Enforces the rectangular look */
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}
+
+/* Simple hover trigger rule to reveal it safely */
+#bottom-agent-box .help-container:hover .help-tooltip {
+    display: block;
+}
 
 /* ==========================================
    7. COLLAPSED INFRASTRUCTURE STATE
